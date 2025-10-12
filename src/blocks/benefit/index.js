@@ -1,0 +1,9 @@
+export { default as Benefit1 } from './Benefit1';
+export { default as Benefit2 } from './Benefit2';
+export { default as Benefit3 } from './Benefit3';
+export { default as Benefit4 } from './Benefit4';
+export { default as Benefit5 } from './Benefit5';
+export { default as Benefit6 } from './Benefit6';
+export { default as Benefit7 } from './Benefit7';
+export { default as Benefit8 } from './Benefit8';
+export { default as Benefit9 } from './Benefit9';

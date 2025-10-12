@@ -1,0 +1,12 @@
+export { benefit } from './benefit';
+export { blog } from './blog';
+export { clientele } from './clientele';
+export { cta } from './cta';
+export { faq } from './faq';
+export { feature1 } from './feature';
+export { feature9 } from './feature';
+export { hero } from './hero';
+export { integration } from './integration';
+export { navbar } from './navbar';
+export { pricing } from './pricing';
+export { process } from './process';
