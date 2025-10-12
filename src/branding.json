@@ -1,0 +1,24 @@
+{
+  "brandName": "Your Brand",
+  "title": "",
+  "company": {
+    "name": "Your Company",
+    "url": "https://yourwebsite.com",
+    "socialLink": {
+      "linkedin": "#",
+      "instagram": "#",
+      "facebook": "#",
+      "youtube": "#",
+      "github": "#",
+      "dribble": "#",
+      "discord": "#",
+      "support": "#"
+    }
+  },
+  "logo": {
+    "main": "",
+    "logoIcon": "",
+    "logoFab": "",
+    "logoWatermark": ""
+  }
+}
