@@ -1,9 +1,9 @@
 {
-  "brandName": "Your Brand",
+  "brandName": "RoThiBouw",
   "title": "",
   "company": {
-    "name": "Your Company",
-    "url": "https://yourwebsite.com",
+    "name": "RoThiBouw",
+    "url": "https://rothibouw.nl",
     "socialLink": {
       "linkedin": "#",
       "instagram": "#",
@@ -16,6 +16,8 @@
     }
   },
   "logo": {
+    "light": "/assets/logo/light.png",
+    "dark": "/assets/logo/dark.png",
     "main": "",
     "logoIcon": "",
     "logoFab": "",

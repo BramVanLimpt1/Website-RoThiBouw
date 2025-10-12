@@ -12,7 +12,9 @@ import branding from '@/branding.json';
 
 export default function LogoMain() {
   const theme = useTheme();
-  const logoMainPath = branding.logo.main;
+  // Use theme-specific logo if available, otherwise fall back to main logo
+  const logoPath = theme.palette.mode === 'dark' ? branding.logo.dark : branding.logo.light;
+  const logoMainPath = logoPath || branding.logo.main;
 
   return logoMainPath ? (
     <CardMedia src={logoMainPath} component="img" alt="logo" sx={{ width: { xs: 112, lg: 140 } }} loading="lazy" />

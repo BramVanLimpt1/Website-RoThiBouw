@@ -12,7 +12,9 @@ import branding from '@/branding.json';
 
 export default function LogoIcon() {
   const theme = useTheme();
-  const logoIconPath = branding.logo.logoIcon;
+  // Use theme-specific logo if available, otherwise fall back to logoIcon
+  const logoPath = theme.palette.mode === 'dark' ? branding.logo.dark : branding.logo.light;
+  const logoIconPath = logoPath || branding.logo.logoIcon;
 
   return (
     <Box

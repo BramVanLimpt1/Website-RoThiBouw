@@ -4,10 +4,10 @@ import branding from '@/branding.json';
 /***************************  SEO METADATA - MAIN LAYOUT  ***************************/
 
 const title = `${branding.brandName} ${branding.title}`;
-const description = `${branding.brandName} is a cutting-edge software solution designed to revolutionize the way businesses operate. Our platform offers a comprehensive suite of features that enable businesses to streamline their operations, enhance productivity, and drive growth. With ${branding.brandName}, businesses can easily manage their customers, track sales, optimize marketing campaigns, and streamline their internal processes. Whether you're a startup or a large enterprise, ${branding.brandName} has the tools and expertise to help you succeed in today's fast-paced business landscape. Join the ${branding.brandName} community and experience the power of innovative software solutions for business success`;
+const description = `${branding.brandName} add description here.`;
 
 const ogCommonMetadata = {
-  locale: 'en_US',
+  locale: 'en',
   type: 'website',
   siteName: `${branding.brandName}`,
   images: '' // recommended dimensions of 1200x630
@@ -21,17 +21,28 @@ export const mainMetadata = {
   description,
   applicationName: title,
   keywords: [
-    'SaaS',
     `${branding.brandName}`,
-    'Software as a Service',
-    'Cloud-based software',
-    'Project management tools',
-    'Enterprise software'
+    'Timmerwerken',
+    'Renovatie',
+    'Dakwerken',
   ],
   creator: `${branding.company.name}`,
   metadataBase: new URL(process.env.NEXT_PUBLIC_METADATA_BASE || 'http://localhost:3000'),
   alternates: {
     canonical: '/'
+  },
+  icons: {
+    icon: [
+      {
+        url: '/assets/logo/light.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/assets/logo/dark.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: '/assets/logo/light.png',
   },
   openGraph: {
     title,
