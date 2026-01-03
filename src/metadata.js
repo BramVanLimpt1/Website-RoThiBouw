@@ -20,12 +20,7 @@ export const mainMetadata = {
   },
   description,
   applicationName: title,
-  keywords: [
-    `${branding.brandName}`,
-    'Timmerwerken',
-    'Renovatie',
-    'Dakwerken',
-  ],
+  keywords: [`${branding.brandName}`, 'Timmerwerken', 'Renovatie', 'Dakwerken'],
   creator: `${branding.company.name}`,
   metadataBase: new URL(process.env.NEXT_PUBLIC_METADATA_BASE || 'http://localhost:3000'),
   alternates: {
@@ -35,14 +30,14 @@ export const mainMetadata = {
     icon: [
       {
         url: '/assets/logo/light.png',
-        media: '(prefers-color-scheme: light)',
+        media: '(prefers-color-scheme: light)'
       },
       {
         url: '/assets/logo/dark.png',
-        media: '(prefers-color-scheme: dark)',
-      },
+        media: '(prefers-color-scheme: dark)'
+      }
     ],
-    apple: '/assets/logo/light.png',
+    apple: '/assets/logo/light.png'
   },
   openGraph: {
     title,

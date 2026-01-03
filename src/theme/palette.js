@@ -1,33 +1,33 @@
 // @project
 import { ThemeMode } from '@/config';
 
-/***************************  DEFAULT / AI THEME - PALETTE  ***************************/
+/***************************  ROTHI BOUW - BRAND PALETTE  ***************************/
 
 export default function palette(mode) {
-  const textPrimary = '#1A1C1E'; // AI/neutral/10 - on surface
-  const textSecondary = '#42474E'; // AI/neutral variant/30 - on surface variant
-  const divider = '#C2C7CE'; // AI/neutral variant/80 - outline variant
+  const textPrimary = '#1A1C1E'; // on surface
+  const textSecondary = '#42474E'; // on surface variant
+  const divider = '#C2C7CE'; // outline variant
   const background = '#FFF';
 
-  const textPrimaryDark = '#E2E2E5'; // AI/neutral/90 - on surface
-  const textSecondaryDark = '#C2C7CE'; // AI/neutral variant/80 - on surface variant
-  const dividerDark = '#42474E'; // AI/neutral variant/30 - outline variant
-  const backgroundDark = '#0B0F12'; // AI/neutral/04 - container lowest
+  const textPrimaryDark = '#E2E2E5'; // on surface
+  const textSecondaryDark = '#C2C7CE'; // on surface variant
+  const dividerDark = '#42474E'; // outline variant
+  const backgroundDark = '#051519'; // RoThi Bouw brand dark
 
   const lightPalette = {
     primary: {
-      lighter: '#CCE5FF', // AI/primary/90 - primary container / primary fixed
-      light: '#92CCFF', // AI/primary/80 - primary fixed dim
-      main: '#006397', // AI/primary/40 - primary
-      dark: '#004B73', // AI/primary/30 - on primary fixed variant
-      darker: '#001D31' // AI/primary/10 - on primary container / on primary fixed
+      lighter: '#B3D4DC', // lighter teal variant
+      light: '#4A8B9E', // light teal
+      main: '#051519', // RoThi Bouw brand dark
+      dark: '#030E11', // darker variant
+      darker: '#020A0C' // darkest variant
     },
     secondary: {
-      lighter: '#D3E4F8', // AI/secondary/90 - secondary container / secondary fixed
-      light: '#B7C8DB', // AI/secondary/80 - secondary fixed dim
-      main: '#4F6070', // AI/secondary/40 - secondary
-      dark: '#384858', // AI/secondary/30 - on secondary fixed variant
-      darker: '#0B1D2B' // AI/secondary/10 - on secondary container / on secondary fixed
+      lighter: '#D9D9D9', // lighter grey
+      light: '#ADADAD', // light grey
+      main: '#8c8a8a', // RoThi Bouw brand grey
+      dark: '#5A5858', // darker grey
+      darker: '#2E2D2D' // darkest grey
     },
     grey: {
       50: '#F9F9FC', // AI/neutral/98 - surface / surface bright
@@ -53,18 +53,18 @@ export default function palette(mode) {
 
   const darkPalette = {
     primary: {
-      lighter: '#004B73', // AI/primary/30 - primary container / on primary fixed variant
-      light: '#3398DB', // AI/primary/60 - primary fixed dim
-      main: '#92CCFF', // AI/primary/80 - primary
-      dark: '#CCE5FF ', // AI/primary/90 - on primary container / primary fixed
-      darker: '#E7F2FF' // AI/primary/95 - on primary container / on primary fixed
+      lighter: '#0A2A31', // darker teal variant
+      light: '#5AA2B5', // light teal for dark mode
+      main: '#7BC4D8', // lighter teal for dark mode
+      dark: '#A8DDE9', // lighter variant
+      darker: '#D4F0F5' // lightest variant
     },
     secondary: {
-      lighter: '#384858', // AI/secondary/30 - secondary container / on secondary fixed variant
-      light: '#8193A4', // AI/secondary/60 - secondary fixed dim
-      main: '#B7C8DB', // AI/secondary/80 - secondary
-      dark: '#D3E4F8', // AI/secondary/90 - on secondary container / secondary fixed
-      darker: '#E7F2FF' // AI/secondary/95   - on secondary container / on secondary fixed
+      lighter: '#3D3C3C', // darker grey variant
+      light: '#A5A3A3', // light grey for dark mode
+      main: '#BFBDBD', // RoThi Bouw grey lighter for dark mode
+      dark: '#D9D9D9', // lighter grey
+      darker: '#F0F0F0' // lightest grey
     },
     grey: {
       50: '#101418', // AI/neutral/06 - surface / surface dim

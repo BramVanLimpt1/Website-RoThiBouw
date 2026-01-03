@@ -3,6 +3,83 @@ import { NextResponse } from 'next/server';
 
 /***************************  API - CONTACT FORM  ***************************/
 
+/**
+ * POST /api/contact - Handle contact form submissions
+ *
+ * Server-side endpoint for processing contact form data from ContactUsForm2.
+ * Validates input, sends email using configured provider, and returns localized response messages.
+ *
+ * Validation:
+ * - Required fields: name, email, message
+ * - Email format validation using regex
+ * - Response language detection from Accept-Language header
+ *
+ * Email Providers (configurable):
+ * - Nodemailer: SMTP-based email sending (most flexible)
+ * - SendGrid: Third-party email service
+ * - Resend: Modern email API
+ * - Log: Simple console logging (for development/testing)
+ *
+ * Environment Variables Required:
+ * - CONTACT_EMAIL: Recipient email address for contact submissions
+ *
+ * For Nodemailer:
+ * - SMTP_HOST: SMTP server hostname
+ * - SMTP_PORT: SMTP server port (usually 587 for TLS, 465 for SSL)
+ * - SMTP_SECURE: 'true' for SSL, 'false' for TLS
+ * - SMTP_USER: SMTP authentication username
+ * - SMTP_PASS: SMTP authentication password
+ * - SMTP_FROM: Sender email address
+ *
+ * For SendGrid (uncomment in code):
+ * - SENDGRID_API_KEY: SendGrid API key
+ * - SENDGRID_FROM: Sender email address
+ *
+ * For Resend (uncomment in code):
+ * - RESEND_API_KEY: Resend API key
+ * - RESEND_FROM: Sender email address
+ *
+ * Request Body:
+ * @param {string} name - Full name (required)
+ * @param {string} email - Email address (required, must be valid)
+ * @param {string} subject - Subject line (optional, defaults to "New Contact Form Submission")
+ * @param {string} message - Message content (required)
+ * @param {string} company - Company name (optional)
+ * @param {string} phone - Phone number with country code (optional)
+ *
+ * Responses:
+ * - 200: { message: "Thank you for your message! We'll get back to you soon." }
+ * - 400: { error: "Validation error message" }
+ * - 500: { error: "Failed to send message. Please try again later." }
+ *
+ * @param {Request} request - Next.js request object
+ * @returns {Response} JSON response with success or error message
+ *
+ * @example
+ * ```javascript
+ * // Client-side call (from ContactUsForm2 via submitContactForm utility)
+ * const response = await fetch('/api/contact', {
+ *   method: 'POST',
+ *   headers: { 'Content-Type': 'application/json' },
+ *   body: JSON.stringify({
+ *     name: 'John Doe',
+ *     email: 'john@example.com',
+ *     phone: '+31612345678',
+ *     subject: 'Project Inquiry',
+ *     message: 'I am interested in your services',
+ *     company: 'Acme Corp'
+ *   })
+ * });
+ *
+ * const result = await response.json();
+ * if (response.ok) {
+ *   console.log(result.message); // Success message
+ * } else {
+ *   console.error(result.error); // Error message
+ * }
+ * ```
+ */
+
 // POST handler for /api/contact
 export async function POST(request) {
   try {
@@ -56,7 +133,7 @@ export async function POST(request) {
     // Choose your email provider (uncomment one):
 
     // Option 1: Nodemailer (most flexible, works with any SMTP)
-    // const result = await sendWithNodemailer(emailData);
+    const result = await sendWithNodemailer(emailData);
 
     // Option 2: SendGrid (popular service)
     // const result = await sendWithSendGrid(emailData);
@@ -65,7 +142,7 @@ export async function POST(request) {
     // const result = await sendWithResend(emailData);
 
     // Option 4: Simple log (for testing/development)
-    const result = await logEmail(emailData);
+    // const result = await logEmail(emailData);
 
     if (result.success) {
       return NextResponse.json({ message: msg.success }, { status: 200 });
@@ -83,8 +160,6 @@ export async function POST(request) {
 // Option 1: Nodemailer (requires: npm install nodemailer)
 async function sendWithNodemailer(emailData) {
   try {
-    // Uncomment and configure when using Nodemailer:
-    /*
     const nodemailer = require('nodemailer');
 
     const transporter = nodemailer.createTransporter({
@@ -93,8 +168,8 @@ async function sendWithNodemailer(emailData) {
       secure: process.env.SMTP_SECURE === 'true',
       auth: {
         user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
+        pass: process.env.SMTP_PASS
+      }
     });
 
     await transporter.sendMail({
@@ -104,7 +179,6 @@ async function sendWithNodemailer(emailData) {
       html: generateEmailHTML(emailData),
       replyTo: emailData.email
     });
-    */
 
     return { success: true };
   } catch (error) {

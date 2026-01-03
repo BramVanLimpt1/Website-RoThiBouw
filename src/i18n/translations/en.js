@@ -21,13 +21,29 @@ export const translations = {
     getInTouch: 'Get in Touch',
     contactUs: 'Contact Us',
     fullName: 'Full Name',
-    fullNamePlaceholder: 'Enter your full name'
+    fullNamePlaceholder: 'Enter your full name',
+    contactPerson: 'Who would you like to contact?',
+    contactPersonPlaceholder: 'Select a person',
+    // Validation messages
+    validation: {
+      firstNameRequired: 'First name is required',
+      firstNameInvalid: 'Invalid first name',
+      lastNameRequired: 'Last name is required',
+      lastNameInvalid: 'Invalid last name',
+      emailRequired: 'Email is required',
+      emailInvalid: 'Invalid email address',
+      phoneRequired: 'Phone number is required',
+      phoneInvalid: 'Invalid phone number',
+      messageRequired: 'Message is required',
+      contactPersonRequired: 'Please select who you would like to contact'
+    }
   },
 
   // Navigation
   nav: {
     home: 'Home',
     about: 'About',
+    projects: 'Projects',
     contact: 'Contact',
     pricing: 'Pricing',
     faq: 'FAQ',
@@ -60,6 +76,13 @@ export const translations = {
     previous: 'Previous',
     back: 'Back',
     continue: 'Continue'
+  },
+
+  // Customization (Theme/Language settings)
+  customization: {
+    darkMode: 'Dark Mode',
+    rtl: 'Right to Left',
+    language: 'Language'
   },
 
   // Footer sections
@@ -117,5 +140,334 @@ export const translations = {
     signInFacebook: 'Sign In with Facebook',
     privacyPolicy: 'Privacy Policy',
     termsAndConditions: 'Terms & Conditions'
+  },
+
+  // Contact Page
+  contact: {
+    pageTitle: 'Contact Us',
+    heading: 'Get in Touch',
+    caption: "Have a question or want to work together? We'd love to hear from you.",
+    emailCard: {
+      title: 'Email Us',
+      content: 'Send us an email anytime',
+      buttonText: 'Send Email'
+    },
+    phoneCard: {
+      title: 'Call Us',
+      content: 'Available Monday to Friday, 9AM - 5PM',
+      buttonText: 'Call Now'
+    },
+    whatsappCard: {
+      title: 'WhatsApp Us',
+      content: 'Quick and easy communication',
+      buttonText: 'Start Chat'
+    }
+  },
+
+  // Home Page
+  home: {
+    hero: {
+      slide1: {
+        title: 'Quality Craftsmanship in Wood Construction',
+        description: 'Professional timber work and construction services for your project'
+      },
+      slide2: {
+        title: 'From Renovation to New Construction',
+        description: 'Complete solutions for all your construction needs'
+      },
+      slide3: {
+        title: 'Durable and Beautiful Results',
+        description: 'Years of experience in carpentry and construction'
+      }
+    },
+    services: {
+      heading: 'Our Services',
+      caption: 'Professional construction services tailored to your needs',
+      roofing: {
+        title: 'Roofing',
+        description: 'Expert roof construction, repairs, and maintenance for residential and commercial properties'
+      },
+      carpentry: {
+        title: 'Timber Work',
+        description: 'High-quality carpentry services for both interior and exterior projects'
+      },
+      renovations: {
+        title: 'Renovations',
+        description: 'Complete renovation solutions that breathe new life into your space'
+      },
+      dormers: {
+        title: 'Dormer Windows',
+        description: 'Professional dormer construction to add space and value to your home'
+      },
+      canopies: {
+        title: 'Garden Canopies',
+        description: 'Beautiful and durable outdoor canopies for your garden or terrace'
+      },
+      walls: {
+        title: 'Wall Construction',
+        description: 'Solid wall construction and masonry work for all your building needs'
+      }
+    },
+    stats: {
+      yearsExperience: 'Years Experience',
+      projectsCompleted: 'Projects Completed',
+      satisfaction: 'Client Satisfaction',
+      warrantyYears: 'Year Warranty'
+    },
+    projects: {
+      heading: 'Featured Projects',
+      caption: 'Take a look at some of our recently completed construction projects'
+    },
+    process: {
+      heading: 'Our Working Process',
+      caption: 'From initial consultation to project completion, we guide you through every step',
+      step1: {
+        title: 'Consultation',
+        description: 'We discuss your project requirements and provide expert advice'
+      },
+      step2: {
+        title: 'Planning & Design',
+        description: 'Detailed planning and design to bring your vision to life'
+      },
+      step3: {
+        title: 'Execution',
+        description: 'Professional execution with attention to quality and deadlines'
+      },
+      step4: {
+        title: 'Completion',
+        description: 'Final inspection and handover of your completed project'
+      }
+    },
+    cta: {
+      heading: 'Ready to Start Your Project?',
+      description: 'Contact us today for a free consultation and quote',
+      button: 'Get in Touch'
+    },
+    viewAllProjects: 'View All Projects'
+  },
+
+  // About Page
+  about: {
+    story: {
+      heading: 'Our Story',
+      caption: 'Two friends with a shared vision to deliver exceptional craftsmanship and quality construction',
+      section1: {
+        title: 'The Beginning',
+        description:
+          'RoThi Bouw was founded in 2023 by two friends with a shared passion for quality construction and craftsmanship. What started as a dream between two experienced construction professionals has grown into a trusted name in timber work, roofing, and renovations.'
+      },
+      section2: {
+        title: 'Our Vision',
+        description:
+          'With years of hands-on experience in the construction industry, our founders bring expertise, dedication, and a commitment to excellence to every project. We are currently working towards obtaining our contractor certifications, positioning ourselves to take on even more ambitious and larger-scale projects in the future.'
+      }
+    },
+    timeline: {
+      heading: 'Our Journey',
+      caption: 'Key milestones that shaped RoThi Bouw into the company we are today',
+      founded: {
+        title: '2023 - Company Founded',
+        description:
+          'Roy and Thijs founded RoThi Bouw, combining their expertise and passion for quality construction to start their own company.'
+      },
+      team: {
+        title: 'Building Our Team',
+        description:
+          'Expanded our capabilities by building a network of skilled craftsmen and trusted partners in the construction industry.'
+      },
+      office: {
+        title: 'New Office Location',
+        description: 'Moved to a new office and workshop, giving us more space to plan and prepare our projects with precision.'
+      },
+      projects: {
+        title: '100+ Projects Completed',
+        description: 'Reached an important milestone of completing over 100 successful construction projects for satisfied clients.'
+      },
+      certification: {
+        title: 'Contractor Certification',
+        description:
+          'Working towards obtaining official contractor certifications to expand our capabilities for larger and more complex projects.'
+      }
+    },
+    values: {
+      heading: 'What Sets Us Apart',
+      caption: 'Our commitment to quality, experience, and professionalism',
+      quality: {
+        title: 'Quality Craftsmanship',
+        description:
+          'We take pride in delivering high-quality work that stands the test of time. Every project is executed with precision and attention to detail.'
+      },
+      experience: {
+        title: 'Years of Experience',
+        description:
+          'Our team brings extensive experience from the construction industry, ensuring professional results on every project we undertake.'
+      },
+      contractor: {
+        title: 'Growing Expertise',
+        description:
+          'Currently working towards contractor certifications to expand our capabilities and take on larger, more complex construction projects.'
+      },
+      reliability: {
+        title: 'Reliable & Professional',
+        description:
+          'We value clear communication, punctuality, and professionalism. You can count on us to deliver on our promises and meet deadlines.'
+      }
+    },
+    team: {
+      heading: 'Meet Our Team',
+      caption: 'The skilled craftsmen behind RoThi Bouw - two friends united by a passion for quality construction'
+    }
+  },
+
+  // Privacy Policy Page
+  privacyPolicy: {
+    sections: {
+      informationCollection: {
+        heading: 'Information Collection',
+        caption:
+          'We collect information that you provide directly to us when using our services, including your name, email address, phone number, and any other information you choose to provide. We may also automatically collect certain information about your device and how you interact with our website, such as IP address, browser type, and usage data.'
+      },
+      informationUsage: {
+        heading: 'How We Use Your Information',
+        caption:
+          'We use the information we collect to provide, maintain, and improve our services, to communicate with you about our construction services, to respond to your inquiries, and to send you technical notices and support messages. We may also use your information to personalize your experience and to develop new services.'
+      },
+      informationSharing: {
+        heading: 'Information Sharing',
+        caption:
+          'We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share your information with trusted service providers who assist us in operating our website and conducting our business, as long as they agree to keep this information confidential.'
+      },
+      dataSecurity: {
+        heading: 'Data Security',
+        caption:
+          'We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.'
+      },
+      cookies: {
+        heading: 'Cookies and Tracking',
+        caption:
+          'We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with small amounts of data that are stored on your device. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.'
+      },
+      yourRights: {
+        heading: 'Your Rights',
+        caption:
+          'You have the right to access, correct, or delete your personal information. You may also have the right to restrict or object to certain processing of your data. To exercise these rights, please contact us using the information provided below. We will respond to your request in accordance with applicable data protection laws.'
+      },
+      changesToPolicy: {
+        heading: 'Changes to This Policy',
+        caption:
+          'We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "last updated" date. You are advised to review this Privacy Policy periodically for any changes.'
+      },
+      contactUs: {
+        heading: 'Contact Us',
+        caption:
+          'If you have any questions about this Privacy Policy or our data practices, please contact us through our contact page or using the contact information provided on our website. We are committed to resolving any concerns you may have about your privacy.'
+      }
+    }
+  },
+
+  // Terms & Conditions Page
+  termsCondition: {
+    sections: {
+      acceptanceOfTerms: {
+        heading: 'Acceptance of Terms',
+        caption:
+          'By accessing and using the RoThiBouw website and services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our website or services. These terms apply to all visitors, users, and others who access or use our services.'
+      },
+      servicesDescription: {
+        heading: 'Services Description',
+        caption:
+          'RoThiBouw provides construction services including roof construction and repairs, timber work, renovations, dormer windows, garden canopies, and wall construction. All services are subject to availability and may be modified or discontinued at any time. Service descriptions, pricing, and availability are subject to change without notice.'
+      },
+      userResponsibilities: {
+        heading: 'User Responsibilities',
+        caption:
+          "You agree to use our website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account."
+      },
+      intellectualProperty: {
+        heading: 'Intellectual Property',
+        caption:
+          'All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of RoThiBouw or its content suppliers and is protected by Dutch and international copyright laws. You may not reproduce, distribute, or create derivative works from any content without our express written permission.'
+      },
+      limitationOfLiability: {
+        heading: 'Limitation of Liability',
+        caption:
+          'RoThiBouw shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services. Our total liability for any claims under these terms shall not exceed the amount paid by you for our services in the twelve months preceding the claim.'
+      },
+      warranties: {
+        heading: 'Warranties and Guarantees',
+        caption:
+          'We warrant that our construction services will be performed in a professional and workmanlike manner in accordance with industry standards. However, we make no warranties regarding specific results or outcomes. All warranties are subject to the terms of any written agreements for specific projects.'
+      },
+      changesToTerms: {
+        heading: 'Changes to Terms',
+        caption:
+          'We reserve the right to modify these terms at any time. We will notify you of any material changes by posting the new terms on this page and updating the "last updated" date. Your continued use of our services after any changes constitutes acceptance of the new terms.'
+      },
+      governingLaw: {
+        heading: 'Governing Law',
+        caption:
+          'These terms and conditions are governed by and construed in accordance with the laws of the Netherlands. Any disputes arising from these terms or your use of our services shall be subject to the exclusive jurisdiction of the Dutch courts.'
+      }
+    }
+  },
+
+  // Projects Page
+  projects: {
+    heading: 'Our Projects',
+    caption: 'Explore our completed construction projects and see the quality of our craftsmanship',
+    filterByCategory: 'Filter by Category',
+    noProjects: 'No projects found in this category',
+    aboutProject: 'About this Project',
+    activities: 'Activities',
+    specifications: 'Specifications',
+    interestedTitle: 'Interested in a Similar Project?',
+    interestedDescription: 'Contact us for a no-obligation conversation about the possibilities.',
+    contactButton: 'Contact Us',
+    projectNotFound: 'Project not found',
+
+    // Category labels
+    categories: {
+      all: 'All Projects',
+      buitenconstructies: 'Outdoor Constructions',
+      aanbouwRenovatie: 'Extensions & Renovations',
+      dakwerken: 'Roofing',
+      renovatie: 'Renovations'
+    },
+
+    // Specification labels
+    specs: {
+      material: 'Material',
+      surfaceArea: 'Surface Area',
+      executionTime: 'Execution Time',
+      warranty: 'Warranty'
+    },
+
+    // Project items
+    items: {
+      project1: {
+        title: 'Wooden Canopy with Terrace Floor',
+        description: 'Realization of a beautiful wooden canopy with solid oak columns and a durable terrace floor.',
+        detailDescription:
+          'For this client we realized a beautiful wooden canopy that fits perfectly with the existing home. The construction is made of sustainable oak with robust columns that ensure a solid and long-lasting solution. The canopy not only offers protection, but also adds a warm and natural look to the outdoor space.',
+        activities: {
+          activity1: 'Massive oak columns with steel footplates',
+          activity2: 'High-quality roof covering with optimal drainage',
+          activity3: 'Seamless connection to existing level',
+          activity4: 'Durable terrace floor in harmony with the canopy',
+          activity5: 'Professional finishing with attention to detail'
+        }
+      },
+      project2: {
+        title: 'Modern Extension with Wood Cladding',
+        description: 'Complete extension with modern wood cladding, large windows and seamless integration with existing construction.',
+        detailDescription:
+          'This modern extension combines functionality with aesthetics. The wood cladding gives the extension a warm and contemporary look that integrates perfectly with the existing architecture.',
+        activities: {
+          activity1: 'Construction of the extension with modern architecture',
+          activity2: 'Installation of high-quality wood cladding',
+          activity3: 'Large windows for optimal natural light'
+        }
+      }
+    }
   }
 };

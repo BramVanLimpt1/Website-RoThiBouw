@@ -54,6 +54,7 @@ export const PAGE_PATH = {
 
   // pages path
   aboutPage: '/about',
+  projectsPage: '/projects',
   careerPage: '/career',
   contactPage: '/contact',
   faqPage: '/faq',

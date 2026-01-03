@@ -1,14 +1,19 @@
 'use client';
 
 // @mui
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 // @project
+import HeroSlideshow from '@/components/hero/HeroSlideshow';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
 import useTranslation from '@/hooks/useTranslation';
-import { Team2Members } from '@/blocks/team';
+
+// @data
+import { heroSlides, services, stats, processSteps } from './data';
+import { projects } from '../projects/data';
+
+// @sections
+import { ServicesSection, StatsSection, FeaturedProjectsSection, ProcessSection, CtaSection } from './sections';
 
 /***************************  HOME PAGE  ***************************/
 
@@ -16,22 +21,32 @@ export default function HomePage() {
   useDataThemeMode();
   const { t } = useTranslation();
 
-  return (
-    <Container maxWidth="lg" sx={{ py: 8, textAlign: 'center' }}>
-      <Box sx={{ mb: 4 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
-          Welcome to Your Template
-        </Typography>
-        <Typography variant="h6" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-          This is a clean Next.js template with Material-UI. Start building your amazing project from here.
-        </Typography>
-      </Box>
+  // Prepare slides with translated text
+  const slides = heroSlides.map((slide) => ({
+    image: slide.image,
+    title: t(slide.titleKey),
+    description: t(slide.descriptionKey)
+  }));
 
-      <Box sx={{ mt: 6, p: 3, bgcolor: 'grey.50', borderRadius: 2 }}>
-        <Typography variant="body1" color="text.secondary">
-          🚀 Add your content here by editing <code>src/views/pages/home/index.jsx</code>
-        </Typography>
-      </Box>
-    </Container>
+  return (
+    <Stack spacing={0}>
+      {/* Hero Slideshow */}
+      <HeroSlideshow slides={slides} height={{ xs: 400, sm: 500, md: 600 }} showText={true} />
+
+      {/* Services Section */}
+      <ServicesSection services={services} heading="home.services.heading" caption="home.services.caption" t={t} />
+
+      {/* Stats Section */}
+      {/* <StatsSection stats={stats} t={t} /> */}
+
+      {/* Featured Projects Section */}
+      <FeaturedProjectsSection projects={projects} heading="home.projects.heading" caption="home.projects.caption" t={t} />
+
+      {/* Process Section */}
+      {/* <ProcessSection steps={processSteps} heading="home.process.heading" caption="home.process.caption" t={t} /> */}
+
+      {/* CTA Section */}
+      {/* <CtaSection heading="home.cta.heading" description="home.cta.description" buttonText="home.cta.button" t={t} /> */}
+    </Stack>
   );
 }

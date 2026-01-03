@@ -20,15 +20,50 @@ import SlickArrows from '@/components/SlickArrows';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
 
+import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 import GetImagePath from '@/utils/GetImagePath';
 
-// @types
-
 /***************************  TEAM - 4  ***************************/
 
+/**
+ * Team4 Component
+ *
+ * Displays a carousel of team members with their avatars, names, roles, and optional badges.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.heading - Section heading text
+ * @param {string} props.caption - Section caption/description text
+ * @param {Array<Object>} props.members - Array of team member objects
+ * @param {string} props.members[].name - Member's full name
+ * @param {string} props.members[].role - Member's role/title
+ * @param {string} props.members[].avatar - Path to member's profile image
+ * @param {string|JSX.Element} [props.members[].badge] - Optional badge text or element
+ *
+ * @example
+ * ```jsx
+ * const data = {
+ *    heading: "Our Team",
+ *    caption: "Meet the people behind our success",
+ *    members: [
+ *      {
+ *        name: "Jane Doe",
+ *        role: "CEO",
+ *        avatar: "/assets/profiles/jane.jpg",
+ *        badge: "Founder"
+ *      },
+ *      // more members...
+ *    ]
+ * };
+ * <Team4 {...data} />
+ * ```
+ * @return {JSX.Element} The rendered Team4 component
+ */
 export default function Team4({ heading, caption, members }) {
   const theme = useTheme();
+  const { t } = useTranslation();
+
   const sliderRef = useRef(null);
 
   const settings = {
@@ -57,7 +92,10 @@ export default function Team4({ heading, caption, members }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
-        <Typeset {...{ heading, caption, stackProps: { sx: { textAlign: 'center' } } }} />
+        {/* Header */}
+        <Typeset {...{ heading: t(heading), caption: t(caption), stackProps: { sx: { textAlign: 'center' } } }} />
+
+        {/* Team Members Carousel */}
         <Slider ref={sliderRef} {...settings}>
           {members.map((item, index) => (
             <Box key={index} sx={{ px: 0.75 }}>

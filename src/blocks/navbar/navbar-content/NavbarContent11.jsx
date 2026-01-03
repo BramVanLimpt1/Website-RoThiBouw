@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 // @project
 import ContainerWrapper from '@/components/ContainerWrapper';
 import LogoSection from '@/components/logo';
-import { MenuPopper, NavMenu, NavMenuDrawer } from '@/components/navbar';
+import { MenuPopper, NavMenu, NavMenuDrawer, Customization } from '@/components/navbar';
 import SvgIcon from '@/components/SvgIcon';
 
 // @types
@@ -26,32 +26,40 @@ export default function NavbarContent11({ navItems }) {
       {/* Logo on the left */}
       <LogoSection isIcon={true} />
 
-      {/* Navigation items on the right */}
-      {!downMD && navItems && (
-        <Box>
-          <NavMenu {...{ navItems, menuTextColor: theme.palette.text.secondary }} />
-        </Box>
-      )}
+      {/* Navigation items and customization on the right */}
+      <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
+        {!downMD && navItems && (
+          <Box>
+            <NavMenu {...{ navItems, menuTextColor: theme.palette.text.secondary }} />
+          </Box>
+        )}
 
-      {/* Mobile menu */}
-      {downMD && (
-        <MenuPopper
-          offset={12}
-          toggleProps={{
-            children: <SvgIcon name="tabler-menu-2" color="text.primary" />,
-            color: 'inherit',
-            sx: { minWidth: 40, width: 40, height: 40, p: 0 }
-          }}
-        >
-          <ContainerWrapper>
-            {navItems && (
-              <Box sx={{ mx: -2 }}>
-                <NavMenuDrawer {...{ navItems, menuTextColor: theme.palette.text.secondary }} />
-              </Box>
-            )}
-          </ContainerWrapper>
-        </MenuPopper>
-      )}
+        {/* Theme and Language Switcher */}
+        {!downMD && <Customization showThemeToggle={true} showDirectionToggle={false} showLanguageSelector={true} />}
+
+        {/* Mobile menu */}
+        {downMD && (
+          <MenuPopper
+            offset={12}
+            toggleProps={{
+              children: <SvgIcon name="tabler-menu-2" color="text.primary" />,
+              color: 'inherit',
+              sx: { minWidth: 40, width: 40, height: 40, p: 0 }
+            }}
+          >
+            <ContainerWrapper>
+              {navItems && (
+                <Box sx={{ mx: -2 }}>
+                  <NavMenuDrawer {...{ navItems, menuTextColor: theme.palette.text.secondary }} />
+                </Box>
+              )}
+            </ContainerWrapper>
+          </MenuPopper>
+        )}
+
+        {/* Mobile customization */}
+        {downMD && <Customization showThemeToggle={true} showDirectionToggle={false} showLanguageSelector={true} />}
+      </Stack>
     </Stack>
   );
 }

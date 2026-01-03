@@ -11,17 +11,22 @@ export const useNavbarData = () => {
       {
         id: 'home',
         title: t('nav.home', 'Home'),
-        url: '/'
+        link: '/'
       },
       {
         id: 'about',
         title: t('nav.about', 'About'),
-        url: '/about'
+        link: '/about'
+      },
+      {
+        id: 'projects',
+        title: t('nav.projects', 'Projects'),
+        link: '/projects'
       },
       {
         id: 'contact',
         title: t('nav.contact', 'Contact'),
-        url: '/contact'
+        link: '/contact'
       }
     ]
   };

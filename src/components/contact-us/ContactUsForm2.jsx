@@ -28,15 +28,33 @@ import { useForm, Controller } from 'react-hook-form';
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import SvgIcon from '@/components/SvgIcon';
+
 import { useTranslation } from '@/i18n';
 
-import countries from '@/data/countries';
-import { emailSchema, firstNameSchema, lastNameSchema, phoneSchema } from '@/utils/validationSchema';
+import useConfig from '@/hooks/useConfig';
 
-// @types
+import countries from '@/data/countries';
+
+import { submitContactForm } from '@/api/contact';
+
+import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, getMessageSchema } from '@/utils/validationSchema';
 
 /***************************  FORM - INPUT LABEL  ***************************/
 
+/**
+ * FieldLabel Component
+ *
+ * Simple label component for form fields. Displays the field name/label text
+ * in a consistent subtitle style with secondary text color.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.name - The label text to display
+ *
+ * @example
+ * ```jsx
+ * <FieldLabel name={t('forms.firstName')} />
+ * ```
+ */
 function FieldLabel({ name }) {
   return (
     <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
@@ -47,6 +65,20 @@ function FieldLabel({ name }) {
 
 /***************************  FORM - ERROR MESSAGE  ***************************/
 
+/**
+ * ErrorMessage Component
+ *
+ * Displays validation or submission error messages in a consistent style.
+ * Used for displaying inline form field errors.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.message - The error message text to display
+ *
+ * @example
+ * ```jsx
+ * <ErrorMessage message={errors.email?.message} />
+ * ```
+ */
 function ErrorMessage({ message }) {
   return (
     <Typography variant="caption" sx={{ color: 'error.main' }}>
@@ -57,9 +89,49 @@ function ErrorMessage({ message }) {
 
 /***************************  CONTACT US - FORM 2  ***************************/
 
+/**
+ * ContactUsForm2 Component
+ *
+ * Advanced contact form with multi-field input, country dial code selector, and API integration.
+ *
+ * Features:
+ * - Input validation for all fields (name, email, phone, message)
+ * - Dynamic country code selector with flag icons
+ * - Real-time error message display (translation-aware)
+ * - Loading state while submitting
+ * - Success/error feedback messages
+ * - Language-aware default dial code (defaults to Netherlands +31)
+ * - Responsive design (mobile-first)
+ * - Integrated with submitContactForm() API utility for server submission
+ *
+ * Form Fields:
+ * - firstName: Required, alpha characters only
+ * - lastName: Required, alpha characters only
+ * - email: Required, must be valid email format
+ * - phone: Required with country dial code, 7-15 digits
+ * - message: Required, multi-line text input
+ *
+ * Validation Approach:
+ * - Uses reusable validation schemas from src/utils/validationSchema.js
+ * - All error messages are translated strings from i18n
+ * - Server-side validation also occurs on /api/contact endpoint
+ *
+ * API Integration:
+ * - Calls submitContactForm() utility from src/api/contact.js
+ * - Server endpoint: POST /api/contact
+ * - Handles both success and error responses with translated messages
+ * - Resets form on successful submission
+ */
 export default function ContactUsForm2() {
   const theme = useTheme();
   const { t } = useTranslation();
+  const { language } = useConfig();
+
+  // Set default dial code based on language
+  const getDefaultDialCode = () => {
+    if (language === 'nl') return '+31'; // Netherlands
+    return '+31'; // Default to Netherlands for this Dutch company
+  };
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -79,23 +151,47 @@ export default function ContactUsForm2() {
     watch,
     formState: { errors },
     setValue
-  } = useForm({ defaultValues: { dialcode: '+91' } });
+  } = useForm({ defaultValues: { dialcode: getDefaultDialCode() } });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   // Handle form submission
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Combine firstName and lastName into name field for API
+      const formData = {
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        phone: `${data.dialcode}${data.phone}`,
+        message: data.message
+      };
+
+      const result = await submitContactForm(formData, language);
+
+      setSubmitStatus({ type: 'success', message: result.message });
+      reset();
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: error.message || t('forms.validation.submitError') });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
         <Grid container spacing={2.5} sx={{ justifyContent: 'space-between' }}>
+          
+          {/* First Name Field */}
           <Grid size={{ xs: 12, sm: 6 }}>
             <Stack sx={{ gap: 0.5 }}>
               <FieldLabel name={t('forms.firstName')} />
               <OutlinedInput
-                {...register('firstName', firstNameSchema)}
+                {...register('firstName', getFirstNameSchema(t))}
                 placeholder={t('forms.firstName')}
                 slotProps={{ input: { 'aria-label': 'First name' } }}
                 fullWidth
@@ -104,11 +200,13 @@ export default function ContactUsForm2() {
               {errors.firstName?.message && <ErrorMessage message={errors.firstName?.message} />}
             </Stack>
           </Grid>
+
+          {/* Last Name Field */}
           <Grid size={{ xs: 12, sm: 6 }}>
             <Stack sx={{ gap: 0.5 }}>
               <FieldLabel name={t('forms.lastName')} />
               <OutlinedInput
-                {...register('lastName', lastNameSchema)}
+                {...register('lastName', getLastNameSchema(t))}
                 placeholder={t('forms.lastName')}
                 slotProps={{ input: { 'aria-label': 'Last name' } }}
                 fullWidth
@@ -117,11 +215,13 @@ export default function ContactUsForm2() {
               {errors.lastName?.message && <ErrorMessage message={errors.lastName?.message} />}
             </Stack>
           </Grid>
+
+          {/* Email Field */}
           <Grid size={{ xs: 12, sm: 6 }}>
             <Stack sx={{ gap: 0.5 }}>
               <FieldLabel name={t('forms.email')} />
               <OutlinedInput
-                {...register('email', emailSchema)}
+                {...register('email', getEmailSchema(t))}
                 placeholder={t('forms.emailPlaceholder')}
                 slotProps={{ input: { 'aria-label': 'Email Address' } }}
                 fullWidth
@@ -130,13 +230,15 @@ export default function ContactUsForm2() {
               {errors.email?.message && <ErrorMessage message={errors.email?.message} />}
             </Stack>
           </Grid>
+
+          {/* Phone Field with Dial Code Selector */}
           <Grid size={{ xs: 12, sm: 6 }}>
             <Stack sx={{ gap: 0.5 }}>
               <FieldLabel name={t('forms.phone')} />
               <Controller
                 control={control}
                 name="phone"
-                rules={phoneSchema}
+                rules={getPhoneSchema(t)}
                 render={({ field: { onChange } }) => (
                   <OutlinedInput
                     placeholder={t('forms.phonePlaceholder')}
@@ -227,11 +329,13 @@ export default function ContactUsForm2() {
               {errors.phone?.message && <ErrorMessage message={errors.phone?.message} />}
             </Stack>
           </Grid>
+
+          {/* Message Field */}
           <Grid size={12}>
             <Stack sx={{ gap: 0.5 }}>
               <FieldLabel name={t('forms.message')} />
               <OutlinedInput
-                {...register('message', { required: 'Message is required' })}
+                {...register('message', getMessageSchema(t))}
                 multiline
                 rows={4}
                 placeholder={t('forms.messagePlaceholder')}
@@ -243,13 +347,71 @@ export default function ContactUsForm2() {
             </Stack>
           </Grid>
         </Grid>
+        
+        {/* Submit Button */}
         <Box sx={{ textAlign: 'center' }}>
           <ButtonAnimationWrapper>
-            <Button type="submit" color="primary" size="large" variant="contained">
-              {t('forms.send')}
+            <Button type="submit" color="primary" size="large" variant="contained" disabled={isSubmitting}>
+              {isSubmitting ? t('common.loading') : t('forms.send')}
             </Button>
           </ButtonAnimationWrapper>
         </Box>
+
+        {/* Submission Status Message */}
+        {submitStatus && (
+          <Grid size={12}>
+            <Box
+              sx={{
+                p: { xs: 2.5, sm: 3 },
+                borderRadius: 3,
+                bgcolor: submitStatus.type === 'success' ? 'success.lighter' : 'error.lighter',
+                border: '2px solid',
+                borderColor: submitStatus.type === 'success' ? 'success.main' : 'error.main',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                gap: 1.5,
+                animation: 'slideUp 0.3s ease-out',
+                '@keyframes slideUp': {
+                  from: {
+                    opacity: 0,
+                    transform: 'translateY(10px)'
+                  },
+                  to: {
+                    opacity: 1,
+                    transform: 'translateY(0)'
+                  }
+                }
+              }}
+            >
+              <SvgIcon
+                name={submitStatus.type === 'success' ? 'tabler-circle-check' : 'tabler-alert-circle'}
+                color={submitStatus.type === 'success' ? 'success.main' : 'error.main'}
+                size={24}
+              />
+              <Stack sx={{ gap: 0.25, alignItems: 'center', flex: 1 }}>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: submitStatus.type === 'success' ? 'success.darker' : 'error.darker',
+                    fontWeight: 600
+                  }}
+                >
+                  {submitStatus.type === 'success' ? t('common.success') : t('common.error')}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: submitStatus.type === 'success' ? 'success.darker' : 'error.darker'
+                  }}
+                >
+                  {submitStatus.message}
+                </Typography>
+              </Stack>
+            </Box>
+          </Grid>
+        )}
       </Stack>
     </form>
   );

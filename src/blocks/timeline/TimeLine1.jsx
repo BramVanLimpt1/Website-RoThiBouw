@@ -69,22 +69,15 @@ export default function TimeLine1({ heading, caption, sections }) {
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 6, md: 8 } }} ref={containerRef}>
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Typeset
-            {...{
-              heading: t(heading),
-              caption: t(caption),
-              stackProps: { sx: { alignItems: 'center' } },
-              headingProps: { variant: 'h2', sx: { textAlign: 'center' } },
-              captionProps: { sx: { maxWidth: 700, textAlign: 'center' } }
-            }}
-          />
-        </motion.div>
+        <Typeset
+          {...{
+            heading: t(heading),
+            caption: t(caption),
+            stackProps: { sx: { alignItems: 'center' } },
+            headingProps: { variant: 'h2', sx: { textAlign: 'center' } },
+            captionProps: { sx: { maxWidth: 700, textAlign: 'center' } }
+          }}
+        />
 
         {/* Timeline Container */}
         <Box sx={{ position: 'relative' }}>

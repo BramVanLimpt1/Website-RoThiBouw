@@ -15,21 +15,60 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 
 // @project
-import { GraphicsCard } from '@/components/cards';
 import { ThemeMode } from '@/config';
+
+import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
 
-import { IconType } from '@/enum';
-import { SECTION_COMMON_PY } from '@/utils/constant';
+import useTranslation from '@/hooks/useTranslation';
 
-// @types
+import { IconType } from '@/enum';
+
+import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  TEAM - 3  ***************************/
 
+/**
+ * Team3 Component
+ *
+ * Displays a responsive team member carousel with avatar images, names, roles,
+ * and social media links.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.heading - Section heading text
+ * @param {string} props.caption - Section caption/description text
+ * @param {Array<Object>} props.members - Array of team member objects
+ * @param {string} props.members[].name - Member name
+ * @param {string} props.members[].role - Member role
+ * @param {string} props.members[].avatar - Path to member avatar image
+ * @param {Array<Object>} props.members[].socials - Array of social media links
+ *
+ * @example
+ * ```jsx
+ * const data = {
+ *   heading: "Our Team",
+ *   caption: "Meet the people behind our success",
+ *   members: [
+ *     {
+ *       name: "John Doe",
+ *       role: "CEO",
+ *       avatar: "/assets/avatar1.jpg",
+ *       socials: [
+ *         { type: IconType.FACEBOOK, href: "#" },
+ *         { type: IconType.TWITTER, href: "#" }
+ *       ]
+ *     }
+ *   ]
+ * };
+ * <Team3 {...data} />
+ * ```
+ * @return {JSX.Element} The rendered Team3 component
+ */
 export default function Team3({ heading, caption, members }) {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   const settings = {
     autoplay: true,
@@ -59,6 +98,7 @@ export default function Team3({ heading, caption, members }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY, overflowX: 'hidden' }}>
       <Stack sx={{ gap: 4, pb: 5 }}>
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 5, x: 0 }}
           whileInView={{ opacity: 1, y: 0, x: 0 }}
@@ -70,6 +110,8 @@ export default function Team3({ heading, caption, members }) {
         >
           <Typeset {...{ heading, caption }} />
         </motion.div>
+        
+        {/* Team Members Carousel */}
         <Box
           sx={{
             position: 'relative',
