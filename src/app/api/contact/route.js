@@ -1,6 +1,9 @@
 // @next
 import { NextResponse } from 'next/server';
 
+// @third-party
+import nodemailer from 'nodemailer';
+
 /***************************  API - CONTACT FORM  ***************************/
 
 /**
@@ -57,7 +60,6 @@ import { NextResponse } from 'next/server';
  *
  * @example
  * ```javascript
- * // Client-side call (from ContactUsForm2 via submitContactForm utility)
  * const response = await fetch('/api/contact', {
  *   method: 'POST',
  *   headers: { 'Content-Type': 'application/json' },
@@ -82,29 +84,32 @@ import { NextResponse } from 'next/server';
 
 // POST handler for /api/contact
 export async function POST(request) {
+  
+  // Get language from request headers or default to 'nl'
+  const language = request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || 'nl';
+
+  // Language-specific messages
+  const messages = {
+    en: {
+      required: 'Name, email, and message are required',
+      invalidEmail: 'Please enter a valid email address',
+      success: "Thank you for your message! We'll get back to you soon.",
+      error: 'Failed to send message. Please try again later.'
+    },
+    nl: {
+      required: 'Naam, e-mail en bericht zijn verplicht',
+      invalidEmail: 'Voer een geldig e-mailadres in',
+      success: 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.',
+      error: 'Kan bericht niet verzenden. Probeer het later opnieuw.'
+    }
+  };
+
+  const msg = messages[language] || messages.en;
+
   try {
+    
+    // Parse JSON body
     const { name, email, subject, message, company, phone } = await request.json();
-
-    // Get language from request headers or default to 'en'
-    const language = request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || 'en';
-
-    // Language-specific messages
-    const messages = {
-      en: {
-        required: 'Name, email, and message are required',
-        invalidEmail: 'Please enter a valid email address',
-        success: "Thank you for your message! We'll get back to you soon.",
-        error: 'Failed to send message. Please try again later.'
-      },
-      nl: {
-        required: 'Naam, e-mail en bericht zijn verplicht',
-        invalidEmail: 'Voer een geldig e-mailadres in',
-        success: 'Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.',
-        error: 'Kan bericht niet verzenden. Probeer het later opnieuw.'
-      }
-    };
-
-    const msg = messages[language] || messages.en;
 
     // Basic validation
     if (!name || !email || !message) {
@@ -133,7 +138,7 @@ export async function POST(request) {
     // Choose your email provider (uncomment one):
 
     // Option 1: Nodemailer (most flexible, works with any SMTP)
-    const result = await sendWithNodemailer(emailData);
+    // const result = await sendWithNodemailer(emailData);
 
     // Option 2: SendGrid (popular service)
     // const result = await sendWithSendGrid(emailData);
@@ -142,7 +147,7 @@ export async function POST(request) {
     // const result = await sendWithResend(emailData);
 
     // Option 4: Simple log (for testing/development)
-    // const result = await logEmail(emailData);
+    const result = await logEmail(emailData);
 
     if (result.success) {
       return NextResponse.json({ message: msg.success }, { status: 200 });
@@ -160,8 +165,6 @@ export async function POST(request) {
 // Option 1: Nodemailer (requires: npm install nodemailer)
 async function sendWithNodemailer(emailData) {
   try {
-    const nodemailer = require('nodemailer');
-
     const transporter = nodemailer.createTransporter({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
