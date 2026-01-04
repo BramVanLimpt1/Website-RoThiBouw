@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 // @mui
 import { useTheme } from '@mui/material/styles';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -6,14 +7,17 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 // @project
 import SvgIcon from '@/components/SvgIcon';
 
+import useTranslation from '@/hooks/useTranslation';
+
 /***************************  NAVBAR - SEARCH INPUT ***************************/
 
 export default function SearchInput({ sx, ...rest }) {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <OutlinedInput
-      placeholder="Search here"
+      placeholder={t('common.search')}
       slotProps={{ input: { 'aria-label': 'Search area' } }}
       {...rest}
       sx={{

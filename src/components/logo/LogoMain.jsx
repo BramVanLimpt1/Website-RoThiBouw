@@ -12,6 +12,7 @@ import branding from '@/branding.json';
 
 export default function LogoMain() {
   const theme = useTheme();
+  
   // Use theme-specific logo if available, otherwise fall back to main logo
   const logoPath = theme.palette.mode === 'dark' ? branding.logo.dark : branding.logo.light;
   const logoMainPath = logoPath || branding.logo.main;

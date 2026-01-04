@@ -6,6 +6,17 @@ import Circles from '@/images/Circles';
 
 /***************************  BACKGROUND - CIRCLE  ***************************/
 
+/**
+ * BackgroundCircle Component
+ *
+ * Renders a decorative background circle SVG positioned absolutely with responsive scaling.
+ *
+ * @returns {JSX.Element} A Box component containing the background circle SVG
+ *
+ * @example
+ * // Basic usage of BackgroundCircle
+ * <BackgroundCircle />
+ */
 export default function BackgroundCircle() {
   return (
     <Box

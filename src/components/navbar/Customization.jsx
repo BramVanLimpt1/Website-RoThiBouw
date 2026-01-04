@@ -10,10 +10,14 @@ import Switch from '@mui/material/Switch';
 
 // @project
 import MenuPopper from './MenuPopper';
+
 import SvgIcon from '@/components/SvgIcon';
+
 import { ThemeDirection, ThemeMode } from '@/config';
+
 import useConfig from '@/hooks/useConfig';
 import useTranslation from '@/hooks/useTranslation';
+
 import { SUPPORTED_LANGUAGES } from '@/i18n';
 
 /***************************  NAVBAR - CUSTOMIZATION  ***************************/

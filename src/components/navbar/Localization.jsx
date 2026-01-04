@@ -17,7 +17,9 @@ import Box from '@mui/material/Box';
 
 // @project
 import SvgIcon from '@/components/SvgIcon';
+
 import useConfig from '@/hooks/useConfig';
+
 import { useTranslation, SUPPORTED_LANGUAGES } from '@/i18n';
 
 /***************************  NAVBAR - LOCALIZATION  ***************************/

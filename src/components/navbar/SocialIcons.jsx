@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 // next
 import Link from 'next/link';
 
@@ -7,8 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 
 // @project
-import branding from '@/branding.json';
 import SvgIcon from '@/components/SvgIcon';
+
+import branding from '@/branding.json';
+
 import { IconType } from '@/enum';
 
 /***************************  NAVBAR - SOCIAL ICON  ***************************/

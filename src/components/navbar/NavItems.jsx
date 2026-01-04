@@ -20,12 +20,11 @@ import Box from '@mui/material/Box';
 // @project
 import MenuPopper from './MenuPopper';
 
+import SvgIcon from '@/components/SvgIcon';
+
 import { MegaMenu1, MegaMenu2, MegaMenu3, MegaMenu4, MegaMenu5 } from '@/blocks/mega-menu';
 
-import SvgIcon from '@/components/SvgIcon';
 import { MegaMenuType } from '@/enum';
-
-// @types
 
 const navItemSX = { py: 1.5, borderRadius: { xs: 0, sm: 4 } };
 

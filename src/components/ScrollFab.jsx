@@ -8,25 +8,40 @@ import Box from '@mui/material/Box';
 
 // @third-party
 import { motion } from 'framer-motion';
+
+// @project
 import SvgIcon from './SvgIcon';
 
 /***************************  COMMON - SCROLL TO TOP BUTTON  ***************************/
 
+/**
+ * ScrollFab Component
+ * 
+ * A floating action button (FAB) that appears when the user scrolls down the page.
+ * When clicked, it smoothly scrolls the user back to the top of the page.
+ * The button uses framer-motion for fade-in and slide-up animations.
+ * 
+ * @returns {JSX.Element} A floating action button for scrolling to the top
+ * 
+ * @example
+ * // Basic usage
+ * <ScrollFab />
+ */
 export default function ScrollFab() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // if the user scrolls down, show the button
+    // If the user scrolls down, show the button
     const toggleVisibility = () => setIsVisible(window.scrollY > 400);
 
-    // attach scroll event listener
+    // Attach scroll event listener
     window.addEventListener('scroll', toggleVisibility);
 
-    // remove event listener on component unmount
+    // Remove event listener on component unmount
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  // handles the animation when scrolling to the top
+  // Handles the animation when scrolling to the top
   const scrollToTop = () => isVisible && window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // @next
 import NextLink from 'next/link';
 
+// @mui
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
@@ -12,7 +13,9 @@ import Typography from '@mui/material/Typography';
 
 //@project
 import branding from '@/branding.json';
+
 import { CopyrightType } from '@/enum';
+
 import { useTranslation } from '@/i18n';
 
 /***************************  FOOTER - COPYRIGHT  ***************************/
