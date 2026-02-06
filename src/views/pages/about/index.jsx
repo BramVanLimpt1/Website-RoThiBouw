@@ -1,9 +1,10 @@
 'use client';
 
 // @project
-import { TimeLine1 } from '@/blocks/timeline';
-import { Team2Members } from '@/blocks/team';
+import LazySection from '@/components/LazySection';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
+
+// @data
 import { teamData, storyData } from './data';
 
 /***************************  ABOUT PAGE  ***************************/
@@ -13,8 +14,13 @@ export default function AboutPage() {
 
   return (
     <>
-      <Team2Members {...teamData} />
-      <TimeLine1 {...storyData} />
+      <LazySection
+        sections={[
+          { importFunc: () => import('@/blocks/team').then((module) => ({ default: module.Team2Members })), props: teamData },
+          { importFunc: () => import('@/blocks/timeline').then((module) => ({ default: module.TimeLine1 })), props: storyData }
+        ]}
+        offset="200px"
+      />
     </>
   );
 }
