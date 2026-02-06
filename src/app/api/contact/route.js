@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 
 // @third-party
-import nodemailer from 'nodemailer';
+// import nodemailer from 'nodemailer';
 
 /***************************  API - CONTACT FORM  ***************************/
 
