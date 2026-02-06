@@ -24,6 +24,9 @@ export const translations = {
     fullNamePlaceholder: 'Voer je volledige naam in',
     contactPerson: 'Met wie wil je contact opnemen?',
     contactPersonPlaceholder: 'Selecteer een persoon',
+    location: 'Locatie',
+    locationPlaceholder: 'Voer je locatie in',
+    locationHelper: 'Het is erg behulpzaam als we weten waar het mogelijke project of ondersteuning plaatsvindt, zodat we dat in acht kunnen nemen.',
     // Validation messages
     validation: {
       firstNameRequired: 'Voornaam is verplicht',
@@ -154,13 +157,17 @@ export const translations = {
     },
     phoneCard: {
       title: 'Bel Ons',
-      content: 'Bereikbaar maandag t/m vrijdag, 9:00 - 17:00',
-      buttonText: 'Bel Nu'
+      content: 'Bel Roy of Thijs voor direct contact',
+      buttonText: 'Bel Nu',
+      roy: 'Bel Roy',
+      thijs: 'Bel Thijs'
     },
     whatsappCard: {
       title: 'WhatsApp Ons',
       content: 'Snelle en gemakkelijke communicatie',
-      buttonText: 'Start Chat'
+      buttonText: 'Start Chat',
+      roy: 'Chat met Roy',
+      thijs: 'Chat met Thijs'
     }
   },
 

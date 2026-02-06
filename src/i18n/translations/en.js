@@ -24,6 +24,9 @@ export const translations = {
     fullNamePlaceholder: 'Enter your full name',
     contactPerson: 'Who would you like to contact?',
     contactPersonPlaceholder: 'Select a person',
+    location: 'Location',
+    locationPlaceholder: 'Enter your location',
+    locationHelper: 'It\'s very helpful if we know where the possible project or support will take place, so we can take that into account.',
     // Validation messages
     validation: {
       firstNameRequired: 'First name is required',
@@ -154,13 +157,17 @@ export const translations = {
     },
     phoneCard: {
       title: 'Call Us',
-      content: 'Available Monday to Friday, 9AM - 5PM',
-      buttonText: 'Call Now'
+      content: 'Call Roy or Thijs for direct contact',
+      buttonText: 'Call Now',
+      roy: 'Call Roy',
+      thijs: 'Call Thijs'
     },
     whatsappCard: {
       title: 'WhatsApp Us',
       content: 'Quick and easy communication',
-      buttonText: 'Start Chat'
+      buttonText: 'Start Chat',
+      roy: 'Chat with Roy',
+      thijs: 'Chat with Thijs'
     }
   },
 

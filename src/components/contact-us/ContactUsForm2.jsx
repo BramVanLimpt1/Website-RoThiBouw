@@ -19,6 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Popper from '@mui/material/Popper';
 import Stack from '@mui/material/Stack';
+import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
@@ -29,7 +30,7 @@ import { useForm, Controller } from 'react-hook-form';
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import SvgIcon from '@/components/SvgIcon';
 
-import { useTranslation } from '@/i18n';
+import useTranslation from '@/hooks/useTranslation';
 
 import useConfig from '@/hooks/useConfig';
 
@@ -46,20 +47,52 @@ import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, 
  *
  * Simple label component for form fields. Displays the field name/label text
  * in a consistent subtitle style with secondary text color.
+ * Optionally displays a question mark icon with a tooltip for helper text.
  *
  * @param {Object} props - Component props
  * @param {string} props.name - The label text to display
+ * @param {string} [props.helper] - Optional helper text to show in a tooltip on the question mark icon
  *
  * @example
  * ```jsx
  * <FieldLabel name={t('forms.firstName')} />
+ * <FieldLabel name={t('forms.location')} helper={t('forms.locationHelper')} />
  * ```
  */
-function FieldLabel({ name }) {
+function FieldLabel({ name, helper }) {
   return (
-    <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
-      {name}
-    </Typography>
+    <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
+      <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
+        {name}
+      </Typography>
+      {helper && (
+        <Tooltip title={helper} arrow>
+          <Box
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 18,
+              height: 18,
+              borderRadius: '50%',
+              border: '1.5px solid',
+              borderColor: 'text.secondary',
+              cursor: 'help',
+              color: 'text.secondary',
+              fontSize: '14px',
+              fontWeight: 600,
+              '&:hover': {
+                borderColor: 'text.primary',
+                color: 'text.primary',
+                bgcolor: 'action.hover'
+              }
+            }}
+          >
+            ?
+          </Box>
+        </Tooltip>
+      )}
+    </Stack>
   );
 }
 
@@ -109,6 +142,7 @@ function ErrorMessage({ message }) {
  * - lastName: Required, alpha characters only
  * - email: Required, must be valid email format
  * - phone: Required with country dial code, 7-15 digits
+ * - location: Optional text input for project location
  * - message: Required, multi-line text input
  *
  * Validation Approach:
@@ -167,6 +201,7 @@ export default function ContactUsForm2() {
         name: `${data.firstName} ${data.lastName}`,
         email: data.email,
         phone: `${data.dialcode}${data.phone}`,
+        location: data.location,
         message: data.message
       };
 
@@ -330,6 +365,22 @@ export default function ContactUsForm2() {
             </Stack>
           </Grid>
 
+          {/* Location Field */}
+          <Grid size={12}>
+            <Stack sx={{ gap: 0.5 }}>
+              <FieldLabel 
+                name={t('forms.location')} 
+                helper={t('forms.locationHelper')} 
+              />
+              <OutlinedInput
+                {...register('location')}
+                placeholder={t('forms.locationPlaceholder')}
+                slotProps={{ input: { 'aria-label': 'Project location' } }}
+                fullWidth
+              />
+            </Stack>
+          </Grid>
+
           {/* Message Field */}
           <Grid size={12}>
             <Stack sx={{ gap: 0.5 }}>
@@ -417,6 +468,6 @@ export default function ContactUsForm2() {
   );
 }
 
-FieldLabel.propTypes = { name: PropTypes.string };
+FieldLabel.propTypes = { name: PropTypes.string, helper: PropTypes.string };
 
 ErrorMessage.propTypes = { message: PropTypes.string };

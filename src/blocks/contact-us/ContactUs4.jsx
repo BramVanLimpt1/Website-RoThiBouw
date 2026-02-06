@@ -1,6 +1,9 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @next
+import NextLink from 'next/link';
+
 // @mui
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -8,14 +11,12 @@ import Grid from '@mui/material/Grid2';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
-// @third-party
-import { motion } from 'framer-motion';
-
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import { GraphicsCard } from '@/components/cards';
 import { ContactUsForm2 } from '@/components/contact-us';
 import ContainerWrapper from '@/components/ContainerWrapper';
+import MotionWrapper from '@/components/MotionWrapper';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
 
@@ -28,7 +29,7 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 /**
  * ContactCard Component
  *
- * Displays a single contact method card with an icon, title, content, and optional link button.
+ * Displays a single contact method card with an icon, title, content, and optional link buttons.
  * Translates all text content using the translation hook.
  *
  * Layout:
@@ -39,12 +40,13 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
  * @param {string} props.icon - Icon name (e.g., 'tabler-mail', 'tabler-phone')
  * @param {string} props.title - Translation key for card title (e.g., 'contact.emailCard.title')
  * @param {string} props.content - Translation key for card content/description
- * @param {Object} [props.link] - Optional link button properties
- *   @param {string} props.link.href - URL for the link (e.g., 'mailto:', 'tel:', 'https://')
- *   @param {string} props.link.children - Translation key for button text (e.g., 'contact.emailCard.buttonText')
+ * @param {Object|Array} [props.link] - Optional link button(s). Can be a single object or array of objects
+ *   @param {string} props.link.href - URL for the link (mailto:, tel:, https://, etc.)
+ *   @param {string} props.link.children - Translation key for button text
  *
  * @example
  * ```jsx
+ * // Single button
  * <ContactCard
  *   icon="tabler-mail"
  *   title="contact.emailCard.title"
@@ -54,16 +56,30 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
  *     children: "contact.emailCard.buttonText"
  *   }}
  * />
+ *
+ * // Multiple buttons
+ * <ContactCard
+ *   icon="tabler-phone"
+ *   title="contact.phoneCard.title"
+ *   content="contact.phoneCard.content"
+ *   link={[
+ *     { href: "tel:+31123456789", children: "contact.phoneCard.roy" },
+ *     { href: "tel:+31987654321", children: "contact.phoneCard.thijs" }
+ *   ]}
+ * />
  * ```
  */
 function ContactCard({ icon, title, content, link }) {
   const { t } = useTranslation();
 
+  // Normalize link to always be an array
+  const links = link ? (Array.isArray(link) ? link : [link]) : [];
+
   return (
     <GraphicsCard sx={{ height: 1 }}>
       <Stack direction={{ xs: 'row', sm: 'column' }} sx={{ gap: { xs: 2, sm: 4, md: 5 }, height: 1, p: { xs: 2, sm: 3, md: 4 } }}>
         <Avatar sx={{ width: 60, height: 60, bgcolor: 'grey.300' }}>
-          <SvgIcon {...(typeof icon === 'string' ? { name: icon } : { ...icon })} />
+          <SvgIcon name={icon} />
         </Avatar>
         <Stack sx={{ gap: { xs: 2, md: 3 }, height: 1, alignItems: 'flex-start', justifyContent: 'space-between' }}>
           <Typeset
@@ -75,10 +91,21 @@ function ContactCard({ icon, title, content, link }) {
               captionProps: { variant: 'body1' }
             }}
           />
-          {link && (
-            <ButtonAnimationWrapper>
-              <Button color="primary" variant="outlined" {...{ ...link, children: t(link.children) }} />
-            </ButtonAnimationWrapper>
+          {links.length > 0 && (
+            <Stack direction="row" sx={{ gap: 1, flexWrap: 'wrap' }}>
+              {links.map((linkItem, index) => (
+                <ButtonAnimationWrapper key={index}>
+                  <Button 
+                    color="primary" 
+                    variant="outlined"
+                    {...(linkItem.href && { component: NextLink })}
+                    href={linkItem.href}
+                  >
+                    {t(linkItem.children)}
+                  </Button>
+                </ButtonAnimationWrapper>
+              ))}
+            </Stack>
           )}
         </Stack>
       </Stack>
@@ -125,52 +152,6 @@ function ContactCard({ icon, title, content, link }) {
  * @param {boolean} [props.showForm=true] - Control visibility of contact form. Default: true.
  *   - If true: Displays form card at top, then contact cards in grid below
  *   - If false: Displays only contact cards in grid layout
- *
- * @example
- * ```jsx
- * // With both form and contact cards
- * <ContactUs4
- *   heading="contact.heading"
- *   caption="contact.caption"
- *   list={[
- *     {
- *       icon: "tabler-mail",
- *       title: "contact.emailCard.title",
- *       content: "contact.emailCard.content",
- *       link: {
- *         href: "mailto:info@example.com",
- *         children: "contact.emailCard.buttonText"
- *       },
- *       animationDelay: 0.6
- *     },
- *     {
- *       icon: "tabler-phone",
- *       title: "contact.phoneCard.title",
- *       content: "contact.phoneCard.content",
- *       link: {
- *         href: "tel:+31612345678",
- *         children: "contact.phoneCard.buttonText"
- *       },
- *       animationDelay: 0.8
- *     }
- *   ]}
- *   showForm={true}
- * />
- *
- * // With only contact cards (no form)
- * <ContactUs4
- *   list={contactCards}
- *   showForm={false}
- * />
- *
- * // With form only (empty list)
- * <ContactUs4
- *   heading="contact.heading"
- *   caption="contact.caption"
- *   list={[]}
- *   showForm={true}
- * />
- * ```
  */
 export default function ContactUs4({ heading, caption, list, showForm = true }) {
   const { t } = useTranslation();
@@ -184,16 +165,7 @@ export default function ContactUs4({ heading, caption, list, showForm = true }) 
           {/* Contact Form Card - Optional */}
           {showForm && (
             <Grid size={12}>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: 0.4
-                }}
-                style={{ height: '100%' }}
-              >
+              <MotionWrapper delay={0.4} duration={0.4}>
                 <GraphicsCard sx={{ height: 1, borderRadius: cardRadius }}>
                   <GraphicsCard sx={{ bgcolor: 'grey.200', borderRadius: cardRadius }}>
                     <Box sx={{ p: { xs: 2, sm: 4, md: 5 } }}>
@@ -214,25 +186,16 @@ export default function ContactUs4({ heading, caption, list, showForm = true }) 
                     <ContactUsForm2 />
                   </Box>
                 </GraphicsCard>
-              </motion.div>
+              </MotionWrapper>
             </Grid>
           )}
 
           {/* Contact Method Cards - Responsive Grid Layout */}
           {list?.map((item, index) => (
             <Grid key={index} size={{ xs: 12, sm: 4 }}>
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: item.animationDelay
-                }}
-                style={{ height: '100%' }}
-              >
+              <MotionWrapper delay={item.animationDelay || 0.2 + index * 0.1} duration={0.4}>
                 <ContactCard {...{ ...item }} />
-              </motion.div>
+              </MotionWrapper>
             </Grid>
           ))}
         </Grid>
