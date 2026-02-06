@@ -7,7 +7,7 @@ const title = `${branding.brandName} ${branding.title}`;
 const description = `${branding.brandName} add description here.`;
 
 const ogCommonMetadata = {
-  locale: 'en',
+  locale: 'nl',
   type: 'website',
   siteName: `${branding.brandName}`,
   images: '' // recommended dimensions of 1200x630

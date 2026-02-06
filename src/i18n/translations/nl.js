@@ -54,7 +54,9 @@ export const translations = {
     privacyPolicy: 'Privacybeleid',
     termsCondition: 'Algemene Voorwaarden',
     blog: 'Blog',
-    pages: "Pagina's"
+    pages: "Pagina's",
+    company: 'Bedrijf',
+    support: 'Ondersteuning'
   },
 
   // Common actions and words
@@ -97,7 +99,12 @@ export const translations = {
     joinNewsletterDescription: 'Ontdek de functies die je klantrelaties zullen transformeren',
     enterEmailAddress: 'Voer je e-mailadres in',
     followUsOn: 'Volg Ons op',
-    allRightsReserved: 'Alle rechten voorbehouden'
+    allRightsReserved: 'Alle rechten voorbehouden',
+    phoneRoy: 'Telefoon Roy',
+    phoneThijs: 'Telefoon Thijs',
+    kvkNumber: 'KvK Nummer',
+    btwNumber: 'BTW Nummer',
+    legal: 'Juridisch'
   },
 
   // Language names

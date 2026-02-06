@@ -6,3 +6,4 @@ export { default as Footer5 } from './Footer5';
 export { default as Footer6 } from './Footer6';
 export { default as Footer7 } from './Footer7';
 export { default as Footer8 } from './Footer8';
+export { default as Footer9 } from './Footer9';

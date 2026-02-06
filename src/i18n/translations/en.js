@@ -54,7 +54,9 @@ export const translations = {
     privacyPolicy: 'Privacy Policy',
     termsCondition: 'Terms & Conditions',
     blog: 'Blog',
-    pages: 'Pages'
+    pages: 'Pages',
+    company: 'Company',
+    support: 'Support'
   },
 
   // Common actions and words
@@ -97,7 +99,13 @@ export const translations = {
     joinNewsletterDescription: 'Discover the features that will transform your customer relationships',
     enterEmailAddress: 'Enter your email address',
     followUsOn: 'Follow Us on',
-    allRightsReserved: 'All rights reserved'
+    allRightsReserved: 'All rights reserved',
+    email: 'Email',
+    phoneRoy: 'Phone Roy',
+    phoneThijs: 'Phone Thijs',
+    kvkNumber: 'KvK Number',
+    btwNumber: 'BTW Number',
+    legal: 'Legal',
   },
 
   // Language names

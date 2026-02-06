@@ -18,20 +18,35 @@ import { motion } from 'framer-motion';
 
 // @project
 import { GraphicsCard } from '@/components/cards';
-import ContainerWrapper from '@/components/ContainerWrapper';
 import { ProfileCard2 } from '@/components/cards/profile-card';
+import ContainerWrapper from '@/components/ContainerWrapper';
+
 import Rating from '@/components/Rating';
 import SvgIcon from '@/components/SvgIcon';
 import Typeset from '@/components/Typeset';
 
 import useFocusWithin from '@/hooks/useFocusWithin';
+
 import { generateFocusVisibleStyles } from '@/utils/CommonFocusStyle';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
-// @types
-
 /***************************  TESTIMONIAL - REVIEW  ***************************/
 
+/**
+ * 
+ * Review Component
+ * 
+ * A component that displays a testimonial review with quotation styling.
+ * 
+ * @param {Object} props - Component props
+ * @param {string} props.review - The testimonial review text to be displayed
+ * 
+ * @returns {JSX.Element} A Typography component rendering the review with quote styling
+ * 
+ * @example
+ * // Usage of Review component
+ * <Review review="This is an amazing product!" />
+ */
 function Review({ review }) {
   return (
     <Typography variant="h4" sx={{ color: 'text.secondary', '&:before': { content: 'open-quote' }, '&:after': { content: 'close-quote' } }}>
@@ -42,6 +57,26 @@ function Review({ review }) {
 
 /***************************  TESTIMONIAL - PROFILE  ***************************/
 
+/**
+ * 
+ * ReviewCard Component
+ * 
+ * A component that displays a testimonial review along with the reviewer's profile information.
+ * 
+ * @param {Object} props - Component props
+ * @param {Object} props.ratings - The ratings data for the testimonial
+ * @param {string} props.review - The testimonial review text
+ * @param {Object} props.profile - The profile information of the reviewer
+ * @returns {JSX.Element} A GraphicsCard component containing the review and profile information
+ * 
+ * @example
+ * // Usage of ReviewCard component
+ * <ReviewCard
+ *   ratings={{ rate: 5 }}
+ *   review="This is an amazing product!"
+ *   profile={{ name: 'John Doe', title: 'CEO', avatar: '/path/to/avatar.jpg' }}
+ * />
+ */
 function ReviewCard({ ratings, review, profile }) {
   return (
     <GraphicsCard>
@@ -58,9 +93,40 @@ function ReviewCard({ ratings, review, profile }) {
 
 /***************************  TESTIMONIAL - 1  ***************************/
 
-// threshold - adjust threshold as needed
+// Threshold - adjust threshold as needed
 const options = { root: null, rootMargin: '0px', threshold: 0.6 };
 
+/**
+ * 
+ * Testimonial1 Component
+ * 
+ * A testimonial section that features a video testimonial alongside additional reviews and a call-to-action link.
+ * The video plays automatically when it comes into view and pauses when it goes out of view.
+ *
+ * @param {Object} props - Component props
+ * @param {string} props.heading - The main heading text for the testimonial section
+ * @param {string} [props.caption] - Optional. Caption text displayed below the heading
+ * @param {Array} props.testimonials - An array of testimonial objects containing video source, review text, and profile information
+ * @param {Object} props.link - An object containing link properties for the call-to-action button
+ * 
+ * @returns {JSX.Element} A ContainerWrapper component containing the testimonial section
+ * 
+ * @example
+ * // Usage of Testimonial1 component
+ * <Testimonial1
+ *   heading="What Our Clients Say"
+ *   caption="Real feedback from our valued customers"
+ *   testimonials={[
+ *     {
+ *       videoSrc: '/path/to/video.mp4',
+ *       review: 'This is an amazing product!',
+ *       profile: { name: 'Jane Doe', title: 'CTO', avatar: '/path/to/avatar.jpg' }
+ *     },
+ *     // Additional testimonials...
+ *   ]}
+ *   link={{ href: '/testimonials', children: 'Read More Testimonials' }}
+ * />
+ */
 export default function Testimonial1({ heading, caption, testimonials, link }) {
   const theme = useTheme();
   const videoRef = useRef(null);

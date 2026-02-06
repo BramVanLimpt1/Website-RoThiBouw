@@ -7,13 +7,14 @@ import Stack from '@mui/material/Stack';
 import HeroSlideshow from '@/components/hero/HeroSlideshow';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
 import useTranslation from '@/hooks/useTranslation';
+import ContactUs3 from '@/blocks/contact-us/ContactUs3';
 
 // @data
-import { heroSlides, services, stats, processSteps } from './data';
+import { heroSlides, servicesData, stats, processSteps } from './data';
 import { projects } from '../projects/data';
 
 // @sections
-import { ServicesSection, StatsSection, FeaturedProjectsSection, ProcessSection, CtaSection } from './sections';
+import { StatsSection, FeaturedProjectsSection, ProcessSection, CtaSection } from './sections';
 
 /***************************  HOME PAGE  ***************************/
 
@@ -34,19 +35,10 @@ export default function HomePage() {
       <HeroSlideshow slides={slides} height={{ xs: 400, sm: 500, md: 600 }} showText={true} />
 
       {/* Services Section */}
-      <ServicesSection services={services} heading="home.services.heading" caption="home.services.caption" t={t} />
-
-      {/* Stats Section */}
-      {/* <StatsSection stats={stats} t={t} /> */}
+      <ContactUs3 {...servicesData} />
 
       {/* Featured Projects Section */}
       <FeaturedProjectsSection projects={projects} heading="home.projects.heading" caption="home.projects.caption" t={t} />
-
-      {/* Process Section */}
-      {/* <ProcessSection steps={processSteps} heading="home.process.heading" caption="home.process.caption" t={t} /> */}
-
-      {/* CTA Section */}
-      {/* <CtaSection heading="home.cta.heading" description="home.cta.description" buttonText="home.cta.button" t={t} /> */}
     </Stack>
   );
 }

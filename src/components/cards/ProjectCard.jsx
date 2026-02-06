@@ -11,7 +11,6 @@ import { useTheme, alpha } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 
 // @project
@@ -52,27 +51,37 @@ export default function ProjectCard({ project, index = 0 }) {
     <MotionWrapper delay={0.2 + index * 0.1}>
       <GraphicsCard sx={{ height: 1, display: 'flex', flexDirection: 'column' }}>
         {/* Project Image with Navigation */}
-        <Box sx={{ position: 'relative', width: '100%', height: 280, overflow: 'hidden', bgcolor: 'grey.200' }}>
+        <Box sx={{ position: 'relative', width: '100%', height: 380, overflow: 'hidden', bgcolor: 'grey.200' }}>
           <Image src={currentImage} alt={t(project.titleKey)} fill style={{ objectFit: 'cover' }} priority={index === 0} />
 
           {/* Category Badge */}
-          <Box
+          {/* <Box
             sx={{
               position: 'absolute',
-              top: 12,
-              left: 12,
-              bgcolor: alpha(theme.palette.background.paper, 0.95),
-              backdropFilter: 'blur(8px)',
-              px: 1.5,
-              py: 0.5,
-              borderRadius: 1,
-              fontSize: '0.75rem',
-              fontWeight: 600,
-              color: 'text.primary'
+              top: 25,
+              left: 25,
+              right: 25,
+              bottom: 25,
+              zIndex: 2,
+              color: 'primary.main',
+              // py: 1,
+              // px: 2,
+              // borderRadius: 1,
+              textAlign: 'center',
+              fontSize: '0.875rem',
+              fontWeight: 600
             }}
           >
-            {t(`projects.categories.${project.category}`)}
-          </Box>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              disabled
+              sx={{ cursor: 'default', pointerEvents: 'none' }}
+            >
+              {t(`projects.categories.${project.category}`)}
+            </Button>
+          </Box> */}
 
           {/* Navigation Arrows & Dots (only if multiple images) */}
           {hasMultipleImages && (
