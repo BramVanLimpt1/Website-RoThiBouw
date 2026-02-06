@@ -1,5 +1,3 @@
-import branding from '@/branding.json';
-
 /***************************  CONTACT PAGE - DATA  ***************************/
 
 export const contactData = {
