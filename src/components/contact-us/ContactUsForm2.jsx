@@ -29,6 +29,7 @@ import { useForm, Controller } from 'react-hook-form';
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import SvgIcon from '@/components/SvgIcon';
+import FileUpload from '@/components/contact-us/FileUpload';
 
 import useTranslation from '@/hooks/useTranslation';
 
@@ -38,7 +39,7 @@ import countries from '@/data/countries';
 
 import { submitContactForm } from '@/api/contact';
 
-import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, getMessageSchema } from '@/utils/validationSchema';
+import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, getMessageSchema, getLocationSchema } from '@/utils/validationSchema';
 
 /***************************  FORM - INPUT LABEL  ***************************/
 
@@ -189,6 +190,7 @@ export default function ContactUsForm2() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [file, setFile] = useState(null);
 
   // Handle form submission
   const onSubmit = async (data) => {
@@ -196,19 +198,21 @@ export default function ContactUsForm2() {
     setSubmitStatus(null);
 
     try {
-      // Combine firstName and lastName into name field for API
-      const formData = {
-        name: `${data.firstName} ${data.lastName}`,
-        email: data.email,
-        phone: `${data.dialcode}${data.phone}`,
-        location: data.location,
-        message: data.message
-      };
+      const formData = new FormData();
+      formData.append('name', `${data.firstName} ${data.lastName}`);
+      formData.append('email', data.email);
+      formData.append('phone', `${data.dialcode}${data.phone}`);
+      formData.append('location', data.location);
+      formData.append('message', data.message);
+      if (file) {
+        formData.append('file', file);
+      }
 
       const result = await submitContactForm(formData, language);
 
       setSubmitStatus({ type: 'success', message: result.message });
       reset();
+      setFile(null);
     } catch (error) {
       setSubmitStatus({ type: 'error', message: error.message || t('forms.validation.submitError') });
     } finally {
@@ -373,11 +377,13 @@ export default function ContactUsForm2() {
                 helper={t('forms.locationHelper')} 
               />
               <OutlinedInput
-                {...register('location')}
+                {...register('location', getLocationSchema(t))}
                 placeholder={t('forms.locationPlaceholder')}
                 slotProps={{ input: { 'aria-label': 'Project location' } }}
                 fullWidth
+                error={errors.location && Boolean(errors.location)}
               />
+              {errors.location?.message && <ErrorMessage message={errors.location?.message} />}
             </Stack>
           </Grid>
 
@@ -395,6 +401,14 @@ export default function ContactUsForm2() {
                 slotProps={{ input: { 'aria-label': 'Message' } }}
               />
               {errors.message?.message && <ErrorMessage message={errors.message?.message} />}
+            </Stack>
+          </Grid>
+
+          {/* File Upload Field */}
+          <Grid size={12}>
+            <Stack sx={{ gap: 0.5 }}>
+              <FieldLabel name={t('forms.attachment')} helper={t('forms.attachmentHelper')} />
+              <FileUpload onFileSelect={setFile} />
             </Stack>
           </Grid>
         </Grid>

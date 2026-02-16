@@ -1,6 +1,9 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @next
+import NextLink from 'next/link';
+
 // @mui
 import { useTheme, alpha } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
@@ -24,6 +27,7 @@ export default function MegaMenu2({ menuItems }) {
       {menuItems.map((item, index) => (
         <ListItemButton
           key={index}
+          {...(item.link && { component: NextLink, href: item.link })}
           sx={{
             px: { xs: 1.5, md: 2 },
             py: { xs: 0.75, md: 1.25 },

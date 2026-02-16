@@ -25,12 +25,15 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
   const theme = useTheme();
   const sliderRef = useRef(null);
 
+  // If only one slide, render static header image
+  const isSingleSlide = slides.length === 1;
+
   const settings = {
-    autoplay: true,
+    autoplay: !isSingleSlide,
     autoplaySpeed: 5000,
     arrows: false,
-    dots: true,
-    infinite: true,
+    dots: !isSingleSlide,
+    infinite: !isSingleSlide,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -55,6 +58,7 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
           height: '100%'
         },
         '.slick-dots': {
+          display: isSingleSlide ? 'none' : undefined,
           bottom: { xs: 16, md: 24 },
           zIndex: 2,
           'li button:before': {
@@ -69,79 +73,148 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
         }
       }}
     >
-      <Slider {...settings} ref={sliderRef}>
-        {slides.map((slide, index) => (
-          <Box key={index} sx={{ position: 'relative', height: '100%' }}>
-            {/* Background Image */}
-            <Box
-              sx={{
-                position: 'relative',
-                width: '100%',
-                height: '100%'
-              }}
-            >
-              <Image
-                src={slide.image}
-                alt={slide.title || `Slide ${index + 1}`}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority={index === 0}
-              />
-
-              {/* Overlay Gradient */}
-              {showText && (
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: `linear-gradient(to bottom, ${alpha(theme.palette.common.black, 0.3)} 0%, ${alpha(theme.palette.common.black, 0.5)} 100%)`
-                  }}
-                />
-              )}
-            </Box>
-
-            {/* Text Content */}
-            {showText && (slide.title || slide.description) && (
+      {isSingleSlide ? (
+        <Box sx={{ position: 'relative', height: '100%' }}>
+          {/* Background Image */}
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              height: '100%'
+            }}
+          >
+            <Image
+              src={slides[0].image}
+              alt={slides[0].title || 'Header Image'}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+            {/* Overlay Gradient */}
+            {showText && (
               <Box
                 sx={{
                   position: 'absolute',
                   inset: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  zIndex: 1,
-                  px: { xs: 2, sm: 4, md: 6 }
+                  background: `linear-gradient(to bottom, ${alpha(theme.palette.common.black, 0.3)} 0%, ${alpha(theme.palette.common.black, 0.5)} 100%)`
                 }}
-              >
-                <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
-                  <Typeset
-                    heading={slide.title}
-                    caption={slide.description}
-                    stackProps={{
-                      sx: {
-                        textAlign: 'center',
-                        alignItems: 'center',
-                        maxWidth: 800,
-                      },
-                    }}
-                    headingProps={{
-                      sx: {
-                        color: 'white',
-                      },
-                    }}
-                    captionProps={{
-                      sx: {
-                        color: 'white',
-                      },
-                    }}
-                  />
-                </MotionWrapper>
-              </Box>
+              />
             )}
           </Box>
-        ))}
-      </Slider>
-      <SlickArrows sliderRef={sliderRef} variant="contained" />
+          {/* Text Content */}
+          {showText && (slides[0].title || slides[0].description) && (
+            <Box
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 1,
+                px: { xs: 2, sm: 4, md: 6 }
+              }}
+            >
+              <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
+                <Typeset
+                  heading={slides[0].title}
+                  caption={slides[0].description}
+                  stackProps={{
+                    sx: {
+                      textAlign: 'center',
+                      alignItems: 'center',
+                      maxWidth: 800,
+                    },
+                  }}
+                  headingProps={{
+                    sx: {
+                      color: 'white',
+                    },
+                  }}
+                  captionProps={{
+                    sx: {
+                      color: 'white',
+                    },
+                  }}
+                />
+              </MotionWrapper>
+            </Box>
+          )}
+        </Box>
+      ) : (
+        <>
+          <Slider {...settings} ref={sliderRef}>
+            {slides.map((slide, index) => (
+              <Box key={index} sx={{ position: 'relative', height: '100%' }}>
+                {/* Background Image */}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  <Image
+                    src={slide.image}
+                    alt={slide.title || `Slide ${index + 1}`}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    priority={index === 0}
+                  />
+                  {/* Overlay Gradient */}
+                  {showText && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: `linear-gradient(to bottom, ${alpha(theme.palette.common.black, 0.3)} 0%, ${alpha(theme.palette.common.black, 0.5)} 100%)`
+                      }}
+                    />
+                  )}
+                </Box>
+                {/* Text Content */}
+                {showText && (slide.title || slide.description) && (
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      zIndex: 1,
+                      px: { xs: 2, sm: 4, md: 6 }
+                    }}
+                  >
+                    <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
+                      <Typeset
+                        heading={slide.title}
+                        caption={slide.description}
+                        stackProps={{
+                          sx: {
+                            textAlign: 'center',
+                            alignItems: 'center',
+                            maxWidth: 800,
+                          },
+                        }}
+                        headingProps={{
+                          sx: {
+                            color: 'white',
+                          },
+                        }}
+                        captionProps={{
+                          sx: {
+                            color: 'white',
+                          },
+                        }}
+                      />
+                    </MotionWrapper>
+                  </Box>
+                )}
+              </Box>
+            ))}
+          </Slider>
+          <SlickArrows sliderRef={sliderRef} variant="contained" />
+        </>
+      )}
     </Box>
   );
 }

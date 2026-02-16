@@ -66,6 +66,10 @@ export const getMessageSchema = (t) => ({
   required: t('forms.validation.messageRequired')
 });
 
+export const getLocationSchema = (t) => ({
+  required: t('forms.validation.locationRequired')
+});
+
 // Legacy exports for backward compatibility (without translation)
 export const emailSchema = {
   required: 'Email is required',

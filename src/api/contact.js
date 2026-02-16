@@ -49,10 +49,9 @@ export async function submitContactForm(formData, language = 'nl') {
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         'Accept-Language': language
       },
-      body: JSON.stringify(formData)
+      body: formData
     });
 
     const data = await response.json();

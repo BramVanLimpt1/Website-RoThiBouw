@@ -4,17 +4,17 @@ import { notFound } from 'next/navigation';
 
 // @project
 const MainLayout = dynamic(() => import('@/views/layouts/main'));
-const ProjectDetailPage = dynamic(() => import('@/views/pages/project-detail'));
+const ServiceDetailPage = dynamic(() => import('@/views/pages/service-detail'));
 const ScrollFab = dynamic(() => import('@/components/ScrollFab'));
 
-// Import projects data
-import { projects } from '@/views/pages/projects/data';
+// Import services data
+import { services } from '@/views/pages/service-detail/data';
 
 /***************************  GENERATE STATIC PARAMS  ***************************/
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug
+  return services.map((service) => ({
+    slug: service.slug
   }));
 }
 
@@ -22,35 +22,35 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const service = services.find((s) => s.slug === slug);
 
-  if (!project) {
+  if (!service) {
     return {
-      title: 'Project Not Found'
+      title: 'Service Not Found'
     };
   }
 
   return {
-    title: project.slug
+    title: service.slug
       .split('-')
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ')
   };
 }
 
-/***************************  PAGE - PROJECT DETAIL  ***************************/
+/***************************  PAGE - SERVICE DETAIL  ***************************/
 
-export default async function ProjectDetail({ params }) {
+export default async function ServiceDetail({ params }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
+  const service = services.find((s) => s.slug === slug);
 
-  if (!project) {
+  if (!service) {
     notFound();
   }
 
   return (
     <MainLayout>
-      <ProjectDetailPage project={project} />
+      <ServiceDetailPage service={service} />
       <ScrollFab />
     </MainLayout>
   );

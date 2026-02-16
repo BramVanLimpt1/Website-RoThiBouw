@@ -27,6 +27,10 @@ export const translations = {
     location: 'Locatie',
     locationPlaceholder: 'Voer je locatie in',
     locationHelper: 'Het is erg behulpzaam als we weten waar het mogelijke project of ondersteuning plaatsvindt, zodat we dat in acht kunnen nemen.',
+    attachment: 'Bijlage',
+    attachmentHelper: 'Voeg een bestand toe aan je bericht',
+    attachmentDrop: 'Sleep hier een bestand of klik om een bestand te selecteren',
+    attachmentSize: 'Maximale bestandsgrootte 10MB',
     // Validation messages
     validation: {
       firstNameRequired: 'Voornaam is verplicht',
@@ -38,6 +42,7 @@ export const translations = {
       phoneRequired: 'Telefoonnummer is verplicht',
       phoneInvalid: 'Ongeldig telefoonnummer',
       messageRequired: 'Bericht is verplicht',
+      locationRequired: 'Locatie is verplicht',
       contactPersonRequired: 'Selecteer met wie je contact wilt opnemen'
     }
   },
@@ -48,6 +53,7 @@ export const translations = {
     about: 'Over Ons',
     projects: 'Projecten',
     contact: 'Contact',
+    services: 'Diensten',
     pricing: 'Prijzen',
     faq: 'Veelgestelde Vragen',
     career: 'Carrière',
@@ -100,6 +106,7 @@ export const translations = {
     enterEmailAddress: 'Voer je e-mailadres in',
     followUsOn: 'Volg Ons op',
     allRightsReserved: 'Alle rechten voorbehouden',
+    email: 'E-mail',
     phoneRoy: 'Telefoon Roy',
     phoneThijs: 'Telefoon Thijs',
     kvkNumber: 'KvK Nummer',
@@ -257,6 +264,13 @@ export const translations = {
       description: 'Neem vandaag nog contact met ons op voor een gratis consultatie en offerte',
       button: 'Neem Contact Op'
     },
+    aboutTeaser: {
+      heading: 'Twee vrienden,',
+      highlight: 'één missie',
+      caption:
+        'RoThi Bouw is opgericht door Roy en Thijs — twee jonge vakmensen met een gedeelde passie voor kwaliteitsbouw. Het begon als een droom en is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties. Met oog voor detail en een persoonlijke aanpak bij elk project, leveren we vakmanschap waar u op kunt bouwen.',
+      button: 'Leer Ons Kennen'
+    },
     viewAllProjects: 'Bekijk Alle Projecten'
   },
 
@@ -295,6 +309,8 @@ export const translations = {
 
   // Privacy Policy Page
   privacyPolicy: {
+    heading: 'Privacybeleid',
+    subtitle: 'Uw privacy is voor ons belangrijk. Lees hoe we uw gegevens verzamelen, gebruiken en beschermen.',
     sections: {
       informationCollection: {
         heading: 'Verzameling van Informatie',
@@ -341,6 +357,8 @@ export const translations = {
 
   // Terms & Conditions Page
   termsCondition: {
+    heading: 'Algemene Voorwaarden',
+    subtitle: 'Controleer onze algemene voorwaarden die uw gebruik van onze diensten bepalen.',
     sections: {
       acceptanceOfTerms: {
         heading: 'Aanvaarding van Voorwaarden',
@@ -382,6 +400,122 @@ export const translations = {
         caption:
           'Deze algemene voorwaarden worden beheerst door en geïnterpreteerd in overeenstemming met de wetten van Nederland. Eventuele geschillen die voortvloeien uit deze voorwaarden of uw gebruik van onze diensten vallen onder de exclusieve jurisdictie van de Nederlandse rechtbanken.'
       }
+    }
+  },
+
+  // Service Detail Pages
+  services: {
+    dakwerken: {
+      title: 'Dakwerken',
+      descriptionTitle: 'Professionele Dakconstructie & Reparaties',
+      description:
+        'Bij RoThiBouw zijn we gespecialiseerd in alle vormen van dakwerk. Van nieuwbouw tot renovatie, wij zorgen voor een waterdicht en duurzaam dak dat jarenlang meegaat. Onze ervaren vakmensen werken met hoogwaardige materialen en leveren altijd een strak en professioneel resultaat.',
+      features: {
+        f1: 'Nieuwbouw dakconstructies',
+        f2: 'Dakrenovaties en reparaties',
+        f3: 'Dakpannen leggen en vervangen',
+        f4: 'Dakisolatie en ventilatie',
+        f5: 'Dakgoten en hemelwaterafvoer',
+        f6: 'Lood- en zinkwerk'
+      }
+    },
+    timmerwerk: {
+      title: 'Timmerwerk',
+      descriptionTitle: 'Vakkundig Timmerwerk voor Elk Project',
+      description:
+        'Timmerwerk is de kern van wat wij doen. Of het nu gaat om het plaatsen van kozijnen, het maken van een houten constructie of het afwerken van een interieur - bij RoThiBouw bent u verzekerd van precisie en kwaliteit. Wij werken met diverse houtsoorten en leveren maatwerk voor elke situatie.',
+      features: {
+        f1: 'Kozijnen en deurkozijnen',
+        f2: 'Houten constructies en draagbalken',
+        f3: 'Gevelbekleding in hout',
+        f4: 'Binnenbetimmering en afwerking',
+        f5: 'Houten vloeren en plafonds',
+        f6: 'Maatwerk meubels en inbouwkasten'
+      }
+    },
+    renovaties: {
+      title: 'Renovaties',
+      descriptionTitle: 'Complete Renovatieoplossingen',
+      description:
+        'Een renovatie geeft uw woning een nieuw leven. Of u nu een enkele ruimte wilt vernieuwen of een complete verbouwing plant, wij begeleiden u van begin tot eind. Met oog voor detail en respect voor de bestaande structuur realiseren wij uw droomproject.',
+      features: {
+        f1: 'Complete woningrenovaties',
+        f2: 'Keuken- en badkamerverbouwingen',
+        f3: 'Aanbouwen en uitbreidingen',
+        f4: 'Vloeren en wanden vernieuwen',
+        f5: 'Isolatie en energiebesparing',
+        f6: 'Constructieve aanpassingen'
+      }
+    },
+    dakkapellen: {
+      title: 'Dakkapellen',
+      descriptionTitle: 'Meer Ruimte met een Dakkapel',
+      description:
+        'Een dakkapel is de ideale manier om extra ruimte en licht te creëren op uw zolder. Wij plaatsen dakkapellen in diverse stijlen en maten, perfect afgestemd op uw woning. Van vergunningsaanvraag tot oplevering, wij regelen het voor u.',
+      features: {
+        f1: 'Platte en schuin aflopende dakkapellen',
+        f2: 'Maatwerk ontwerpen',
+        f3: 'Isolatie en ventilatie inbegrepen',
+        f4: 'Dakpannen en zinken bekleding',
+        f5: 'Kozijnen en beglazing',
+        f6: 'Hulp bij vergunningsaanvraag'
+      }
+    },
+    tuinoverkappingen: {
+      title: 'Tuinoverkappingen',
+      descriptionTitle: 'Geniet van Uw Tuin met een Overkapping',
+      description:
+        'Met een tuinoverkapping van RoThiBouw kunt u het hele jaar genieten van uw buitenruimte. Wij bouwen duurzame en stijlvolle overkappingen op maat, van klassiek houten pergola tot moderne aluminium constructie.',
+      features: {
+        f1: 'Houten overkappingen op maat',
+        f2: 'Veranda\'s en terrasoverkappingen',
+        f3: 'Pergola\'s en prielen',
+        f4: 'Lichtdoorlatende dakplaten',
+        f5: 'Geïntegreerde verlichting en elektra',
+        f6: 'Weerbestendige afwerking'
+      }
+    },
+    muurbouw: {
+      title: 'Muurbouw',
+      descriptionTitle: 'Solide Muurbouw & Metselwerk',
+      description:
+        'Van dragende muren tot tuinmuren en scheidingswanden, RoThiBouw levert vakkundig metsel- en muurwerk. Wij werken met verschillende materialen en technieken om een stevig en mooi resultaat te garanderen.',
+      features: {
+        f1: 'Dragende en niet-dragende muren',
+        f2: 'Tuinmuren en erfafscheidingen',
+        f3: 'Metselwerk in diverse stijlen',
+        f4: 'Betonblokken en gevelstenen',
+        f5: 'Voegwerk en herstel',
+        f6: 'Constructieve versterkingen'
+      }
+    },
+    process: {
+      heading: 'Ons Werkproces',
+      caption: 'Van inspectie tot oplevering, wij begeleiden u bij elke stap',
+      step1: {
+        title: 'Inspectie & Advies',
+        description: 'Wij komen bij u langs om de situatie te bekijken en geven u eerlijk en deskundig advies over de mogelijkheden.'
+      },
+      step2: {
+        title: 'Uitvoering',
+        description: 'Onze vakmensen gaan aan de slag met hoogwaardige materialen en leveren vakkundig werk met aandacht voor detail.'
+      },
+      step3: {
+        title: 'Oplevering & Garantie',
+        description: 'Na een grondige eindcontrole leveren wij het project op en bieden wij garantie op ons werk.'
+      }
+    },
+    cta: {
+      heading: 'Interesse in Deze Dienst?',
+      button: 'Neem Contact Op'
+    },
+    relatedProjects: {
+      heading: 'Gerelateerde Projecten',
+      caption: 'Bekijk projecten die wij hebben uitgevoerd in deze categorie'
+    },
+    navigation: {
+      heading: 'Onze Diensten',
+      caption: 'Ontdek al onze professionele bouwdiensten'
     }
   },
 

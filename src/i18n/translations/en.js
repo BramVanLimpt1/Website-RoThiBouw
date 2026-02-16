@@ -27,6 +27,10 @@ export const translations = {
     location: 'Location',
     locationPlaceholder: 'Enter your location',
     locationHelper: 'It\'s very helpful if we know where the possible project or support will take place, so we can take that into account.',
+    attachment: 'Attachment',
+    attachmentHelper: 'Add a file to your message',
+    attachmentDrop: 'Drag & drop a file here, or click to select a file',
+    attachmentSize: 'Max file size 10MB',
     // Validation messages
     validation: {
       firstNameRequired: 'First name is required',
@@ -38,6 +42,7 @@ export const translations = {
       phoneRequired: 'Phone number is required',
       phoneInvalid: 'Invalid phone number',
       messageRequired: 'Message is required',
+      locationRequired: 'Location is required',
       contactPersonRequired: 'Please select who you would like to contact'
     }
   },
@@ -48,6 +53,7 @@ export const translations = {
     about: 'About',
     projects: 'Projects',
     contact: 'Contact',
+    services: 'Services',
     pricing: 'Pricing',
     faq: 'FAQ',
     career: 'Career',
@@ -258,6 +264,13 @@ export const translations = {
       description: 'Contact us today for a free consultation and quote',
       button: 'Get in Touch'
     },
+    aboutTeaser: {
+      heading: 'Two friends,',
+      highlight: 'one mission',
+      caption:
+        'RoThi Bouw was founded by Roy and Thijs — two young craftsmen with a shared passion for quality construction. What started as a dream has grown into a trusted name in carpentry, roofing, and renovations. With an eye for detail and a personal approach to every project, we deliver craftsmanship you can build on.',
+      button: 'Get to Know Us'
+    },
     viewAllProjects: 'View All Projects'
   },
 
@@ -336,6 +349,8 @@ export const translations = {
 
   // Privacy Policy Page
   privacyPolicy: {
+    heading: 'Privacy Policy',
+    subtitle: 'Your privacy is important to us. Learn how we collect, use, and protect your data.',
     sections: {
       informationCollection: {
         heading: 'Information Collection',
@@ -382,6 +397,8 @@ export const translations = {
 
   // Terms & Conditions Page
   termsCondition: {
+    heading: 'Terms & Conditions',
+    subtitle: 'Please review our terms and conditions that govern your use of our services.',
     sections: {
       acceptanceOfTerms: {
         heading: 'Acceptance of Terms',
@@ -423,6 +440,122 @@ export const translations = {
         caption:
           'These terms and conditions are governed by and construed in accordance with the laws of the Netherlands. Any disputes arising from these terms or your use of our services shall be subject to the exclusive jurisdiction of the Dutch courts.'
       }
+    }
+  },
+
+  // Service Detail Pages
+  services: {
+    dakwerken: {
+      title: 'Roofing',
+      descriptionTitle: 'Professional Roof Construction & Repairs',
+      description:
+        'At RoThiBouw, we specialize in all forms of roofing work. From new construction to renovation, we ensure a waterproof and durable roof that lasts for years. Our experienced craftsmen work with high-quality materials and always deliver a clean and professional result.',
+      features: {
+        f1: 'New roof constructions',
+        f2: 'Roof renovations and repairs',
+        f3: 'Roof tile installation and replacement',
+        f4: 'Roof insulation and ventilation',
+        f5: 'Gutters and rainwater drainage',
+        f6: 'Lead and zinc work'
+      }
+    },
+    timmerwerk: {
+      title: 'Timber Work',
+      descriptionTitle: 'Expert Carpentry for Every Project',
+      description:
+        'Carpentry is at the core of what we do. Whether it\'s installing window frames, building a wooden structure, or finishing an interior - at RoThiBouw you are assured of precision and quality. We work with various types of wood and deliver custom solutions for every situation.',
+      features: {
+        f1: 'Window and door frames',
+        f2: 'Wooden structures and support beams',
+        f3: 'Wood cladding for facades',
+        f4: 'Interior paneling and finishing',
+        f5: 'Wooden floors and ceilings',
+        f6: 'Custom furniture and built-in cabinets'
+      }
+    },
+    renovaties: {
+      title: 'Renovations',
+      descriptionTitle: 'Complete Renovation Solutions',
+      description:
+        'A renovation gives your home a new life. Whether you want to refresh a single room or plan a complete remodel, we guide you from start to finish. With an eye for detail and respect for the existing structure, we realize your dream project.',
+      features: {
+        f1: 'Complete home renovations',
+        f2: 'Kitchen and bathroom remodels',
+        f3: 'Extensions and additions',
+        f4: 'Floor and wall renewals',
+        f5: 'Insulation and energy efficiency',
+        f6: 'Structural modifications'
+      }
+    },
+    dakkapellen: {
+      title: 'Dormer Windows',
+      descriptionTitle: 'More Space with a Dormer Window',
+      description:
+        'A dormer window is the ideal way to create extra space and light in your attic. We install dormer windows in various styles and sizes, perfectly tailored to your home. From permit application to delivery, we take care of everything for you.',
+      features: {
+        f1: 'Flat and pitched dormers',
+        f2: 'Custom designs',
+        f3: 'Insulation and ventilation included',
+        f4: 'Roof tiles and zinc cladding',
+        f5: 'Frames and glazing',
+        f6: 'Assistance with permit applications'
+      }
+    },
+    tuinoverkappingen: {
+      title: 'Garden Canopies',
+      descriptionTitle: 'Enjoy Your Garden with a Canopy',
+      description:
+        'With a garden canopy from RoThiBouw, you can enjoy your outdoor space all year round. We build durable and stylish custom canopies, from classic wooden pergolas to modern aluminum structures.',
+      features: {
+        f1: 'Custom wooden canopies',
+        f2: 'Verandas and terrace covers',
+        f3: 'Pergolas and gazebos',
+        f4: 'Light-transmitting roof panels',
+        f5: 'Integrated lighting and electrical',
+        f6: 'Weather-resistant finishing'
+      }
+    },
+    muurbouw: {
+      title: 'Wall Construction',
+      descriptionTitle: 'Solid Wall Construction & Masonry',
+      description:
+        'From load-bearing walls to garden walls and partition walls, RoThiBouw delivers expert masonry and wall construction. We work with various materials and techniques to guarantee a sturdy and beautiful result.',
+      features: {
+        f1: 'Load-bearing and non-load-bearing walls',
+        f2: 'Garden walls and boundary fences',
+        f3: 'Masonry in various styles',
+        f4: 'Concrete blocks and facing bricks',
+        f5: 'Pointing and repair work',
+        f6: 'Structural reinforcements'
+      }
+    },
+    process: {
+      heading: 'Our Working Process',
+      caption: 'From inspection to delivery, we guide you through every step',
+      step1: {
+        title: 'Inspection & Advice',
+        description: 'We visit your location to assess the situation and provide honest and expert advice on the possibilities.'
+      },
+      step2: {
+        title: 'Execution',
+        description: 'Our craftsmen get to work with high-quality materials, delivering expert work with attention to detail.'
+      },
+      step3: {
+        title: 'Delivery & Warranty',
+        description: 'After a thorough final inspection, we deliver the project and offer a warranty on our work.'
+      }
+    },
+    cta: {
+      heading: 'Interested in This Service?',
+      button: 'Get in Touch'
+    },
+    relatedProjects: {
+      heading: 'Related Projects',
+      caption: 'View projects we have completed in this category'
+    },
+    navigation: {
+      heading: 'Our Services',
+      caption: 'Discover all our professional construction services'
     }
   },
 

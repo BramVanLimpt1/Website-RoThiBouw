@@ -30,7 +30,7 @@ export const servicesData = {
         title: 'home.services.roofing.title',
         content: 'home.services.roofing.description',
         link: {
-          href: '#',
+          href: '/services/dakwerken',
           children: 'common.learnMore'
         }
       },
@@ -39,7 +39,7 @@ export const servicesData = {
         title: 'home.services.carpentry.title',
         content: 'home.services.carpentry.description',
         link: {
-          href: '#',
+          href: '/services/timmerwerk',
           children: 'common.learnMore'
         }
       },
@@ -48,7 +48,7 @@ export const servicesData = {
         title: 'home.services.renovations.title',
         content: 'home.services.renovations.description',
         link: {
-          href: '#',
+          href: '/services/renovaties',
           children: 'common.learnMore'
         }
       },
@@ -57,7 +57,7 @@ export const servicesData = {
         title: 'home.services.dormers.title',
         content: 'home.services.dormers.description',
         link: {
-          href: '#',
+          href: '/services/dakkapellen',
           children: 'common.learnMore'
         }
       },
@@ -66,7 +66,7 @@ export const servicesData = {
         title: 'home.services.canopies.title',
         content: 'home.services.canopies.description',
         link: {
-          href: '#',
+          href: '/services/tuinoverkappingen',
           children: 'common.learnMore'
         }
       },
@@ -75,10 +75,22 @@ export const servicesData = {
         title: 'home.services.walls.title',
         content: 'home.services.walls.description',
         link: {
-          href: '#',
+          href: '/services/muurbouw',
           children: 'common.learnMore'
         }
       }
     ]
+};
+
+// About Teaser
+export const aboutTeaserData = {
+  headingKey: 'home.aboutTeaser.heading',
+  highlightKey: 'home.aboutTeaser.highlight',
+  captionKey: 'home.aboutTeaser.caption',
+  image: '/assets/home/image_1.jpg',
+  primaryBtn: {
+    href: '/about',
+    children: 'home.aboutTeaser.button'
+  }
 };
 

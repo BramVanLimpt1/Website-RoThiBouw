@@ -8,6 +8,7 @@ export const PAGE_PATH = {
   aboutPage: '/about',
   projectsPage: '/projects',
   contactPage: '/contact',
+  servicesPage: '/services',
   privacyPolicyPage: '/privacy-policy',
   termsConditionPage: '/terms-condition'
 };

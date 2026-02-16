@@ -12,7 +12,7 @@ import { NavbarContent11 } from '@/blocks/navbar/navbar-content';
 // @data
 import { useNavbarData } from './data/navbar';
 
-import { companyInfo, footerColumns, bottomBar } from './data';
+import { companyInfo, bottomBar } from './data';
 
 /***************************  LAYOUT - MAIN  ***************************/
 
@@ -32,7 +32,7 @@ export default function MainLayout({ children }) {
       <main>{children}</main>
 
       {/* footer section */}
-      <Footer9 companyInfo={companyInfo} footerColumns={footerColumns} bottomBar={bottomBar} />;
+      <Footer9 companyInfo={companyInfo} bottomBar={bottomBar} />;
     </>
   );
 }

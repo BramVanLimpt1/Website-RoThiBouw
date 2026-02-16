@@ -7,14 +7,13 @@ import Stack from '@mui/material/Stack';
 import HeroSlideshow from '@/components/hero/HeroSlideshow';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
 import useTranslation from '@/hooks/useTranslation';
+import { About4 } from '@/blocks/about';
 import ContactUs3 from '@/blocks/contact-us/ContactUs3';
+import { Project1 } from '@/blocks/projects';
 
 // @data
-import { heroSlides, servicesData, stats, processSteps } from './data';
+import { heroSlides, servicesData, aboutTeaserData } from './data';
 import { projects } from '../projects/data';
-
-// @sections
-import { StatsSection, FeaturedProjectsSection, ProcessSection, CtaSection } from './sections';
 
 /***************************  HOME PAGE  ***************************/
 
@@ -37,8 +36,11 @@ export default function HomePage() {
       {/* Services Section */}
       <ContactUs3 {...servicesData} />
 
+      {/* About Us Teaser */}
+      <About4 {...aboutTeaserData} />
+
       {/* Featured Projects Section */}
-      <FeaturedProjectsSection projects={projects} heading="home.projects.heading" caption="home.projects.caption" t={t} />
+      <Project1 heading="home.projects.heading" caption="home.projects.caption" projects={projects} />
     </Stack>
   );
 }
