@@ -1,6 +1,9 @@
 // @project
 import useTranslation from '@/hooks/useTranslation';
+
 import { MegaMenuType } from '@/enum';
+
+// TODO: Make the link also based on the translation key, so we can have correct link name for different languages
 
 /***************************  NAVBAR - DATA  ***************************/
 
@@ -23,50 +26,45 @@ export const useNavbarData = () => {
           menuItems: [
             {
               icon: 'tabler-home',
-              title: t('services.dakwerken.title', 'Roofing'),
+              title: t('services.roofing.title'),
               link: '/services/dakwerken'
             },
             {
-              icon: 'tabler-tool',
-              title: t('services.timmerwerk.title', 'Timber Work'),
+              icon: 'tabler-hammer',
+              title: t('services.carpentry.title'),
               link: '/services/timmerwerk'
             },
             {
-              icon: 'tabler-paint',
-              title: t('services.renovaties.title', 'Renovations'),
+              icon: 'tabler-crane',
+              title: t('services.renovations.title'),
               link: '/services/renovaties'
             },
             {
-              icon: 'tabler-building',
-              title: t('services.dakkapellen.title', 'Dormer Windows'),
-              link: '/services/dakkapellen'
+              icon: 'tabler-michelin-star-green',
+              title: t('services.sustainability.title'),
+              link: '/services/verduurzaaming'
             },
             {
-              icon: 'tabler-umbrella',
-              title: t('services.tuinoverkappingen.title', 'Garden Canopies'),
-              link: '/services/tuinoverkappingen'
-            },
-            {
-              icon: 'tabler-wall',
-              title: t('services.muurbouw.title', 'Wall Construction'),
-              link: '/services/muurbouw'
+              icon: 'tabler-wood',
+              title: t('services.woodConstructions.title'),
+              link: '/services/hout-constructies'
             }
           ]
         }
       },
       {
         id: 'about',
-        title: t('nav.about', 'About'),
+        title: t('nav.about'),
         link: '/about'
       },
       {
         id: 'projects',
-        title: t('nav.projects', 'Projects'),
+        title: t('nav.projects'),
         link: '/projects'
       },
       {
         id: 'contact',
-        title: t('nav.contact', 'Contact'),
+        title: t('nav.contact'),
         link: '/contact'
       }
     ]

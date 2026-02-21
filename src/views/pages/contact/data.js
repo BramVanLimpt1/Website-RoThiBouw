@@ -1,5 +1,3 @@
-/***************************  CONTACT PAGE - DATA  ***************************/
-
 export const contactData = {
   heading: 'contact.heading',
   caption: 'contact.caption',

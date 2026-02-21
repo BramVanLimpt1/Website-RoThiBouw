@@ -15,3 +15,4 @@ export { default as Hero14 } from './Hero14';
 export { default as Hero15 } from './Hero15';
 export { default as Hero16 } from './Hero16';
 export { default as Hero17 } from './Hero17';
+export { default as HeroSlideshow } from './HeroSlideshow';

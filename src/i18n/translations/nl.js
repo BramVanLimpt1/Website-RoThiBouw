@@ -213,56 +213,17 @@ export const translations = {
         description: 'Hoogwaardig timmerwerk voor zowel binnen- als buitenprojecten'
       },
       renovations: {
-        title: 'Renovaties',
-        description: 'Complete renovatieoplossingen die nieuw leven geven aan uw ruimte'
+        title: 'Ver- en aanbouw',
+        description: 'Complete ver- en aanbouwoplossingen die uw woning of bedrijfspand uitbreiden'
       },
-      dormers: {
-        title: 'Dakkapellen',
-        description: 'Professionele dakkapelconstructie om ruimte en waarde toe te voegen aan uw woning'
+      sustainability: {
+        title: 'Verduurzaaming',
+        description: 'Professionele verduurzaaming voor uw woning of bedrijfspand'
       },
-      canopies: {
-        title: 'Tuinoverkappingen',
-        description: 'Mooie en duurzame buitenoverkappingen voor uw tuin of terras'
-      },
-      walls: {
-        title: 'Muurbouw',
-        description: 'Solide muurbouw en metselwerk voor al uw bouwbehoeften'
+      woodConstructions: {
+        title: 'Houtconstructies',
+        description: 'Vakkundige houtconstructies op maat voor elk bouwproject'
       }
-    },
-    stats: {
-      yearsExperience: 'Jaar Ervaring',
-      projectsCompleted: 'Projecten Voltooid',
-      satisfaction: 'Klanttevredenheid',
-      warrantyYears: 'Jaar Garantie'
-    },
-    projects: {
-      heading: 'Uitgelichte Projecten',
-      caption: 'Bekijk enkele van onze recent voltooide bouwprojecten'
-    },
-    process: {
-      heading: 'Ons Werkproces',
-      caption: 'Van eerste consultatie tot projectoplevering, wij begeleiden u bij elke stap',
-      step1: {
-        title: 'Consultatie',
-        description: 'We bespreken uw projecteisen en geven deskundig advies'
-      },
-      step2: {
-        title: 'Planning & Ontwerp',
-        description: 'Gedetailleerde planning en ontwerp om uw visie tot leven te brengen'
-      },
-      step3: {
-        title: 'Uitvoering',
-        description: 'Professionele uitvoering met aandacht voor kwaliteit en deadlines'
-      },
-      step4: {
-        title: 'Oplevering',
-        description: 'Eindcontrole en oplevering van uw voltooide project'
-      }
-    },
-    cta: {
-      heading: 'Klaar om Uw Project te Starten?',
-      description: 'Neem vandaag nog contact met ons op voor een gratis consultatie en offerte',
-      button: 'Neem Contact Op'
     },
     aboutTeaser: {
       heading: 'Twee vrienden,',
@@ -271,7 +232,16 @@ export const translations = {
         'RoThi Bouw is opgericht door Roy en Thijs — twee jonge vakmensen met een gedeelde passie voor kwaliteitsbouw. Het begon als een droom en is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties. Met oog voor detail en een persoonlijke aanpak bij elk project, leveren we vakmanschap waar u op kunt bouwen.',
       button: 'Leer Ons Kennen'
     },
-    viewAllProjects: 'Bekijk Alle Projecten'
+    projects: {
+      heading: 'Uitgelichte Projecten',
+      caption: 'Bekijk enkele van onze recent voltooide bouwprojecten'
+    },
+    viewAllProjects: 'Bekijk Alle Projecten',
+    cta: {
+      heading: 'Klaar om Uw Project te Starten?',
+      description: 'Neem vandaag nog contact met ons op voor een gratis consultatie en offerte',
+      button: 'Neem Contact Op'
+    }
   },
 
   // About Page

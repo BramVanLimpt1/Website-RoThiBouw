@@ -1,8 +1,10 @@
 'use client';
 
 // @project
-import ContactUs4 from '@/blocks/contact-us/ContactUs4';
+import LazySection from '@/components/LazySection';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
+
+// @data
 import { contactData } from './data';
 
 /***************************  CONTACT PAGE  ***************************/
@@ -10,5 +12,13 @@ import { contactData } from './data';
 export default function ContactPage() {
   useDataThemeMode();
 
-  return <ContactUs4 {...contactData} />;
+  return (
+    <LazySection
+      sections={{
+        importFunc: () => import('@/blocks/contact-us').then((module) => ({ default: module.ContactUs4 })),
+        props: contactData
+      }}
+      offset="200px"
+    />
+  );
 }

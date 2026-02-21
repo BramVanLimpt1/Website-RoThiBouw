@@ -1,5 +1,3 @@
-// Privacy Policy sections data configuration
-// This data structure provides the section IDs and keys for translation
 export const privacyPolicySections = [
   {
     id: 'information-collection',

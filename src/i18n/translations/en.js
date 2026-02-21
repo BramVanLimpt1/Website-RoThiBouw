@@ -98,7 +98,7 @@ export const translations = {
 
   // Footer sections
   footer: {
-    copyright: 'Copyright © 2024',
+    copyright: 'Copyright © 2026',
     privacyPolicy: 'Privacy Policy',
     termsConditions: 'Terms & Conditions',
     joinNewsletter: 'Join our newsletter',
@@ -213,56 +213,17 @@ export const translations = {
         description: 'High-quality carpentry services for both interior and exterior projects'
       },
       renovations: {
-        title: 'Renovations',
-        description: 'Complete renovation solutions that breathe new life into your space'
+        title: 'Renovations and Extensions',
+        description: 'Complete renovation and extension services to transform your home or business'
       },
-      dormers: {
-        title: 'Dormer Windows',
-        description: 'Professional dormer construction to add space and value to your home'
+      sustainability: {
+        title: 'Sustainability',
+        description: 'Professional sustainability work for your home or business'
       },
-      canopies: {
-        title: 'Garden Canopies',
-        description: 'Beautiful and durable outdoor canopies for your garden or terrace'
-      },
-      walls: {
-        title: 'Wall Construction',
-        description: 'Solid wall construction and masonry work for all your building needs'
+      woodConstructions: {
+        title: 'Wood Construction',
+        description: 'Expert wood construction services tailored to your project needs'
       }
-    },
-    stats: {
-      yearsExperience: 'Years Experience',
-      projectsCompleted: 'Projects Completed',
-      satisfaction: 'Client Satisfaction',
-      warrantyYears: 'Year Warranty'
-    },
-    projects: {
-      heading: 'Featured Projects',
-      caption: 'Take a look at some of our recently completed construction projects'
-    },
-    process: {
-      heading: 'Our Working Process',
-      caption: 'From initial consultation to project completion, we guide you through every step',
-      step1: {
-        title: 'Consultation',
-        description: 'We discuss your project requirements and provide expert advice'
-      },
-      step2: {
-        title: 'Planning & Design',
-        description: 'Detailed planning and design to bring your vision to life'
-      },
-      step3: {
-        title: 'Execution',
-        description: 'Professional execution with attention to quality and deadlines'
-      },
-      step4: {
-        title: 'Completion',
-        description: 'Final inspection and handover of your completed project'
-      }
-    },
-    cta: {
-      heading: 'Ready to Start Your Project?',
-      description: 'Contact us today for a free consultation and quote',
-      button: 'Get in Touch'
     },
     aboutTeaser: {
       heading: 'Two friends,',
@@ -271,7 +232,16 @@ export const translations = {
         'RoThi Bouw was founded by Roy and Thijs — two young craftsmen with a shared passion for quality construction. What started as a dream has grown into a trusted name in carpentry, roofing, and renovations. With an eye for detail and a personal approach to every project, we deliver craftsmanship you can build on.',
       button: 'Get to Know Us'
     },
-    viewAllProjects: 'View All Projects'
+    projects: {
+      heading: 'Featured Projects',
+      caption: 'Take a look at some of our recently completed construction projects'
+    },
+    viewAllProjects: 'View All Projects',
+    cta: {
+      heading: 'Ready to Start Your Project?',
+      description: 'Contact us today for a free consultation and quote',
+      button: 'Get in Touch'
+    }
   },
 
   // About Page

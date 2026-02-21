@@ -1,10 +1,5 @@
-
 /***************************  FOOTER - 9 DATA  ***************************/
 
-/**
- * Left Section: Company Info with Locations and Contact Details
- * Displays logo and a list of contact information with icons
- */
 export const companyInfo = {
   infoItems: [
     {
@@ -37,18 +32,14 @@ export const companyInfo = {
     },
     {
       labelKey: 'footer.btwNumber',
-      icon: 'tabler-certificate',
+      icon: 'tabler-receipt-2',
       value: 'NL867559755B01'
     }
   ]
 };
 
-/**
- * Bottom Bar Configuration
- * Copyright and legal links
- */
 export const bottomBar = {
-  copyrightType: 'TYPE3', // Can be 'TYPE1', 'TYPE2', 'TYPE3', etc.
+  copyrightType: 'TYPE3',
   legalLinks: [
     {
       label: 'footer.privacyPolicy',

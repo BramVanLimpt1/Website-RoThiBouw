@@ -1,6 +1,5 @@
-// Home page data configuration
+import { projects } from '../projects/data';
 
-// Hero Slideshow
 export const heroSlides = [
   {
     image: '/assets/home/image_1.jpg',
@@ -19,7 +18,6 @@ export const heroSlides = [
   }
 ];
 
-// Services (ContactUs3 format)
 export const servicesData = {
   heading: 'home.services.heading',
   headerAlign: 'center',
@@ -35,7 +33,7 @@ export const servicesData = {
         }
       },
       {
-        icon: 'tabler-tool',
+        icon: 'tabler-hammer',
         title: 'home.services.carpentry.title',
         content: 'home.services.carpentry.description',
         link: {
@@ -44,7 +42,7 @@ export const servicesData = {
         }
       },
       {
-        icon: 'tabler-paint',
+        icon: 'tabler-crane',
         title: 'home.services.renovations.title',
         content: 'home.services.renovations.description',
         link: {
@@ -53,44 +51,41 @@ export const servicesData = {
         }
       },
       {
-        icon: 'tabler-building',
-        title: 'home.services.dormers.title',
-        content: 'home.services.dormers.description',
+        icon: 'tabler-michelin-star-green',
+        title: 'home.services.sustainability.title',
+        content: 'home.services.sustainability.description',
         link: {
-          href: '/services/dakkapellen',
+          href: '/services/verduurzaaming',
           children: 'common.learnMore'
         }
       },
       {
-        icon: 'tabler-umbrella',
-        title: 'home.services.canopies.title',
-        content: 'home.services.canopies.description',
+        icon: 'tabler-wood',
+        title: 'home.services.woodConstructions.title',
+        content: 'home.services.woodConstructions.description',
         link: {
-          href: '/services/tuinoverkappingen',
-          children: 'common.learnMore'
-        }
-      },
-      {
-        icon: 'tabler-wall',
-        title: 'home.services.walls.title',
-        content: 'home.services.walls.description',
-        link: {
-          href: '/services/muurbouw',
+          href: '/services/hout-constructies',
           children: 'common.learnMore'
         }
       }
     ]
 };
 
-// About Teaser
 export const aboutTeaserData = {
   headingKey: 'home.aboutTeaser.heading',
   highlightKey: 'home.aboutTeaser.highlight',
   captionKey: 'home.aboutTeaser.caption',
-  image: '/assets/home/image_1.jpg',
+  image: '/assets/temp/placeholder.png',
   primaryBtn: {
     href: '/about',
     children: 'home.aboutTeaser.button'
   }
 };
 
+export const projectsData = {
+  heading: 'home.projects.heading',
+  caption: 'home.projects.caption',
+  projects: projects,
+  showViewAll: true,
+  viewAllBtnKey: 'home.viewAllProjects'
+};

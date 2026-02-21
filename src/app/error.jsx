@@ -19,3 +19,5 @@ export default function InternalServerError() {
 
   return <Error500Page {...data} />;
 }
+
+// TODO: Add the translation to the Error500Page block and not here.

@@ -78,19 +78,23 @@ export const projectCategories = [
     labelKey: 'projects.categories.all'
   },
   {
-    id: 'buitenconstructies',
-    labelKey: 'projects.categories.buitenconstructies'
-  },
-  {
-    id: 'aanbouw-renovatie',
-    labelKey: 'projects.categories.aanbouwRenovatie'
-  },
-  {
     id: 'dakwerken',
     labelKey: 'projects.categories.dakwerken'
   },
   {
+    id: 'timmerwerk',
+    labelKey: 'projects.categories.timmerwerk'
+  },
+  {
     id: 'renovatie',
     labelKey: 'projects.categories.renovatie'
+  },
+  {
+    id: 'verduurzaaming',
+    labelKey: 'projects.categories.verduurzaaming'
+  },
+  {
+    id: 'hout-constructies',
+    labelKey: 'projects.categories.houtConstructies'
   }
 ];
