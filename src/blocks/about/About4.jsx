@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 // @next
 import NextLink from 'next/link';
-import Image from 'next/image';
 
 // @mui
 import Box from '@mui/material/Box';
@@ -16,8 +15,11 @@ import Typography from '@mui/material/Typography';
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import MotionWrapper from '@/components/MotionWrapper';
+import GraphicsImage from '@/components/GraphicsImage';
+
 import useTranslation from '@/hooks/useTranslation';
-import { SECTION_COMMON_PY } from '@/utils/constant';
+
+import { SECTION_COMMON_PY, BORDER_RADIUS } from '@/utils/constant';
 
 /***************************  ABOUT - 4 (TEASER)  ***************************/
 
@@ -29,18 +31,15 @@ export default function About4({ headingKey, highlightKey, captionKey, image, pr
       <Grid container spacing={{ xs: 4, md: 6 }} sx={{ alignItems: 'center' }}>
         {/* Left: Image */}
         <Grid size={{ xs: 12, md: 6 }}>
-          <MotionWrapper delay={0.2}>
-            <Box
-              sx={{
-                position: 'relative',
-                width: '100%',
+          <MotionWrapper>
+            <GraphicsImage
+              image={image} 
+              sx={{ 
                 height: { xs: 300, sm: 400, md: 480 },
-                borderRadius: { xs: 6, sm: 8, md: 10 },
+                borderRadius: BORDER_RADIUS.xs,
                 overflow: 'hidden'
               }}
-            >
-              <Image src={image} alt={t(headingKey)} fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 100vw, 50vw" />
-            </Box>
+            />
           </MotionWrapper>
         </Grid>
 
