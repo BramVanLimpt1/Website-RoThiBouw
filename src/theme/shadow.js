@@ -1,4 +1,4 @@
-/***************************  DEFAULT / AI THEME - SHADOWS  ***************************/
+/***************************  DEFAULT THEME - SHADOWS  ***************************/
 
 export default function Shadows() {
   return {};

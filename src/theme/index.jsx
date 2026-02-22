@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useMemo } from 'react';
 
 // @mui
@@ -14,9 +15,7 @@ import typography from './typography';
 
 import useConfig from '@/hooks/useConfig';
 
-// @types
-
-/*************************** DEFAULT / AI THEME - MAIN ***************************/
+/*************************** DEFAULT THEME - MAIN ***************************/
 
 export default function ThemeCustomization({ children }) {
   const { mode, themeDirection } = useConfig();
@@ -37,7 +36,7 @@ export default function ThemeCustomization({ children }) {
     palette: themePalette
   });
 
-  // create duplicate theme due to responsive typography and fontFamily
+  // Create duplicate theme due to responsive typography and fontFamily
   let theme = createTheme({
     ...themeDefault,
     typography: typography(themeDefault)

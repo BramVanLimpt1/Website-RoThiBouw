@@ -1,13 +1,13 @@
 // @project
 import { FONT_ARCHIVO, FONT_FIGTREE } from '@/config';
 
-/***************************  DEFAULT / AI THEME - TYPOGRAPHY  ***************************/
+/***************************  DEFAULT THEME - TYPOGRAPHY  ***************************/
 
 export default function typography(theme) {
   return {
     fontFamily: FONT_ARCHIVO,
 
-    // heading - large
+    // Heading - large
     h1: {
       fontWeight: 400,
       fontSize: 57,
@@ -25,7 +25,7 @@ export default function typography(theme) {
       }
     },
 
-    // heading - medium
+    // Heading - medium
     h2: {
       fontWeight: 400,
       fontSize: 45,
@@ -41,7 +41,7 @@ export default function typography(theme) {
       }
     },
 
-    // display - medium
+    // Display - medium
     h3: {
       fontWeight: 400,
       fontSize: 28,
@@ -57,7 +57,7 @@ export default function typography(theme) {
       }
     },
 
-    // display - small
+    // Display - small
     h4: {
       fontWeight: 400,
       fontSize: 24,
@@ -73,7 +73,7 @@ export default function typography(theme) {
       }
     },
 
-    // label - large
+    // Label - large
     h5: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 500,
@@ -87,7 +87,7 @@ export default function typography(theme) {
       }
     },
 
-    // paragraph - large
+    // Paragraph - large
     h6: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 400,
@@ -101,7 +101,7 @@ export default function typography(theme) {
       }
     },
 
-    // paragraph - medium
+    // Paragraph - medium
     body1: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 400,
@@ -115,7 +115,7 @@ export default function typography(theme) {
       }
     },
 
-    // paragraph - small
+    // Paragraph - small
     body2: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 400,
@@ -128,7 +128,7 @@ export default function typography(theme) {
       }
     },
 
-    // label - medium
+    // Label - medium
     subtitle1: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 500,
@@ -143,7 +143,7 @@ export default function typography(theme) {
       }
     },
 
-    // label - small
+    // Label - small
     subtitle2: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 600,
@@ -156,7 +156,7 @@ export default function typography(theme) {
       }
     },
 
-    // hyperlink - small
+    // Hyperlink - small
     caption: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 600,
@@ -165,7 +165,7 @@ export default function typography(theme) {
       letterSpacing: 0
     },
 
-    // hyperlink - large
+    // Hyperlink - large
     caption1: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 400,
@@ -174,7 +174,7 @@ export default function typography(theme) {
       letterSpacing: 0.5
     },
 
-    // hyperlink - medium
+    // Hyperlink - medium
     caption2: {
       fontFamily: FONT_FIGTREE,
       fontWeight: 500,
@@ -183,7 +183,7 @@ export default function typography(theme) {
       letterSpacing: 0.1
     },
 
-    // button
+    // Button
     button: {
       textTransform: 'capitalize'
     }

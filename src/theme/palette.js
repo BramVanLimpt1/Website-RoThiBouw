@@ -1,7 +1,7 @@
 // @project
 import { ThemeMode } from '@/config';
 
-/***************************  ROTHI BOUW - BRAND PALETTE  ***************************/
+/***************************  ROTHIBOUW - BRAND PALETTE  ***************************/
 
 export default function palette(mode) {
   const textPrimary = '#1A1C1E'; // on surface
@@ -12,20 +12,20 @@ export default function palette(mode) {
   const textPrimaryDark = '#E2E2E5'; // on surface
   const textSecondaryDark = '#C2C7CE'; // on surface variant
   const dividerDark = '#42474E'; // outline variant
-  const backgroundDark = '#051519'; // RoThi Bouw brand dark
+  const backgroundDark = '#051519'; // RoThiBouw brand dark
 
   const lightPalette = {
     primary: {
       lighter: '#B3D4DC', // lighter teal variant
       light: '#4A8B9E', // light teal
-      main: '#051519', // RoThi Bouw brand dark
+      main: '#051519', // RoThiBouw brand dark
       dark: '#030E11', // darker variant
       darker: '#020A0C' // darkest variant
     },
     secondary: {
       lighter: '#D9D9D9', // lighter grey
       light: '#ADADAD', // light grey
-      main: '#8c8a8a', // RoThi Bouw brand grey
+      main: '#8c8a8a', // RoThiBouw brand grey
       dark: '#5A5858', // darker grey
       darker: '#2E2D2D' // darkest grey
     },
@@ -62,7 +62,7 @@ export default function palette(mode) {
     secondary: {
       lighter: '#3D3C3C', // darker grey variant
       light: '#A5A3A3', // light grey for dark mode
-      main: '#BFBDBD', // RoThi Bouw grey lighter for dark mode
+      main: '#BFBDBD', // RoThiBouw grey lighter for dark mode
       dark: '#D9D9D9', // lighter grey
       darker: '#F0F0F0' // lightest grey
     },
