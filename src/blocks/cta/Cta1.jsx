@@ -8,31 +8,35 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-// @third-party
-import { motion } from 'framer-motion';
-
 // @project
 import ButtonAnimationWrapper from '@/components/ButtonAnimationWrapper';
 import ContainerWrapper from '@/components/ContainerWrapper';
+import MotionWrapper from '@/components/MotionWrapper';
 import { GraphicsCard } from '@/components/cards';
+
+import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  CALL TO ACTION - 1  ***************************/
 
-export default function Cta1({ bgImage, heading, primaryBtn }) {
+/**
+ * Cta1 Component
+ *
+ * @param {Object} props - Component props
+ * @param {string} [props.bgImage] - Optional background image URL. If provided, displays as card background with gradient overlay
+ * @param {string} props.headingKey - Translation key for section heading (e.g., 'cta.heading', 'cta.section1.title')
+ * @param {Object} props.primaryBtn - Primary action button properties
+ *   @param {string} props.primaryBtn.href - Button link URL
+ *   @param {string} props.primaryBtn.children - Translation key for button text (e.g., 'cta.buttonText', 'common.cta')
+ */
+export default function Cta1({ bgImage, headingKey, primaryBtn }) {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.4,
-          delay: 0.4
-        }}
-      >
+      <MotionWrapper>
         <GraphicsCard
           {...(bgImage && {
             sx: {
@@ -55,19 +59,19 @@ export default function Cta1({ bgImage, heading, primaryBtn }) {
           <Box sx={{ p: { xs: 3, sm: 4, md: 5 }, position: 'relative', width: 1 }}>
             <Stack sx={{ alignItems: 'center', justifyContent: 'center', gap: { xs: 3, sm: 4 } }}>
               <Typography variant="h2" align="center">
-                {heading}
+                {t(headingKey)}
               </Typography>
               {primaryBtn && (
                 <ButtonAnimationWrapper style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                  <Button color="primary" size="large" variant="contained" sx={{ width: { xs: '100%', sm: 'auto' } }} {...primaryBtn} />
+                  <Button color="primary" size="large" variant="contained" sx={{ width: { xs: '100%', sm: 'auto' } }} {...primaryBtn} children={t(primaryBtn.children)} />
                 </ButtonAnimationWrapper>
               )}
             </Stack>
           </Box>
         </GraphicsCard>
-      </motion.div>
+      </MotionWrapper>
     </ContainerWrapper>
   );
 }
 
-Cta1.propTypes = { bgImage: PropTypes.any, heading: PropTypes.string, primaryBtn: PropTypes.any };
+Cta1.propTypes = { bgImage: PropTypes.any, headingKey: PropTypes.string, primaryBtn: PropTypes.any };
