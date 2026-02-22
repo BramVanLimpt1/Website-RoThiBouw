@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useEffect, useState } from 'react';
 
 // @project
@@ -9,9 +10,7 @@ import RTLLayout from '@/components/RTLLayout';
 import ThemeProvider from '@/components/ThemeProvider';
 import { ConfigProvider } from '@/contexts/ConfigContext';
 
-// @types
-
-/***************************  COMMON - CONFIG, THEME  ***************************/
+/***************************  COMMON - CONFIG  ***************************/
 
 export default function ProviderWrapper({ children }) {
   const [loader, setLoader] = useState(true);

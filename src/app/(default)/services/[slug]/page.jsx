@@ -3,9 +3,7 @@ import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
 
 // @project
-const MainLayout = dynamic(() => import('@/views/layouts/main'));
 const ServiceDetailPage = dynamic(() => import('@/views/pages/service-detail'));
-const ScrollFab = dynamic(() => import('@/components/ScrollFab'));
 
 // Import services data
 import { services } from '@/views/pages/service-detail/data';
@@ -48,10 +46,5 @@ export default async function ServiceDetail({ params }) {
     notFound();
   }
 
-  return (
-    <MainLayout>
-      <ServiceDetailPage service={service} />
-      <ScrollFab />
-    </MainLayout>
-  );
+  return <ServiceDetailPage service={service} />;
 }
