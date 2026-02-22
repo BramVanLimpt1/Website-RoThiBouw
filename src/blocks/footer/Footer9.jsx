@@ -20,25 +20,14 @@ import SvgIcon from '@/components/SvgIcon';
 import useTranslation from '@/hooks/useTranslation';
 
 import { CopyrightType } from '@/enum';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 // @types
 import PropTypes from 'prop-types';
 
-/***************************  FOOTER - 9  ***************************/
+/***************************  FOOTER - 9 / HELPER  ***************************/
 
-/**
- * InfoItem Component
- * 
- * Displays a single contact information item with icon and value side-by-side.
- * Value can be clickable (for phone/email links) or plain text.
- * 
- * @param {Object} props - Component props
- * @param {string} props.labelKey - Translation key for the label (e.g., 'footer.location')
- * @param {string} props.icon - Icon name (e.g., 'tabler-phone', 'tabler-mail')
- * @param {string} props.value - The value/content to display
- * @param {string} [props.href] - Optional link href (for tel:, mailto:, http://)
- */
 function InfoItem({ labelKey, icon, value, href }) {
   const { t } = useTranslation();
 
@@ -81,19 +70,8 @@ function InfoItem({ labelKey, icon, value, href }) {
   return itemContent;
 }
 
-/**
- * Footer9 Component
- * 
- * Simple footer layout with:
- * 1. Centered logo
- * 2. Horizontal info items (location, phone, email, etc.) below logo
- *    - Responsive: stacks vertically on smaller screens
- * 3. Bottom bar: Copyright and text links for legal pages
- * 
- * @param {Object} props - Component props
- * @param {Object} props.companyInfo - Company info configuration with infoItems array
- * @param {Object} props.bottomBar - Bottom bar configuration with copyrightType and legalLinks
- */
+/***************************  FOOTER - 9  ***************************/
+
 export default function Footer9({ companyInfo, bottomBar = {} }) {
   const { t } = useTranslation();
   const { copyrightType = 'TYPE3', legalLinks = [] } = bottomBar;
