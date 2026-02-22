@@ -53,33 +53,17 @@ function getGridSize(index, length) {
 /**
  * ContactCard Component
  *
- * Displays a single contact method card with an icon, title, content, and optional link button.
- * Translates all text content using the translation hook.
- *
- * Layout:
- * - Mobile (xs): Icon and text side-by-side, and button below
- * - Tablet+ (sm+): Icon, text, and button in column layout
+ * Simple, straightforward contact method card for basic contact information.
+ * Features a single call-to-action button with a solid (contained) style.
  *
  * @param {Object} props - Component props
  * @param {string|Object} props.icon - Icon name as string (e.g., 'tabler-mail', 'tabler-phone') or icon object with properties
+ *   - Supports both string notation and object notation for icon flexibility
  * @param {string} props.title - Translation key for card title (e.g., 'contact.emailCard.title')
  * @param {string} props.content - Translation key for card content/description (e.g., 'contact.emailCard.content')
- * @param {Object} [props.link] - Optional link button properties
+ * @param {Object} [props.link] - Optional single link button properties
  *   @param {string} props.link.href - URL for the link (e.g., 'mailto:', 'tel:', 'https://')
  *   @param {string} props.link.children - Translation key for button text (e.g., 'contact.emailCard.buttonText')
- *
- * @example
- * ```jsx
- * <ContactCard
- *   icon="tabler-mail"
- *   title="contact.emailCard.title"
- *   content="contact.emailCard.content"
- *   link={{
- *     href: "mailto:info@example.com",
- *     children: "contact.emailCard.buttonText"
- *   }}
- * />
- * ```
  */
 function ContactCard({ icon, title, content, link }) {
   const { t } = useTranslation();
@@ -112,23 +96,6 @@ function ContactCard({ icon, title, content, link }) {
 /**
  * ContactUs3 Component
  *
- * Displays a contact section with contact method cards in a responsive grid layout.
- * The grid layout adapts based on the number of cards to maintain balanced proportions.
- *
- * Grid Layout Behavior:
- * - 1 card: Full width (size={{ xs: 12, sm: 12 }})
- * - 2 cards: 2 per row, 50% width each (size={{ xs: 12, sm: 6 }})
- * - 3 cards: 3 per row, 33.33% width each (size={{ xs: 12, sm: 4 }})
- * - 4 cards: 2 per row, 50% width each (size={{ xs: 12, sm: 6 }})
- *   - Arranged as: 2 cards in row 1, 2 cards in row 2
- * - 5 cards: First 2 cards 50% each, remaining 3 cards 33.33% each (size={{ xs: 12, sm: 6|4 }})
- *   - Arranged as: 2 cards in row 1, 3 cards in row 2
- * - 6+ cards: 3 per row, 33.33% width each (size={{ xs: 12, sm: 4 }})
- *   - Each card takes 33.33% width for balanced grid
- *
- * Mobile (xs): All cards display full-width (100%) regardless of count
- * Responsive spacing applies via container Grid with 1.5 gap unit
- *
  * @param {Object} props - Component props
  * @param {string} props.heading - Translation key for section heading (e.g., 'contact.heading')
  * @param {string} props.caption - Translation key for section caption/description (e.g., 'contact.caption')
@@ -154,6 +121,7 @@ export default function ContactUs3({ heading, caption, list, headerAlign = 'cent
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
+        {/* Section Heading and Caption*/}
         <MotionWrapper animate={animateHeader}>
           <Typeset
             {...{
@@ -163,6 +131,8 @@ export default function ContactUs3({ heading, caption, list, headerAlign = 'cent
             }}
           />
         </MotionWrapper>
+
+        {/* Contact Method Cards - Responsive Grid Layout */}
         <Grid container spacing={1.5}>
           {list.map((item, index) => (
             <Grid key={index} size={{ xs: 12, sm: getGridSize(index, list.length) }}>
