@@ -1,5 +1,4 @@
 'use client';
-import PropTypes from 'prop-types';
 
 // @mui
 import Button from '@mui/material/Button';
@@ -9,14 +8,23 @@ import Typography from '@mui/material/Typography';
 // @project
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
+
+import useTranslation from '@/hooks/useTranslation';
 
 // @assets
 import Error404 from '@/images/maintenance/Error404';
 
 /***************************  ERROR 404 - PAGES  ***************************/
 
-export default function Error404Page({ primaryBtn, heading }) {
+export default function Error404Page() {
+  const { t } = useTranslation();
+
+  const handleHomeClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <ContainerWrapper>
       <Stack
@@ -33,8 +41,8 @@ export default function Error404Page({ primaryBtn, heading }) {
           <Stack sx={{ justifyContent: 'center', height: 1, gap: { xs: 4, sm: 1 } }}>
             <Error404 />
             <Stack sx={{ gap: 2.25, alignItems: 'center', mt: { sm: -5, lg: -6.25 } }}>
-              <Typography sx={{ width: { xs: 210, sm: 300 }, textAlign: 'center' }}>{heading}</Typography>
-              {primaryBtn && <Button variant="contained" size="medium" {...primaryBtn} />}
+              <Typography sx={{ width: { xs: 210, sm: 300 }, textAlign: 'center' }}>{t('error.404.heading')}</Typography>
+              <Button variant="contained" size="medium" onClick={handleHomeClick} children={t('error.404.buttonText')} />
             </Stack>
           </Stack>
         </GraphicsCard>
@@ -43,4 +51,4 @@ export default function Error404Page({ primaryBtn, heading }) {
   );
 }
 
-Error404Page.propTypes = { primaryBtn: PropTypes.any, heading: PropTypes.string };
+Error404Page.propTypes = {};

@@ -79,13 +79,9 @@ export default function Footer9({ companyInfo, bottomBar = {} }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack id="footer-9" role="contentinfo" aria-label="Footer 9" sx={{ gap: { xs: 3, sm: 4 } }}>
-        {/* Logo and Info Items */}
         <MotionWrapper delay={0.2} duration={0.5}>
           <Stack sx={{ alignItems: 'center', gap: { xs: 3, sm: 4 } }}>
-            {/* Logo */}
             <LogoSection />
-
-            {/* Info Items - Horizontal on desktop, vertical on mobile */}
             {companyInfo?.infoItems && companyInfo.infoItems.length > 0 && (
               <Stack
                 direction={{ xs: 'column', sm: 'row' }}
@@ -103,8 +99,6 @@ export default function Footer9({ companyInfo, bottomBar = {} }) {
             )}
           </Stack>
         </MotionWrapper>
-
-        {/* Bottom Bar: Copyright and Legal Links */}
         <MotionWrapper delay={0.3} duration={0.5}>
           <GraphicsCard sx={{ borderRadius: { xs: 6, sm: 8 } }}>
             <Stack
@@ -118,8 +112,6 @@ export default function Footer9({ companyInfo, bottomBar = {} }) {
               }}
             >
               <Copyright type={CopyrightType[copyrightType]} />
-              
-              {/* Legal Links */}
               {legalLinks.length > 0 && (
                 <Stack direction="row" sx={{ gap: 2, alignItems: 'center' }}>
                   {legalLinks.map((link, index) => (

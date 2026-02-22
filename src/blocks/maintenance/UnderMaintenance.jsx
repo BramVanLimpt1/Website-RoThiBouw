@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+'use client';
+
 // @mui
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -8,6 +9,7 @@ import Box from '@mui/material/Box';
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import { SECTION_COMMON_PY } from '@/utils/constant';
+import useTranslation from '@/hooks/useTranslation';
 
 // @assets
 import BackShortly from '@/images/maintenance/BackShortly';
@@ -15,7 +17,9 @@ import Maintenance from '@/images/maintenance/Maintenance';
 
 /***************************  UNDER MAINTENANCE - PAGES  ***************************/
 
-export default function UnderMaintenance({ heading }) {
+export default function UnderMaintenance() {
+  const { t } = useTranslation();
+
   return (
     <ContainerWrapper>
       <Stack sx={{ width: 1, height: '100vh', py: SECTION_COMMON_PY, minHeight: { xs: 450, sm: 600, md: 800 } }}>
@@ -24,7 +28,7 @@ export default function UnderMaintenance({ heading }) {
             <Box sx={{ width: 1, maxWidth: { xs: 360, sm: 486, md: 728 }, p: 2 }}>
               <BackShortly />
             </Box>
-            <Typography sx={{ textAlign: 'center', width: { xs: 248, sm: 340, md: 448 } }}>{heading}</Typography>
+            <Typography sx={{ textAlign: 'center', width: { xs: 248, sm: 340, md: 448 } }}>{t('error.maintenance.heading')}</Typography>
           </Stack>
           <Box sx={{ width: '70%', maxWidth: { xs: 360, sm: 486, md: 820 }, position: 'absolute', left: -2, bottom: -6 }}>
             <Maintenance />
@@ -35,4 +39,4 @@ export default function UnderMaintenance({ heading }) {
   );
 }
 
-UnderMaintenance.propTypes = { heading: PropTypes.string };
+UnderMaintenance.propTypes = {};

@@ -20,16 +20,6 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  CALL TO ACTION - 1  ***************************/
 
-/**
- * Cta1 Component
- *
- * @param {Object} props - Component props
- * @param {string} [props.bgImage] - Optional background image URL. If provided, displays as card background with gradient overlay
- * @param {string} props.headingKey - Translation key for section heading (e.g., 'cta.heading', 'cta.section1.title')
- * @param {Object} props.primaryBtn - Primary action button properties
- *   @param {string} props.primaryBtn.href - Button link URL
- *   @param {string} props.primaryBtn.children - Translation key for button text (e.g., 'cta.buttonText', 'common.cta')
- */
 export default function Cta1({ bgImage, headingKey, primaryBtn }) {
   const theme = useTheme();
   const { t } = useTranslation();

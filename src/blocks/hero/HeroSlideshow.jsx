@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useRef } from 'react';
 
 // @next
@@ -19,11 +20,14 @@ import SlickArrows from '@/components/SlickArrows';
 import MotionWrapper from '@/components/MotionWrapper';
 import Typeset from '@/components/Typeset';
 
+import useTranslation from '@/hooks/useTranslation';
+
 /***************************  HERO SLIDESHOW  ***************************/
 
 export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md: 600 }, showText = true }) {
   const theme = useTheme();
   const sliderRef = useRef(null);
+  const { t } = useTranslation();
 
   // If only one slide, render static header image
   const isSingleSlide = slides.length === 1;
@@ -75,7 +79,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
     >
       {isSingleSlide ? (
         <Box sx={{ position: 'relative', height: '100%' }}>
-          {/* Background Image */}
           <Box
             sx={{
               position: 'relative',
@@ -90,7 +93,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
               style={{ objectFit: 'cover' }}
               priority
             />
-            {/* Overlay Gradient */}
             {showText && (
               <Box
                 sx={{
@@ -101,7 +103,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
               />
             )}
           </Box>
-          {/* Text Content */}
           {showText && (slides[0].title || slides[0].description) && (
             <Box
               sx={{
@@ -116,8 +117,8 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
             >
               <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
                 <Typeset
-                  heading={slides[0].title}
-                  caption={slides[0].description}
+                  heading={t(slides[0].title)}
+                  caption={t(slides[0].description)}
                   stackProps={{
                     sx: {
                       textAlign: 'center',
@@ -145,7 +146,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
           <Slider {...settings} ref={sliderRef}>
             {slides.map((slide, index) => (
               <Box key={index} sx={{ position: 'relative', height: '100%' }}>
-                {/* Background Image */}
                 <Box
                   sx={{
                     position: 'relative',
@@ -160,7 +160,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                     style={{ objectFit: 'cover' }}
                     priority={index === 0}
                   />
-                  {/* Overlay Gradient */}
                   {showText && (
                     <Box
                       sx={{
@@ -171,7 +170,6 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                     />
                   )}
                 </Box>
-                {/* Text Content */}
                 {showText && (slide.title || slide.description) && (
                   <Box
                     sx={{
@@ -186,8 +184,8 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                   >
                     <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
                       <Typeset
-                        heading={slide.title}
-                        caption={slide.description}
+                        heading={t(slide.title)}
+                        caption={t(slide.description)}
                         stackProps={{
                           sx: {
                             textAlign: 'center',

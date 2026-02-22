@@ -23,14 +23,6 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  CONTACT US - HELPER  ***************************/
 
-/**
- * Get grid size based on index and total length
- *
- * @param {number} index - Index of the item
- * @param {number} length - Total number of items
- * 
- * @returns {number} Grid size (1-12)
- */
 function getGridSize(index, length) {
   switch (length) {
     case 1:
@@ -50,21 +42,6 @@ function getGridSize(index, length) {
 
 /***************************  CONTACT US - CARD  ***************************/
 
-/**
- * ContactCard Component
- *
- * Simple, straightforward contact method card for basic contact information.
- * Features a single call-to-action button with a solid (contained) style.
- *
- * @param {Object} props - Component props
- * @param {string|Object} props.icon - Icon name as string (e.g., 'tabler-mail', 'tabler-phone') or icon object with properties
- *   - Supports both string notation and object notation for icon flexibility
- * @param {string} props.title - Translation key for card title (e.g., 'contact.emailCard.title')
- * @param {string} props.content - Translation key for card content/description (e.g., 'contact.emailCard.content')
- * @param {Object} [props.link] - Optional single link button properties
- *   @param {string} props.link.href - URL for the link (e.g., 'mailto:', 'tel:', 'https://')
- *   @param {string} props.link.children - Translation key for button text (e.g., 'contact.emailCard.buttonText')
- */
 function ContactCard({ icon, title, content, link }) {
   const { t } = useTranslation();
 
@@ -93,27 +70,6 @@ function ContactCard({ icon, title, content, link }) {
 
 /***************************  CONTACT US - 3  ***************************/
 
-/**
- * ContactUs3 Component
- *
- * @param {Object} props - Component props
- * @param {string} props.heading - Translation key for section heading (e.g., 'contact.heading')
- * @param {string} props.caption - Translation key for section caption/description (e.g., 'contact.caption')
- * @param {Array<Object>} props.list - Array of contact method card objects. Each card object:
- *   @param {string|Object} props.list[].icon - Icon name (e.g., 'tabler-mail', 'tabler-phone') or icon object
- *   @param {string} props.list[].title - Translation key for card title (e.g., 'contact.emailCard.title')
- *   @param {string} props.list[].content - Translation key for card content/description (e.g., 'contact.emailCard.content')
- *   @param {Object} [props.list[].link] - Optional link button configuration
- *     @param {string} props.list[].link.href - URL for the link (mailto:, tel:, https://, etc.)
- *     @param {string} props.list[].link.children - Translation key for button text (e.g., 'contact.emailCard.buttonText')
- * @param {string} [props.headerAlign='center'] - Header alignment. Options: 'left', 'center', 'right'
- *   - 'left': Aligns heading and caption to the left
- *   - 'center': Centers the heading and caption (default)
- *   - 'right': Right-aligns the heading and caption
- * @param {boolean} [props.animateHeader=true] - Enable/disable header animation on page load
- *   - true: Header fades in and slides up from bottom (whileInView)
- *   - false: Header displays immediately without animation
- */
 export default function ContactUs3({ heading, caption, list, headerAlign = 'center', animateHeader = true }) {
   const { t } = useTranslation();
   const headerAlignValue = headerAlign === 'center' ? 'center' : headerAlign === 'right' ? 'flex-end' : 'flex-start';
@@ -121,7 +77,6 @@ export default function ContactUs3({ heading, caption, list, headerAlign = 'cent
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
-        {/* Section Heading and Caption*/}
         <MotionWrapper animate={animateHeader}>
           <Typeset
             {...{
@@ -131,8 +86,6 @@ export default function ContactUs3({ heading, caption, list, headerAlign = 'cent
             }}
           />
         </MotionWrapper>
-
-        {/* Contact Method Cards - Responsive Grid Layout */}
         <Grid container spacing={1.5}>
           {list.map((item, index) => (
             <Grid key={index} size={{ xs: 12, sm: getGridSize(index, list.length) }}>

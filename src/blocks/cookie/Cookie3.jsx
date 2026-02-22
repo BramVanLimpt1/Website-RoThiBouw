@@ -17,16 +17,19 @@ import Box from '@mui/material/Box';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import { GraphicsCard } from '@/components/cards';
 import SvgIcon from '@/components/SvgIcon';
-import { SECTION_COMMON_PY } from '@/utils/constant';
+import useTranslation from '@/hooks/useTranslation';
+
+import { SECTION_COMMON_PY, BORDER_RADIUS } from '@/utils/constant';
 
 /***************************  COOKIE - 3  ***************************/
 
-export default function TopOffer3({ heading, cookie, primaryBtn, secondaryBtn }) {
+export default function Cookie3({ heading, cookie, primaryBtn, secondaryBtn }) {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-      <GraphicsCard sx={{ boxShadow: `2px 2px 10px 0px ${alpha(theme.palette.grey[600], 0.09)}`, mx: 2, bgcolor: 'primary.lighter' }}>
+      <GraphicsCard sx={{ boxShadow: `2px 2px 10px 0px ${alpha(theme.palette.grey[600], 0.09)}`, mx: 2, bgcolor: 'primary.lighter', borderRadius: BORDER_RADIUS.xs }}>
         <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
           <Stack
             direction={{ sm: 'row' }}
@@ -51,22 +54,22 @@ export default function TopOffer3({ heading, cookie, primaryBtn, secondaryBtn })
               </Stack>
               <Stack sx={{ gap: { xs: 0.75, md: 1 }, maxWidth: { xs: 1, sm: 480, md: 760 } }}>
                 <Typography variant="h4" sx={{ color: 'primary.darker' }}>
-                  {heading}
+                  {t(heading)}
                 </Typography>
                 <Typography sx={{ color: 'secondary.dark' }}>
-                  {cookie.caption}
+                  {t(cookie.caption)}
                   {cookie.link && (
                     <>
                       &nbsp;
-                      <Link component={NextLink} {...cookie.link} underline="always" />
+                      <Link component={NextLink} {...cookie.link} underline="always" children={t(cookie.link.children)} />
                     </>
                   )}
                 </Typography>
               </Stack>
             </Stack>
             <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 1, md: 1.5 }, width: { xs: 1, sm: 182, md: 298 } }}>
-              {primaryBtn && <Button fullWidth variant="outlined" size="small" {...primaryBtn} />}
-              {secondaryBtn && <Button fullWidth variant="contained" size="small" sx={{ whiteSpace: 'nowrap' }} {...secondaryBtn} />}
+              {primaryBtn && <Button fullWidth variant="outlined" size="small" {...primaryBtn} children={t(primaryBtn.children)} />}
+              {secondaryBtn && <Button fullWidth variant="contained" size="small" sx={{ whiteSpace: 'nowrap' }} {...secondaryBtn} children={t(secondaryBtn.children)} />}
             </Stack>
           </Stack>
         </Box>
@@ -75,4 +78,4 @@ export default function TopOffer3({ heading, cookie, primaryBtn, secondaryBtn })
   );
 }
 
-TopOffer3.propTypes = { heading: PropTypes.string, cookie: PropTypes.object, primaryBtn: PropTypes.any, secondaryBtn: PropTypes.any };
+Cookie3.propTypes = { heading: PropTypes.string, cookie: PropTypes.object, primaryBtn: PropTypes.any, secondaryBtn: PropTypes.any };

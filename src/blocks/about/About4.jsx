@@ -21,7 +21,7 @@ import useTranslation from '@/hooks/useTranslation';
 
 import { SECTION_COMMON_PY, BORDER_RADIUS } from '@/utils/constant';
 
-/***************************  ABOUT - 4 (TEASER)  ***************************/
+/***************************  ABOUT - 4  ***************************/
 
 export default function About4({ headingKey, highlightKey, captionKey, image, primaryBtn }) {
   const { t } = useTranslation();
@@ -29,7 +29,6 @@ export default function About4({ headingKey, highlightKey, captionKey, image, pr
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Grid container spacing={{ xs: 4, md: 6 }} sx={{ alignItems: 'center' }}>
-        {/* Left: Image */}
         <Grid size={{ xs: 12, md: 6 }}>
           <MotionWrapper>
             <GraphicsImage
@@ -42,25 +41,18 @@ export default function About4({ headingKey, highlightKey, captionKey, image, pr
             />
           </MotionWrapper>
         </Grid>
-
-        {/* Right: Content */}
         <Grid size={{ xs: 12, md: 6 }}>
           <MotionWrapper delay={0.3}>
             <Stack spacing={3}>
-              {/* Heading with highlight */}
               <Typography variant="h2">
                 {t(headingKey)}{' '}
                 <Box component="span" sx={{ color: 'primary.main' }}>
                   {t(highlightKey)}
                 </Box>
               </Typography>
-
-              {/* Description */}
               <Typography variant="body1" sx={{ color: 'text.secondary' }}>
                 {t(captionKey)}
               </Typography>
-
-              {/* CTA Button */}
               <Box>
                 <ButtonAnimationWrapper>
                   <Button component={NextLink} href={primaryBtn.href} variant="contained" size="large" sx={{ px: 4 }}>
