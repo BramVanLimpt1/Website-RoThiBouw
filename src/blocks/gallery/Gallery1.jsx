@@ -17,10 +17,10 @@ import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import Typeset from '@/components/Typeset';
 
-import { SECTION_COMMON_PY } from '@/utils/constant';
-import GetImagePath from '@/utils/GetImagePath';
+import useTranslation from '@/hooks/useTranslation';
 
-// @types
+import { SECTION_COMMON_PY, BORDER_RADIUS } from '@/utils/constant';
+import GetImagePath from '@/utils/GetImagePath';
 
 /***************************  GALLERY 1 - HELPER  ***************************/
 
@@ -53,7 +53,8 @@ function getGridSize(index, length) {
 
 /***************************  GALLERY - 1  ***************************/
 
-export default function Gallery1({ heading, caption, images }) {
+export default function Gallery1({ headingKey, captionKey, images }) {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(-1);
 
   // Map over images to create an array for the lightbox
@@ -64,11 +65,11 @@ export default function Gallery1({ heading, caption, images }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
-        <Typeset {...{ heading, caption }} />
+        <Typeset heading={t(headingKey)} caption={t(captionKey)} />
         <Grid container spacing={1.5}>
           {images.map((item, index) => (
             <Grid key={index} size={getGridSize(index, images.length)}>
-              <Box sx={{ borderRadius: 10, overflow: 'hidden' }}>
+              <Box sx={{ borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
                 <motion.div whileHover={{ scale: 1.02 }}>
                   <GraphicsCard
                     bgImage={item.src}
@@ -90,4 +91,4 @@ export default function Gallery1({ heading, caption, images }) {
   );
 }
 
-Gallery1.propTypes = { heading: PropTypes.any, caption: PropTypes.any, images: PropTypes.any };
+Gallery1.propTypes = { headingKey: PropTypes.string, captionKey: PropTypes.string, images: PropTypes.any };

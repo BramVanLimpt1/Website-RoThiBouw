@@ -17,7 +17,9 @@ import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import Typeset from '@/components/Typeset';
 
-import { SECTION_COMMON_PY } from '@/utils/constant';
+import useTranslation from '@/hooks/useTranslation';
+
+import { SECTION_COMMON_PY, BORDER_RADIUS } from '@/utils/constant';
 import GetImagePath from '@/utils/GetImagePath';
 
 /***************************  GALLERY - GRAPHICS BLOCK  ***************************/
@@ -28,7 +30,7 @@ function GraphicsBox({ boxData, setIndex }) {
   return (
     <Grid container spacing={boxGap}>
       <Grid size={8}>
-        <Box sx={{ borderRadius: 10, overflow: 'hidden' }}>
+        <Box sx={{ borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
           <motion.div whileHover={{ scale: 1.02 }}>
             <GraphicsCard
               bgImage={boxData[0].src}
@@ -40,7 +42,7 @@ function GraphicsBox({ boxData, setIndex }) {
       </Grid>
       <Grid size={4}>
         <Stack sx={{ height: 1, gap: boxGap }}>
-          <Box sx={{ height: '50%', borderRadius: 10, overflow: 'hidden' }}>
+          <Box sx={{ height: '50%', borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
             <motion.div whileHover={{ scale: 1.02 }} style={{ height: '100%' }}>
               <GraphicsCard
                 bgImage={boxData[1].src}
@@ -49,7 +51,7 @@ function GraphicsBox({ boxData, setIndex }) {
               />
             </motion.div>
           </Box>
-          <Box sx={{ height: '50%', borderRadius: 10, overflow: 'hidden' }}>
+          <Box sx={{ height: '50%', borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
             <motion.div whileHover={{ scale: 1.02 }} style={{ height: '100%' }}>
               <GraphicsCard
                 bgImage={boxData[2].src}
@@ -66,7 +68,8 @@ function GraphicsBox({ boxData, setIndex }) {
 
 /***************************  GALLERY - 3  ***************************/
 
-export default function Gallery3({ heading, caption, images }) {
+export default function Gallery3({ headingKey, captionKey, images }) {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(-1);
   const [galleryData, setGalleryData] = useState([]);
 
@@ -111,14 +114,14 @@ export default function Gallery3({ heading, caption, images }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
-        <Typeset {...{ heading, caption }} />
+        <Typeset heading={t(headingKey)} caption={t(captionKey)} />
         <Grid container spacing={1.5}>
           {galleryData.map((item, index) => (
             <Grid key={index} size={item.type == 'box' ? 12 : 6}>
               {item.type == 'box' && item.child ? (
                 <GraphicsBox boxData={item.child} setIndex={setIndex} />
               ) : (
-                <Box sx={{ borderRadius: 10, overflow: 'hidden' }}>
+                <Box sx={{ borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
                   <motion.div whileHover={{ scale: 1.02 }}>
                     <GraphicsCard
                       bgImage={item.src}
@@ -139,4 +142,4 @@ export default function Gallery3({ heading, caption, images }) {
 
 GraphicsBox.propTypes = { boxData: PropTypes.array, setIndex: PropTypes.func };
 
-Gallery3.propTypes = { heading: PropTypes.any, caption: PropTypes.any, images: PropTypes.any };
+Gallery3.propTypes = { headingKey: PropTypes.string, captionKey: PropTypes.string, images: PropTypes.any };
