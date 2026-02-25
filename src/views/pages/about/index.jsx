@@ -16,7 +16,7 @@ export default function AboutPage() {
     <>
       <LazySection
         sections={[
-          { importFunc: () => import('@/blocks/team').then((module) => ({ default: module.Team2Members })), props: teamData },
+          { importFunc: () => import('@/blocks/team').then((module) => ({ default: module.Team1 })), props: teamData },
           { importFunc: () => import('@/blocks/timeline').then((module) => ({ default: module.TimeLine1 })), props: storyData }
         ]}
         offset="200px"

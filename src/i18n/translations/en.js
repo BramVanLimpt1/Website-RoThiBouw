@@ -96,6 +96,15 @@ export const translations = {
     language: 'Language'
   },
 
+  // Cookie settings
+  cookie: {
+    heading: 'We use cookies to enhance your experience',
+    caption: 'We use cookies to improve your browsing experience and provide personalized content.',
+    privacyLink: 'Privacy Policy',
+    acceptButton: 'Accept All',
+    rejectButton: 'Reject'
+  },
+
   // Footer sections
   footer: {
     copyright: 'Copyright © 2026',
@@ -129,6 +138,9 @@ export const translations = {
     500: {
       heading: 'Please try again later or feel free to contact us if the problem persists.',
       buttonText: 'Back to Home Page'
+    },
+    maintenance: {
+      heading: 'We\'re currently making improvements. We\'ll be back online soon!'
     }
   },
 
@@ -313,7 +325,19 @@ export const translations = {
     },
     team: {
       heading: 'Meet Our Team',
-      caption: 'The skilled craftsmen behind RoThi Bouw - two friends united by a passion for quality construction'
+      caption: 'The skilled craftsmen behind RoThi Bouw - two friends united by a passion for quality construction',
+      team1_heading: 'Our Dedicated Team',
+      team1_caption: 'Meet the passionate professionals who make RoThi Bouw a success.',
+      member1_name: 'Roy van der Linden',
+      member1_role: 'Co-Founder & Lead Carpenter',
+      member2_name: 'Thijs Bouwman',
+      member2_role: 'Co-Founder & Lead Roofer',
+      member3_name: 'Jane Doe',
+      member3_role: 'Project Manager',
+      member4_name: 'John Smith',
+      member4_role: 'Construction Specialist',
+      member5_name: 'Emily White',
+      member5_role: 'Apprentice Carpenter'
     }
   },
 

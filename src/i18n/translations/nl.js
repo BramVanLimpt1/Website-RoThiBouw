@@ -96,6 +96,15 @@ export const translations = {
     language: 'Taal'
   },
 
+  // Cookie settings
+  cookie: {
+    heading: 'We gebruiken cookies voor een betere ervaring',
+    caption: 'We gebruiken cookies om je browse-ervaring te verbeteren en persoonlijke content aan te bieden.',
+    privacyLink: 'Privacybeleid',
+    acceptButton: 'Alles Accepteren',
+    rejectButton: 'Afwijzen'
+  },
+
   // Footer sections
   footer: {
     copyright: 'Copyright © 2026',
@@ -129,6 +138,9 @@ export const translations = {
     500: {
       heading: 'Probeer het later opnieuw of neem gerust contact met ons op als het probleem zich blijft voordoen.',
       buttonText: 'Terug naar Homepagina'
+    },
+    maintenance: {
+      heading: 'We voeren momenteel verbeteringen door. We zijn binnenkort weer online!'
     }
   },
 
@@ -248,8 +260,19 @@ export const translations = {
   about: {
     team: {
       heading: 'Wie is RoThi Bouw?',
-      caption:
-        'De vakkundige vakmensen achter RoThi Bouw - twee vrienden met een gedeelde visie om uitzonderlijk vakmanschap en kwaliteitsbouw te leveren'
+      caption: 'De vakkundige vakmensen achter RoThi Bouw - twee vrienden met een gedeelde visie om uitzonderlijk vakmanschap en kwaliteitsbouw te leveren',
+      team1_heading: 'Ons Toegewijde Team',
+      team1_caption: 'Ontmoet de gepassioneerde professionals die RoThi Bouw tot een succes maken.',
+      member1_name: 'Roy van der Linden',
+      member1_role: 'Mede-oprichter & Hoofdtimmerman',
+      member2_name: 'Thijs Bouwman',
+      member2_role: 'Mede-oprichter & Hoofddakdekker',
+      member3_name: 'Jane Doe',
+      member3_role: 'Projectmanager',
+      member4_name: 'John Smith',
+      member4_role: 'Bouwspecialist',
+      member5_name: 'Emily White',
+      member5_role: 'Timmerman in Opleiding'
     },
     timeline: {
       heading: 'Onze Reis',

@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
  * @param {boolean} [props.animate=true] - Optional. Enable/disable animation. If false, children render without motion wrapper
  * @param {number} [props.delay=0] - Optional. Animation delay in seconds (e.g., 0.2, 0.4, 0.6)
  * @param {number} [props.duration=0.4] - Optional. Animation duration in seconds
- * @param {string} [props.variant='fadeIn'] - Optional. Animation variant: 'fadeIn' (default) or 'slideInFromSide'
+ * @param {string} [props.variant='fadeIn'] - Optional. Animation variant: 'fadeIn' (default), 'slideInFromSide', 'slideInFromBottom', or 'scaleIn'
  * @param {string} [props.direction='left'] - Optional. For 'slideInFromSide' variant, direction of slide: 'left' or 'right'
  * @param {string} [props.style=''] - Optional. Additional inline styles to apply to the wrapper
  *
@@ -44,6 +44,16 @@ import { motion } from 'framer-motion';
  * // Slide in from right
  * <MotionWrapper variant="slideInFromSide" direction="right" delay={0.3}>
  *   <Card>Content slides in from right</Card>
+ * </MotionWrapper>
+ *
+ * // Slide in from bottom
+ * <MotionWrapper variant="slideInFromBottom">
+ *   <Card>Content slides in from bottom</Card>
+ * </MotionWrapper>
+ *
+ * // Scale in animation
+ * <MotionWrapper variant="scaleIn">
+ *   <Card>Content scales in</Card>
  * </MotionWrapper>
  *
  * // Multiple animated elements with staggered delays
@@ -84,6 +94,18 @@ export default function MotionWrapper({
           },
           whileInView: { opacity: 1, x: 0 }
         };
+      case 'slideInFromBottom':
+        return {
+          ...baseConfig,
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 }
+        };
+      case 'scaleIn':
+        return {
+          ...baseConfig,
+          initial: { opacity: 0, scale: 0.95 },
+          whileInView: { opacity: 1, scale: 1 }
+        };
       case 'fadeIn':
       default:
         return {
@@ -110,7 +132,7 @@ MotionWrapper.propTypes = {
   animate: PropTypes.bool,
   delay: PropTypes.number,
   duration: PropTypes.number,
-  variant: PropTypes.oneOf(['fadeIn', 'slideInFromSide']),
+  variant: PropTypes.oneOf(['fadeIn', 'slideInFromSide', 'slideInFromBottom', 'scaleIn']),
   direction: PropTypes.oneOf(['left', 'right']),
   style: PropTypes.object
 };

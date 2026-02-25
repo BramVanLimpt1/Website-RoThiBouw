@@ -47,21 +47,21 @@ export const createServiceDetailSections = (service, t) => {
     }
   });
 
-  // 4. Process Steps
-  const translatedProcess = {
-    heading: t(serviceProcessSteps.heading),
-    caption: t(serviceProcessSteps.caption),
-    cards: serviceProcessSteps.cards.map((card) => ({
-      ...card,
-      title: t(card.title),
-      description: t(card.description)
-    }))
-  };
+  // // 4. Process Steps
+  // const translatedProcess = {
+  //   heading: t(serviceProcessSteps.heading),
+  //   caption: t(serviceProcessSteps.caption),
+  //   cards: serviceProcessSteps.cards.map((card) => ({
+  //     ...card,
+  //     title: t(card.title),
+  //     description: t(card.description)
+  //   }))
+  // };
 
-  sections.push({
-    importFunc: () => import('@/blocks/process').then((module) => ({ default: module.Process6 })),
-    props: translatedProcess
-  });
+  // sections.push({
+  //   importFunc: () => import('@/blocks/process').then((module) => ({ default: module.Process6 })),
+  //   props: translatedProcess
+  // });
 
   // 5. Related Projects (only if exists)
   const relatedProjects = projects.filter((project) => service.relatedCategories.includes(project.category));

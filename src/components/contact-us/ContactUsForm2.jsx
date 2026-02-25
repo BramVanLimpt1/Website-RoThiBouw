@@ -53,12 +53,6 @@ import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, 
  * @param {Object} props - Component props
  * @param {string} props.name - The label text to display
  * @param {string} [props.helper] - Optional helper text to show in a tooltip on the question mark icon
- *
- * @example
- * ```jsx
- * <FieldLabel name={t('forms.firstName')} />
- * <FieldLabel name={t('forms.location')} helper={t('forms.locationHelper')} />
- * ```
  */
 function FieldLabel({ name, helper }) {
   return (
@@ -107,11 +101,6 @@ function FieldLabel({ name, helper }) {
  *
  * @param {Object} props - Component props
  * @param {string} props.message - The error message text to display
- *
- * @example
- * ```jsx
- * <ErrorMessage message={errors.email?.message} />
- * ```
  */
 function ErrorMessage({ message }) {
   return (
@@ -126,36 +115,16 @@ function ErrorMessage({ message }) {
 /**
  * ContactUsForm2 Component
  *
- * Advanced contact form with multi-field input, country dial code selector, and API integration.
- *
- * Features:
- * - Input validation for all fields (name, email, phone, message)
- * - Dynamic country code selector with flag icons
- * - Real-time error message display (translation-aware)
- * - Loading state while submitting
- * - Success/error feedback messages
- * - Language-aware default dial code (defaults to Netherlands +31)
- * - Responsive design (mobile-first)
- * - Integrated with submitContactForm() API utility for server submission
+ * Contact form with multi-field input, country dial code selector, and API integration.
  *
  * Form Fields:
  * - firstName: Required, alpha characters only
  * - lastName: Required, alpha characters only
  * - email: Required, must be valid email format
  * - phone: Required with country dial code, 7-15 digits
- * - location: Optional text input for project location
+ * - location: Required, text input for project location
  * - message: Required, multi-line text input
- *
- * Validation Approach:
- * - Uses reusable validation schemas from src/utils/validationSchema.js
- * - All error messages are translated strings from i18n
- * - Server-side validation also occurs on /api/contact endpoint
- *
- * API Integration:
- * - Calls submitContactForm() utility from src/api/contact.js
- * - Server endpoint: POST /api/contact
- * - Handles both success and error responses with translated messages
- * - Resets form on successful submission
+ * - file: Optional file upload for attachments
  */
 export default function ContactUsForm2() {
   const theme = useTheme();
@@ -379,7 +348,7 @@ export default function ContactUsForm2() {
               <OutlinedInput
                 {...register('location', getLocationSchema(t))}
                 placeholder={t('forms.locationPlaceholder')}
-                slotProps={{ input: { 'aria-label': 'Project location' } }}
+                slotProps={{ input: { 'aria-label': 'Location' } }}
                 fullWidth
                 error={errors.location && Boolean(errors.location)}
               />

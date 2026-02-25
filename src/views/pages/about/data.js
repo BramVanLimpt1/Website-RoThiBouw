@@ -1,22 +1,16 @@
 export const teamData = {
-  heading: 'about.team.heading',
-  caption: 'about.team.caption',
+  headingKey: 'about.team.heading',
+  captionKey: 'about.team.caption',
   members: [
     {
       name: 'Roy van Strijdhoven',
       avatar: '/assets/temp/placeholder_person.jpg',
-      phone: '+31681399741',
-      socialLinks: {
-        linkedin: 'https://www.linkedin.com/in/roy-van-strijdhoven-aa35a7231/'
-      }
+      phone: 'tel:+31123456789',
     },
     {
       name: 'Thijs van Gisbergen',
       avatar: '/assets/temp/placeholder_person.jpg',
-      phone: '+31657415909',
-      socialLinks: {
-        linkedin: 'https://www.linkedin.com/in/thijs-van-gisbergen-70701226a/'
-      }
+      phone: 'tel:+31987654321',
     }
   ]
 };
