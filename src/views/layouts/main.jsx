@@ -21,15 +21,15 @@ export default function MainLayout({ children }) {
 
   return (
     <>
-      {/* header section */}
+      {/* Header section */}
       <Box sx={{ bgcolor: 'grey.100' }}>
         <Navbar11>
           <NavbarContent11 {...navbar} />
         </Navbar11>
       </Box>
-      {/* page content */}
+      {/* Page content */}
       <main>{children}</main>
-      {/* footer section */}
+      {/* Footer section */}
       <Footer9 companyInfo={companyInfo} bottomBar={bottomBar} />;
     </>
   );

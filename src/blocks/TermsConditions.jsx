@@ -58,7 +58,7 @@ function useScrollspy(ids, offset = 0) {
   return activeId;
 }
 
-/***************************  TERMS CONDITION - DATA  ***************************/
+/***************************  TERMS CONDITIONS - DATA  ***************************/
 
 const menuItems = [
   {
@@ -117,9 +117,9 @@ const menuItems = [
   }
 ];
 
-/***************************  SECTIONS - TERMS CONDITION  ***************************/
+/***************************  SECTIONS - TERMS CONDITIONS  ***************************/
 
-export default function TermsConditionPage({ data = menuItems } = {}) {
+export default function TermsConditionsPage({ data = menuItems } = {}) {
   const { t } = useTranslation();
   const ids = data.map((item) => item.id);
 
@@ -138,8 +138,8 @@ export default function TermsConditionPage({ data = menuItems } = {}) {
       {/* Header Section */}
       <Stack sx={{ mt: { xs: 3, sm: 4, md: 6 }, mb: { xs: 4, sm: 5, md: 6 } }}>
         <Typeset
-          heading={t('termsCondition.heading', 'Terms & Conditions')}
-          caption={t('termsCondition.subtitle', 'Please review our terms and conditions that govern your use of our services.')}
+          heading={t('termsConditions.heading', 'Terms & Conditions')}
+          caption={t('termsConditions.subtitle', 'Please review our terms and conditions that govern your use of our services.')}
           stackProps={{
             sx: {
               textAlign: 'center',

@@ -23,6 +23,8 @@ import Typeset from '@/components/Typeset';
 
 import useTranslation from '@/hooks/useTranslation';
 
+import { SECTION_COMMON_PY } from '@/utils/constant';
+
 /***************************  HERO SLIDESHOW  ***************************/
 
 export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md: 600 }, showText = true }) {
@@ -53,6 +55,7 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
         width: '100%',
         height,
         overflow: 'hidden',
+        pb: SECTION_COMMON_PY,
         '.slick-slider': {
           height: '100%'
         },

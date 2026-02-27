@@ -68,7 +68,7 @@ export default function ProjectSpecsDescription({ specifications, description, d
                   )}
                   <ListItemText sx={{ my: 0 }}>
                     <Stack sx={{ gap: { xs: 0.5, sm: 1 } }}>
-                      <Typography variant="h5" sx={{ fontWeight: 600 }}>
+                      <Typography variant="h6" sx={{ fontWeight: 400 }}>
                         {item.labelKey ? t(item.labelKey) : item.label}
                       </Typography>
                       <Typography variant="body1" sx={{ color: 'text.secondary' }}>

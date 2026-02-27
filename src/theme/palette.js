@@ -18,8 +18,8 @@ export default function palette(mode) {
     primary: {
       lighter: '#B3D4DC', // lighter teal variant
       light: '#5AA2B5', // light teal
-      main: '#7BC4D8', // bright teal
-      dark: '#4A8B9E', // darker variant
+      main: '#4a4e52', // bright teal (This is the main highlight color for RoThiBouw)
+      dark: '#131414', // darker variant (On hover or active state)
       darker: '#051519' // darkest variant (RoThiBouw brand dark)
     },
     secondary: {

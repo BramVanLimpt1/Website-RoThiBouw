@@ -5,7 +5,7 @@ export const createProjectDetailSections = (project) => {
 
   const sections = [];
 
-  // 1. Page heading
+  // Page heading
   sections.push({
     importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectHeader })),
     props: {
@@ -14,14 +14,12 @@ export const createProjectDetailSections = (project) => {
     }
   });
 
-  // 2. Project Image Slideshow
+  // Project Image Gallery1
   if (project.images && project.images.length > 0) {
     sections.push({
-      importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSlideshow })),
+      importFunc: () => import('@/blocks/gallery/Gallery1').then((module) => ({ default: module.default })),
       props: {
         images: project.images
-        // headingKey: 'projects.gallery',
-        // captionKey: 'projects.projectGallery'
       }
     });
   }
@@ -37,18 +35,6 @@ export const createProjectDetailSections = (project) => {
       }
     });
   }
-
-  // // 2. Project Image Gallery1
-  // if (project.images && project.images.length > 0) {
-  //   sections.push({
-  //     importFunc: () => import('@/blocks/gallery/Gallery1').then((module) => ({ default: module.default })),
-  //     props: {
-  //       images: project.images
-  //       // headingKey: 'projects.gallery',
-  //       // captionKey: 'projects.projectGallery'
-  //     }
-  //   });
-  // }
 
   // 3. Secondary Section - Secondary Info + Full Description
   if (project.secondaryInfo && project.secondaryInfo.length > 0 && project.descriptionKey) {

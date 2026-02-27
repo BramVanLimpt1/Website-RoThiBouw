@@ -6,10 +6,10 @@ export const services = [
     slug: 'dakwerken',
     titleKey: 'services.dakwerken.title',
     icon: 'tabler-home',
-    heroImage: '/assets/home/image_1.jpg',
+    heroImage: '/assets/temp/placeholder.png',
     descriptionTitleKey: 'services.dakwerken.descriptionTitle',
     descriptionKey: 'services.dakwerken.description',
-    descriptionImage: '/assets/home/image_2.jpg',
+    descriptionImage: '/assets/temp/placeholder.png',
     features: [
       'services.dakwerken.features.f1',
       'services.dakwerken.features.f2',
@@ -18,17 +18,17 @@ export const services = [
       'services.dakwerken.features.f5',
       'services.dakwerken.features.f6'
     ],
-    featureImage: '/assets/home/image_3.jpg',
+    featureImage: '/assets/temp/placeholder.png',
     relatedCategories: ['dakwerken']
   },
   {
     slug: 'timmerwerk',
     titleKey: 'services.timmerwerk.title',
     icon: 'tabler-tool',
-    heroImage: '/assets/home/image_2.jpg',
+    heroImage: '/assets/temp/placeholder.png',
     descriptionTitleKey: 'services.timmerwerk.descriptionTitle',
     descriptionKey: 'services.timmerwerk.description',
-    descriptionImage: '/assets/home/image_3.jpg',
+    descriptionImage: '/assets/temp/placeholder.png',
     features: [
       'services.timmerwerk.features.f1',
       'services.timmerwerk.features.f2',
@@ -37,17 +37,17 @@ export const services = [
       'services.timmerwerk.features.f5',
       'services.timmerwerk.features.f6'
     ],
-    featureImage: '/assets/home/image_1.jpg',
-    relatedCategories: ['buitenconstructies']
+    featureImage: '/assets/temp/placeholder.png',
+    relatedCategories: ['timmerwerk']
   },
   {
     slug: 'renovaties',
     titleKey: 'services.renovaties.title',
     icon: 'tabler-paint',
-    heroImage: '/assets/home/image_3.jpg',
+    heroImage: '/assets/temp/placeholder.png',
     descriptionTitleKey: 'services.renovaties.descriptionTitle',
     descriptionKey: 'services.renovaties.description',
-    descriptionImage: '/assets/home/image_1.jpg',
+    descriptionImage: '/assets/temp/placeholder.png',
     features: [
       'services.renovaties.features.f1',
       'services.renovaties.features.f2',
@@ -56,65 +56,46 @@ export const services = [
       'services.renovaties.features.f5',
       'services.renovaties.features.f6'
     ],
-    featureImage: '/assets/home/image_2.jpg',
-    relatedCategories: ['aanbouw-renovatie', 'renovatie']
+    featureImage: '/assets/temp/placeholder.png',
+    relatedCategories: ['renovaties']
   },
   {
-    slug: 'dakkapellen',
-    titleKey: 'services.dakkapellen.title',
+    slug: 'verduurzaming',
+    titleKey: 'services.verduurzaming.title',
     icon: 'tabler-building',
-    heroImage: '/assets/home/image_1.jpg',
-    descriptionTitleKey: 'services.dakkapellen.descriptionTitle',
-    descriptionKey: 'services.dakkapellen.description',
-    descriptionImage: '/assets/home/image_3.jpg',
+    heroImage: '/assets/temp/placeholder.png',
+    descriptionTitleKey: 'services.verduurzaming.descriptionTitle',
+    descriptionKey: 'services.verduurzaming.description',
+    descriptionImage: '/assets/temp/placeholder.png',
     features: [
-      'services.dakkapellen.features.f1',
-      'services.dakkapellen.features.f2',
-      'services.dakkapellen.features.f3',
-      'services.dakkapellen.features.f4',
-      'services.dakkapellen.features.f5',
-      'services.dakkapellen.features.f6'
+      'services.verduurzaming.features.f1',
+      'services.verduurzaming.features.f2',
+      'services.verduurzaming.features.f3',
+      'services.verduurzaming.features.f4',
+      'services.verduurzaming.features.f5',
+      'services.verduurzaming.features.f6'
     ],
-    featureImage: '/assets/home/image_2.jpg',
-    relatedCategories: ['dakwerken']
+    featureImage: '/assets/temp/placeholder.png',
+    relatedCategories: ['verduurzaming']
   },
   {
-    slug: 'tuinoverkappingen',
-    titleKey: 'services.tuinoverkappingen.title',
-    icon: 'tabler-umbrella',
-    heroImage: '/assets/home/image_2.jpg',
-    descriptionTitleKey: 'services.tuinoverkappingen.descriptionTitle',
-    descriptionKey: 'services.tuinoverkappingen.description',
-    descriptionImage: '/assets/home/image_1.jpg',
-    features: [
-      'services.tuinoverkappingen.features.f1',
-      'services.tuinoverkappingen.features.f2',
-      'services.tuinoverkappingen.features.f3',
-      'services.tuinoverkappingen.features.f4',
-      'services.tuinoverkappingen.features.f5',
-      'services.tuinoverkappingen.features.f6'
-    ],
-    featureImage: '/assets/home/image_3.jpg',
-    relatedCategories: ['buitenconstructies']
-  },
-  {
-    slug: 'muurbouw',
-    titleKey: 'services.muurbouw.title',
+    slug: 'houtConstructies',
+    titleKey: 'services.houtConstructies.title',
     icon: 'tabler-wall',
-    heroImage: '/assets/home/image_3.jpg',
-    descriptionTitleKey: 'services.muurbouw.descriptionTitle',
-    descriptionKey: 'services.muurbouw.description',
-    descriptionImage: '/assets/home/image_2.jpg',
+    heroImage: '/assets/temp/placeholder.png',
+    descriptionTitleKey: 'services.houtConstructies.descriptionTitle',
+    descriptionKey: 'services.houtConstructies.description',
+    descriptionImage: '/assets/temp/placeholder.png',
     features: [
-      'services.muurbouw.features.f1',
-      'services.muurbouw.features.f2',
-      'services.muurbouw.features.f3',
-      'services.muurbouw.features.f4',
-      'services.muurbouw.features.f5',
-      'services.muurbouw.features.f6'
+      'services.houtConstructies.features.f1',
+      'services.houtConstructies.features.f2',
+      'services.houtConstructies.features.f3',
+      'services.houtConstructies.features.f4',
+      'services.houtConstructies.features.f5',
+      'services.houtConstructies.features.f6'
     ],
-    featureImage: '/assets/home/image_1.jpg',
-    relatedCategories: ['renovatie']
+    featureImage: '/assets/temp/placeholder.png',
+    relatedCategories: ['houtConstructies']
   }
 ];
 

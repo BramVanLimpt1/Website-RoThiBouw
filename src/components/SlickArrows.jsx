@@ -25,7 +25,7 @@ export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
     width: 48,
     borderRadius: '50%',
     backgroundColor: 'primary.main',
-    color: 'primary.contrastText',
+    color: 'text.primary',
     '&:hover': {
       backgroundColor: 'primary.dark'
     },

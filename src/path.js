@@ -7,5 +7,5 @@ export const PAGE_PATH = {
   contactPage: '/contact',
   servicesPage: '/services',
   privacyPolicyPage: '/privacy-policy',
-  termsConditionPage: '/terms-condition'
+  termsConditionsPage: '/terms-conditions'
 };

@@ -55,7 +55,7 @@ export const servicesData = {
       title: 'home.services.sustainability.title',
       content: 'home.services.sustainability.description',
       link: {
-        href: '/services/verduurzaaming',
+        href: '/services/verduurzaming',
         children: 'common.learnMore'
       }
     },
@@ -64,7 +64,7 @@ export const servicesData = {
       title: 'home.services.woodConstructions.title',
       content: 'home.services.woodConstructions.description',
       link: {
-        href: '/services/hout-constructies',
+        href: '/services/houtConstructies',
         children: 'common.learnMore'
       }
     }

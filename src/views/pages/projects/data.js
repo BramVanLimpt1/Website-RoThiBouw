@@ -15,15 +15,15 @@ export const projectCategories = [
     labelKey: 'projects.categories.timmerwerk'
   },
   {
-    id: 'renovatie',
-    labelKey: 'projects.categories.renovatie'
+    id: 'renovaties',
+    labelKey: 'projects.categories.renovaties'
   },
   {
-    id: 'verduurzaaming',
-    labelKey: 'projects.categories.verduurzaaming'
+    id: 'verduurzaming',
+    labelKey: 'projects.categories.verduurzaming'
   },
   {
-    id: 'hout-constructies',
+    id: 'houtConstructies',
     labelKey: 'projects.categories.houtConstructies'
   }
 ];

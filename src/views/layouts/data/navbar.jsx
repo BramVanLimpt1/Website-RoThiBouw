@@ -3,8 +3,6 @@ import useTranslation from '@/hooks/useTranslation';
 
 import { MegaMenuType } from '@/enum';
 
-// TODO: Make the link also based on the translation key, so we can have correct link name for different languages
-
 /***************************  NAVBAR - DATA  ***************************/
 
 export const useNavbarData = () => {
@@ -26,28 +24,28 @@ export const useNavbarData = () => {
           menuItems: [
             {
               icon: 'tabler-home',
-              title: t('services.roofing.title'),
+              title: t('projects.categories.dakwerken'),
               link: '/services/dakwerken'
             },
             {
               icon: 'tabler-hammer',
-              title: t('services.carpentry.title'),
+              title: t('projects.categories.timmerwerk'),
               link: '/services/timmerwerk'
             },
             {
               icon: 'tabler-crane',
-              title: t('services.renovations.title'),
+              title: t('projects.categories.renovaties'),
               link: '/services/renovaties'
             },
             {
               icon: 'tabler-michelin-star-green',
-              title: t('services.sustainability.title'),
-              link: '/services/verduurzaaming'
+              title: t('projects.categories.verduurzaming'),
+              link: '/services/verduurzaming'
             },
             {
               icon: 'tabler-wood',
-              title: t('services.woodConstructions.title'),
-              link: '/services/hout-constructies'
+              title: t('projects.categories.houtConstructies'),
+              link: '/services/houtConstructies'
             }
           ]
         }

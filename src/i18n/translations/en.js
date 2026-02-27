@@ -53,7 +53,7 @@ export const translations = {
     services: 'Services',
     career: 'Career',
     privacyPolicy: 'Privacy Policy',
-    termsCondition: 'Terms & Conditions'
+    termsConditions: 'Terms & Conditions'
   },
 
   // Common actions and words
@@ -329,7 +329,7 @@ export const translations = {
   },
 
   // Terms & Conditions Page
-  termsCondition: {
+  termsConditions: {
     heading: 'Terms & Conditions',
     subtitle: 'Please review our terms and conditions that govern your use of our services.',
     sections: {
@@ -420,46 +420,32 @@ export const translations = {
         f6: 'Structural modifications'
       }
     },
-    dakkapellen: {
-      title: 'Dormer Windows',
-      descriptionTitle: 'More Space with a Dormer Window',
+    verduurzaming: {
+      title: 'Sustainability',
+      descriptionTitle: 'Sustainable Construction Solutions',
       description:
-        'A dormer window is the ideal way to create extra space and light in your attic. We install dormer windows in various styles and sizes, perfectly tailored to your home. From permit application to delivery, we take care of everything for you.',
+        'Sustainability is increasingly important in construction. We offer various sustainable solutions, from energy-efficient insulation to the use of environmentally friendly materials. Together we look at how we can make your project more sustainable without compromising on quality or aesthetics.',
       features: {
-        f1: 'Flat and pitched dormers',
-        f2: 'Custom designs',
-        f3: 'Insulation and ventilation included',
-        f4: 'Roof tiles and zinc cladding',
-        f5: 'Frames and glazing',
-        f6: 'Assistance with permit applications'
+        f1: 'Energy-efficient insulation',
+        f2: 'Use of sustainable materials',
+        f3: 'Solar panel installation',
+        f4: 'Green roofs and walls',
+        f5: 'Water-saving solutions',
+        f6: 'Sustainable renovation techniques'
       }
     },
-    tuinoverkappingen: {
-      title: 'Garden Canopies',
-      descriptionTitle: 'Enjoy Your Garden with a Canopy',
+    houtConstructies: {
+      title: 'Wood Construction',
+      descriptionTitle: 'Expert Wood Construction Services',
       description:
-        'With a garden canopy from RoThiBouw, you can enjoy your outdoor space all year round. We build durable and stylish custom canopies, from classic wooden pergolas to modern aluminum structures.',
+        "Wood is a versatile and beautiful material for construction. Whether it's a wooden canopy, a garden structure, or a custom wood project, we have the expertise to bring your vision to life. With attention to detail and a focus on quality, we create durable and aesthetically pleasing wood constructions that fit perfectly with your home or business.",
       features: {
         f1: 'Custom wooden canopies',
-        f2: 'Verandas and terrace covers',
-        f3: 'Pergolas and gazebos',
-        f4: 'Light-transmitting roof panels',
-        f5: 'Integrated lighting and electrical',
-        f6: 'Weather-resistant finishing'
-      }
-    },
-    muurbouw: {
-      title: 'Wall Construction',
-      descriptionTitle: 'Solid Wall Construction & Masonry',
-      description:
-        'From load-bearing walls to garden walls and partition walls, RoThiBouw delivers expert masonry and wall construction. We work with various materials and techniques to guarantee a sturdy and beautiful result.',
-      features: {
-        f1: 'Load-bearing and non-load-bearing walls',
-        f2: 'Garden walls and boundary fences',
-        f3: 'Masonry in various styles',
-        f4: 'Concrete blocks and facing bricks',
-        f5: 'Pointing and repair work',
-        f6: 'Structural reinforcements'
+        f2: 'Garden structures and pergolas',
+        f3: 'Wooden carports and garages',
+        f4: 'Custom wood projects',
+        f5: 'Wooden facades and cladding',
+        f6: 'Wooden interior structures'
       }
     },
     process: {
@@ -499,21 +485,18 @@ export const translations = {
     caption: 'Explore our completed construction projects and see the quality of our craftsmanship',
     filterByCategory: 'Filter by Category',
     noProjects: 'No projects found in this category',
-    aboutProject: 'About this Project',
-    activities: 'Activities',
     specifications: 'Specifications',
-    interestedTitle: 'Interested in a Similar Project?',
-    interestedDescription: 'Contact us for a no-obligation conversation about the possibilities.',
-    contactButton: 'Contact Us',
     projectNotFound: 'Project not found',
 
     // Category labels
     categories: {
       all: 'All Projects',
       buitenconstructies: 'Outdoor Constructions',
-      aanbouwRenovatie: 'Extensions & Renovations',
       dakwerken: 'Roofing',
-      renovatie: 'Renovations'
+      timmerwerk: 'Carpentry',
+      renovaties: 'Renovations',
+      verduurzaming: 'Sustainability',
+      houtConstructies: 'Wood Constructions'
     },
 
     // Specification labels

@@ -54,7 +54,7 @@ export const translations = {
     services: 'Diensten',
     career: 'Carrière',
     privacyPolicy: 'Privacybeleid',
-    termsCondition: 'Algemene Voorwaarden'
+    termsConditions: 'Algemene Voorwaarden'
   },
 
   // Common actions and words
@@ -193,7 +193,7 @@ export const translations = {
       },
       sustainability: {
         title: 'Verduurzaaming',
-        description: 'Professionele verduurzaaming voor uw woning of bedrijfspand'
+        description: 'Professionele verduurzaming voor uw woning of bedrijfspand'
       },
       woodConstructions: {
         title: 'Houtconstructies',
@@ -318,7 +318,7 @@ export const translations = {
   },
 
   // Terms & Conditions Page
-  termsCondition: {
+  termsConditions: {
     heading: 'Algemene Voorwaarden',
     subtitle: 'Controleer onze algemene voorwaarden die uw gebruik van onze diensten bepalen.',
     sections: {
@@ -409,46 +409,32 @@ export const translations = {
         f6: 'Constructieve aanpassingen'
       }
     },
-    dakkapellen: {
-      title: 'Dakkapellen',
-      descriptionTitle: 'Meer Ruimte met een Dakkapel',
+    verduurzaming: {
+      title: 'Verduurzaming',
+      descriptionTitle: 'Duurzame Oplossingen voor Uw Woning',
       description:
-        'Een dakkapel is de ideale manier om extra ruimte en licht te creëren op uw zolder. Wij plaatsen dakkapellen in diverse stijlen en maten, perfect afgestemd op uw woning. Van vergunningsaanvraag tot oplevering, wij regelen het voor u.',
+        'Bij RoThiBouw bieden we diverse verduurzamingsoplossingen om uw woning energiezuiniger en milieuvriendelijker te maken. Van isolatie tot zonnepanelen, wij helpen u bij het realiseren van een duurzame woning.',
       features: {
-        f1: 'Platte en schuin aflopende dakkapellen',
-        f2: 'Maatwerk ontwerpen',
-        f3: 'Isolatie en ventilatie inbegrepen',
-        f4: 'Dakpannen en zinken bekleding',
-        f5: 'Kozijnen en beglazing',
-        f6: 'Hulp bij vergunningsaanvraag'
+        f1: 'Isolatie en energiebesparing',
+        f2: 'Zonnepanelen en zonne-energie',
+        f3: 'Duurzame verwarmingssystemen',
+        f4: 'Waterbesparende oplossingen',
+        f5: 'Energiezuinige verlichting',
+        f6: 'Milieuvriendelijke materialen'
       }
     },
-    tuinoverkappingen: {
-      title: 'Tuinoverkappingen',
-      descriptionTitle: 'Geniet van Uw Tuin met een Overkapping',
+    houtConstructies: {
+      title: 'Hout Constructies',
+      descriptionTitle: 'Solide Houtconstructies & Maatwerk',
       description:
-        'Met een tuinoverkapping van RoThiBouw kunt u het hele jaar genieten van uw buitenruimte. Wij bouwen duurzame en stijlvolle overkappingen op maat, van klassiek houten pergola tot moderne aluminium constructie.',
+        'Van houten draagconstructies tot maatwerk meubels, RoThiBouw levert vakkundig houtwerk. Wij werken met verschillende houtsoorten en technieken om een stevig en mooi resultaat te garanderen.',
       features: {
-        f1: 'Houten overkappingen op maat',
-        f2: "Veranda's en terrasoverkappingen",
-        f3: "Pergola's en prielen",
-        f4: 'Lichtdoorlatende dakplaten',
-        f5: 'Geïntegreerde verlichting en elektra',
-        f6: 'Weerbestendige afwerking'
-      }
-    },
-    muurbouw: {
-      title: 'Muurbouw',
-      descriptionTitle: 'Solide Muurbouw & Metselwerk',
-      description:
-        'Van dragende muren tot tuinmuren en scheidingswanden, RoThiBouw levert vakkundig metsel- en muurwerk. Wij werken met verschillende materialen en technieken om een stevig en mooi resultaat te garanderen.',
-      features: {
-        f1: 'Dragende en niet-dragende muren',
-        f2: 'Tuinmuren en erfafscheidingen',
-        f3: 'Metselwerk in diverse stijlen',
-        f4: 'Betonblokken en gevelstenen',
-        f5: 'Voegwerk en herstel',
-        f6: 'Constructieve versterkingen'
+        f1: 'Houten draagconstructies',
+        f2: 'Maatwerk meubels',
+        f3: 'Kozijnen en deurkozijnen',
+        f4: 'Binnenbetimmering en afwerking',
+        f5: 'Houten vloeren en plafonds',
+        f6: 'Maatwerk meubels en inbouwkasten'
       }
     },
     process: {
@@ -488,29 +474,17 @@ export const translations = {
     caption: 'Ontdek onze uitgevoerde bouwprojecten en zie de kwaliteit van ons vakmanschap',
     filterByCategory: 'Filter op Categorie',
     noProjects: 'Geen projecten gevonden in deze categorie',
-    aboutProject: 'Over dit Project',
-    activities: 'Werkzaamheden',
     specifications: 'Specificaties',
-    interestedTitle: 'Interesse in een Vergelijkbaar Project?',
-    interestedDescription: 'Neem contact met ons op voor een vrijblijvend gesprek over de mogelijkheden.',
-    contactButton: 'Contact Opnemen',
     projectNotFound: 'Project niet gevonden',
 
     // Category labels
     categories: {
       all: 'Alle Projecten',
-      buitenconstructies: 'Buitenconstructies',
-      aanbouwRenovatie: 'Aanbouw & Renovatie',
       dakwerken: 'Dakwerken',
-      renovatie: 'Renovatie'
-    },
-
-    // Specification labels
-    specs: {
-      material: 'Materiaal',
-      surfaceArea: 'Oppervlakte',
-      executionTime: 'Uitvoeringstijd',
-      warranty: 'Garantie'
+      timmerwerk: 'Timmerwerk',
+      renovaties: 'Renovaties',
+      verduurzaming: 'Verduurzaming',
+      houtConstructies: 'Hout Constructies'
     },
 
     // Project items
