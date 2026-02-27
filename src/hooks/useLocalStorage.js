@@ -1,3 +1,4 @@
+// @react
 import { useState, useEffect } from 'react';
 
 /***************************  HOOKS - LOCAL STORAGE  ***************************/

@@ -1,3 +1,4 @@
+// @react
 import { useEffect } from 'react';
 
 // @project

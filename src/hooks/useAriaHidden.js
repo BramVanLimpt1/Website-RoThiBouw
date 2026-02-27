@@ -1,3 +1,4 @@
+// @react
 import { useEffect, useCallback } from 'react';
 
 /***************************  HOOKS - ARIA HIDDEN  ***************************/
