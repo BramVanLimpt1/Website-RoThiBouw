@@ -13,7 +13,7 @@ import useTranslation from '@/hooks/useTranslation';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 // @sections
-import { createServiceDetailSections } from './sections';
+import { createServiceDetailSections } from './data';
 
 /***************************  SERVICE DETAIL PAGE  ***************************/
 
