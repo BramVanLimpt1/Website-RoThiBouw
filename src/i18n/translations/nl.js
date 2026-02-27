@@ -16,20 +16,18 @@ export const translations = {
     website: 'Website',
     websitePlaceholder: 'Voer je website in',
     submit: 'Versturen',
-    send: 'Bericht Versturen',
-    sendEmail: 'E-mail Versturen',
-    getInTouch: 'Neem Contact Op',
+    send: 'Bericht versturen',
+    sendEmail: 'E-mail versturen',
+    getInTouch: 'Neem contact op',
     contactUs: 'Contact',
-    fullName: 'Volledige Naam',
+    fullName: 'Volledige naam',
     fullNamePlaceholder: 'Voer je volledige naam in',
-    contactPerson: 'Met wie wil je contact opnemen?',
-    contactPersonPlaceholder: 'Selecteer een persoon',
     location: 'Locatie',
     locationPlaceholder: 'Voer je locatie in',
     locationHelper:
       'Het is erg behulpzaam als we weten waar het mogelijke project of ondersteuning plaatsvindt, zodat we dat in acht kunnen nemen.',
     attachment: 'Bijlage',
-    attachmentHelper: 'Voeg een bestand toe aan je bericht',
+    attachmentHelper: 'Voeg optioneel een bestand toe aan je bericht',
     attachmentDrop: 'Sleep hier een bestand of klik om een bestand te selecteren',
     attachmentSize: 'Maximale bestandsgrootte 10MB',
     // Validation messages
@@ -43,8 +41,7 @@ export const translations = {
       phoneRequired: 'Telefoonnummer is verplicht',
       phoneInvalid: 'Ongeldig telefoonnummer',
       messageRequired: 'Bericht is verplicht',
-      locationRequired: 'Locatie is verplicht',
-      contactPersonRequired: 'Selecteer met wie je contact wilt opnemen'
+      locationRequired: 'Locatie is verplicht'
     }
   },
 
@@ -55,15 +52,9 @@ export const translations = {
     projects: 'Projecten',
     contact: 'Contact',
     services: 'Diensten',
-    pricing: 'Prijzen',
-    faq: 'Veelgestelde Vragen',
     career: 'Carrière',
     privacyPolicy: 'Privacybeleid',
-    termsCondition: 'Algemene Voorwaarden',
-    blog: 'Blog',
-    pages: "Pagina's",
-    company: 'Bedrijf',
-    support: 'Ondersteuning'
+    termsCondition: 'Algemene Voorwaarden'
   },
 
   // Common actions and words
@@ -71,10 +62,10 @@ export const translations = {
     loading: 'Laden...',
     error: 'Er is een fout opgetreden',
     success: 'Succes!',
-    learnMore: 'Meer Informatie',
-    getStarted: 'Begin Nu',
-    readMore: 'Lees Meer',
-    viewAll: 'Bekijk Alles',
+    learnMore: 'Meer informatie',
+    getStarted: 'Begin nu',
+    readMore: 'Lees meer',
+    viewAll: 'Bekijk alles',
     close: 'Sluiten',
     open: 'Openen',
     save: 'Opslaan',
@@ -111,8 +102,6 @@ export const translations = {
     copyright: 'Copyright © 2026',
     privacyPolicy: 'Privacybeleid',
     termsConditions: 'Algemene Voorwaarden',
-    joinNewsletter: 'Schrijf je in voor onze nieuwsbrief',
-    joinNewsletterDescription: 'Ontdek de functies die je klantrelaties zullen transformeren',
     enterEmailAddress: 'Voer je e-mailadres in',
     followUsOn: 'Volg Ons op',
     allRightsReserved: 'Alle rechten voorbehouden',
@@ -120,8 +109,7 @@ export const translations = {
     phoneRoy: 'Telefoon Roy',
     phoneThijs: 'Telefoon Thijs',
     kvkNumber: 'KvK Nummer',
-    btwNumber: 'BTW Nummer',
-    legal: 'Juridisch'
+    btwNumber: 'BTW Nummer'
   },
 
   // Language names
@@ -137,7 +125,8 @@ export const translations = {
       buttonText: 'Terug naar Homepagina'
     },
     500: {
-      heading: 'Probeer het later opnieuw of neem gerust contact met ons op als het probleem zich blijft voordoen.',
+      heading:
+        'Probeer het later opnieuw of neem gerust contact met ons op als het probleem zich blijft voordoen. Email: info@rothibouw.nl',
       buttonText: 'Terug naar Homepagina'
     },
     maintenance: {
@@ -145,54 +134,27 @@ export const translations = {
     }
   },
 
-  // Auth
-  auth: {
-    email: 'E-mail',
-    emailPlaceholder: 'voorbeeld@gmail.com',
-    password: 'Wachtwoord',
-    passwordPlaceholder: 'Voer uw wachtwoord in',
-    forgotPassword: 'Wachtwoord vergeten?',
-    signIn: 'Aanmelden',
-    sendCode: 'Code verzenden',
-    newPasswordPlaceholder: 'Voer een nieuw wachtwoord in',
-    confirmPassword: 'Bevestig wachtwoord',
-    confirmPasswordPlaceholder: 'Voer het bevestigingswachtwoord in',
-    passwordMatchError: 'De wachtwoorden komen niet overeen',
-    resetPassword: 'Wachtwoord opnieuw instellen',
-    verify: 'Verifiëren',
-    firstName: 'Voornaam',
-    firstNamePlaceholder: 'Voer de voornaam in',
-    lastName: 'Achternaam',
-    lastNamePlaceholder: 'Voer de achternaam in',
-    signUp: 'Aanmelden',
-    signInGoogle: 'Log in met Google',
-    signInApple: 'Log in met Apple',
-    signInFacebook: 'Log in met Facebook',
-    privacyPolicy: 'Privacybeleid',
-    termsAndConditions: 'Algemene voorwaarden'
-  },
-
   // Contact Page
   contact: {
     pageTitle: 'Contact',
-    heading: 'Neem Contact Op',
-    caption: 'Heeft u een vraag of wilt u samenwerken? We horen graag van u.',
+    heading: 'Neem contact met ons op',
+    caption: 'Heeft u een vraag? We horen graag van u.',
     emailCard: {
-      title: 'E-mail Ons',
-      content: 'Stuur ons altijd een e-mail',
-      buttonText: 'E-mail Versturen'
+      title: 'E-mail ons',
+      content: 'U kunt ons altijd een e-mail sturen',
+      buttonText: 'E-mail versturen'
     },
     phoneCard: {
-      title: 'Bel Ons',
+      title: 'Bel ons',
       content: 'Bel Roy of Thijs voor direct contact',
-      buttonText: 'Bel Nu',
+      buttonText: 'Bel nu',
       roy: 'Bel Roy',
       thijs: 'Bel Thijs'
     },
     whatsappCard: {
-      title: 'WhatsApp Ons',
+      title: 'WhatsApp ons',
       content: 'Snelle en gemakkelijke communicatie',
-      buttonText: 'Start Chat',
+      buttonText: 'Start chat',
       roy: 'Chat met Roy',
       thijs: 'Chat met Thijs'
     }
@@ -242,7 +204,7 @@ export const translations = {
       heading: 'Twee vrienden,',
       highlight: 'één missie',
       caption:
-        'RoThi Bouw is opgericht door Roy en Thijs — twee jonge vakmensen met een gedeelde passie voor kwaliteitsbouw. Het begon als een droom en is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties. Met oog voor detail en een persoonlijke aanpak bij elk project, leveren we vakmanschap waar u op kunt bouwen.',
+        'RoThiBouw is opgericht door Roy en Thijs — twee jonge vakmensen met een gedeelde passie voor kwaliteitsbouw. Het begon als een droom en is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties. Met oog voor detail en een persoonlijke aanpak bij elk project, leveren we vakmanschap waar u op kunt bouwen.',
       button: 'Leer Ons Kennen'
     },
     projects: {
@@ -259,38 +221,32 @@ export const translations = {
 
   // About Page
   about: {
-    team: {
-      heading: 'Wie is RoThi Bouw?',
-      caption:
-        'De vakkundige vakmensen achter RoThi Bouw - twee vrienden met een gedeelde visie om uitzonderlijk vakmanschap en kwaliteitsbouw te leveren',
-      team1_heading: 'Ons Toegewijde Team',
-      team1_caption: 'Ontmoet de gepassioneerde professionals die RoThi Bouw tot een succes maken.',
-      member1_name: 'Roy van der Linden',
-      member1_role: 'Mede-oprichter & Hoofdtimmerman',
-      member2_name: 'Thijs Bouwman',
-      member2_role: 'Mede-oprichter & Hoofddakdekker',
-      member3_name: 'Jane Doe',
-      member3_role: 'Projectmanager',
-      member4_name: 'John Smith',
-      member4_role: 'Bouwspecialist',
-      member5_name: 'Emily White',
-      member5_role: 'Timmerman in Opleiding'
+    hero: {
+      title: 'Twee vrienden,',
+      titleHighlight: 'één missie',
+      description: '...'
+    },
+    story: {
+      heading: 'Van droom naar',
+      highlight: 'werkelijkheid',
+      p1: 'RoThiBouw is ontstaan uit de gedeelde passie van Roy en Thijs voor de bouw en het vakmanschap. Twee vrienden die ...',
+      p2: 'Wat begon met kleine klussen voor vrienden en familie groeide al snel uit tot een volwaardig bouwbedrijf. Vandaag mogen we trots zijn op de vele projecten die we hebben gerealiseerd, steeds met dezelfde toewijding en oog voor detail.',
+      p3: 'Wij zijn gespecialiseerd in timmerwerk, dakwerken, renovaties en aanbouwen, en we benaderen elk project alsof het ons eigen huis betreft.'
     },
     timeline: {
-      heading: 'Onze Reis',
-      caption: 'Belangrijke mijlpalen die RoThi Bouw vormden tot het bedrijf dat we vandaag zijn',
+      heading: 'Onze reis',
+      caption: 'Belangrijke mijlpalen die RoThiBouw vormden tot het bedrijf dat we vandaag zijn!',
       founded: {
         title: '2023 - Bedrijf Opgericht',
         description:
-          'RoThi Bouw werd in 2023 opgericht door twee vrienden met een gedeelde passie voor kwaliteitsbouw en vakmanschap. Wat begon als een droom tussen twee ervaren bouwprofessionals is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties.'
+          'RoThiBouw werd in 2023 opgericht door twee vrienden. Wat begon als een droom tussen twee ervaren bouwprofessionals is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties.'
       },
       office: {
-        title: 'Nieuwe Kantoorlocatie',
-        description:
-          'Verhuisd naar een nieuw kantoor en werkplaats, wat ons meer ruimte geeft om onze projecten met precisie te plannen en voor te bereiden.'
+        title: 'Nieuwe Werkplaats',
+        description: 'Verhuisd naar een nieuwe werkplaats, wat ons meer ruimte geeft om onze projecten te plannen en voor te bereiden.'
       },
       projects: {
-        title: '100+ Projecten Voltooid',
+        title: '100+ Projecten',
         description:
           'Hebben een belangrijke mijlpaal bereikt door meer dan 100 succesvolle bouwprojecten voor tevreden klanten af te ronden.'
       },
@@ -298,6 +254,17 @@ export const translations = {
         title: 'Aannemerscertificering',
         description:
           'Werken aan het verkrijgen van officiële aannemerscertificeringen om onze mogelijkheden voor grotere en complexere projecten uit te breiden.'
+      }
+    },
+    founders: {
+      heading: 'De mensen achter RoThiBouw',
+      roy: {
+        role: 'Mede-oprichter',
+        quote: '"..."'
+      },
+      thijs: {
+        role: 'Mede-oprichter',
+        quote: '"..."'
       }
     }
   },

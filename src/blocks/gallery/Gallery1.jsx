@@ -59,7 +59,7 @@ export default function Gallery1({ headingKey, captionKey, images }) {
 
   // Map over images to create an array for the lightbox
   const lightBox = images.map((image) => {
-    return { ...images, src: GetImagePath(image.src) };
+    return { src: GetImagePath(image) };
   });
 
   return (
@@ -72,7 +72,7 @@ export default function Gallery1({ headingKey, captionKey, images }) {
               <Box sx={{ borderRadius: BORDER_RADIUS.xs, overflow: 'hidden' }}>
                 <motion.div whileHover={{ scale: 1.02 }}>
                   <GraphicsCard
-                    bgImage={item.src}
+                    bgImage={typeof item === 'string' ? GetImagePath(item) : GetImagePath(item.src)}
                     sx={{
                       height: { xs: 200, sm: 300, md: 366 },
                       cursor: 'pointer',

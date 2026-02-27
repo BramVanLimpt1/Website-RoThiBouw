@@ -22,6 +22,11 @@ export default function useTranslation() {
 
   // Helper function to get nested translation by dot notation
   const t = (key, fallback = '') => {
+    // Handle undefined or null keys
+    if (!key || typeof key !== 'string') {
+      return fallback || key || '';
+    }
+
     const keys = key.split('.');
     let result = translations;
 

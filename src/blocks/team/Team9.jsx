@@ -36,7 +36,6 @@ export default function Team9({ heading, caption, members }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: 4, pb: 5 }}>
-        {/* Header */}
         <Typeset
           {...{
             heading: t(heading),
@@ -46,8 +45,6 @@ export default function Team9({ heading, caption, members }) {
             captionProps: { sx: { textAlign: 'center' } }
           }}
         />
-
-        {/* Team Members */}
         <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
           {members?.slice(0, 2).map((item, index) => (
             <Grid key={index} size={{ xs: 12, sm: 6, md: 5 }}>

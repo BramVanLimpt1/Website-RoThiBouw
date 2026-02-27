@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         {/* Sitemap reference for SEO */}
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ProviderWrapper>{children}</ProviderWrapper>
         </AppRouterCacheProvider>

@@ -10,6 +10,7 @@ import Image from 'next/image';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { alpha } from '@mui/material/styles';
 
 // @third-party
@@ -97,7 +98,7 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
               />
             )}
           </Box>
-          {showText && (slides[0].title || slides[0].description) && (
+          {showText && slides.length > 0 && (slides[0].title || slides[0].description) && (
             <Box
               sx={{
                 position: 'absolute',
@@ -111,8 +112,24 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
             >
               <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
                 <Typeset
-                  heading={t(slides[0].title)}
-                  caption={t(slides[0].description)}
+                  heading={
+                    slides[0].title ? (
+                      <>
+                        {t(slides[0].title)}
+                        {slides[0].titleHighlight && (
+                          <>
+                            {' '}
+                            <Box component="span" sx={{ color: 'primary.main' }}>
+                              {t(slides[0].titleHighlight)}
+                            </Box>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      ''
+                    )
+                  }
+                  caption={slides[0].description ? t(slides[0].description) : ''}
                   stackProps={{
                     sx: {
                       textAlign: 'center',
@@ -178,7 +195,28 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                   >
                     <MotionWrapper style={{ display: 'inline-block', height: 'auto' }}>
                       <Typeset
-                        heading={t(slide.title)}
+                        heading={
+                          slide.title ? (
+                            <>
+                              {slide.label && (
+                                <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 1 }}>
+                                  {t(slide.label)}
+                                </Typography>
+                              )}
+                              {t(slide.title)}
+                              {slide.titleHighlight && (
+                                <>
+                                  {' '}
+                                  <Box component="span" sx={{ color: 'primary.main' }}>
+                                    {t(slide.titleHighlight)}
+                                  </Box>
+                                </>
+                              )}
+                            </>
+                          ) : (
+                            ''
+                          )
+                        }
                         caption={t(slide.description)}
                         stackProps={{
                           sx: {
@@ -216,7 +254,9 @@ HeroSlideshow.propTypes = {
     PropTypes.shape({
       image: PropTypes.string.isRequired,
       title: PropTypes.string,
-      description: PropTypes.string
+      description: PropTypes.string,
+      label: PropTypes.string,
+      titleHighlight: PropTypes.string
     })
   ).isRequired,
   height: PropTypes.object,

@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import MotionWrapper from '@/components/MotionWrapper';
 import Typeset from '@/components/Typeset';
+
 import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  PROJECT - HEADER  ***************************/

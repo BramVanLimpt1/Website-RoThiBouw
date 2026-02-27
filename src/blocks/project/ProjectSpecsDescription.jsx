@@ -16,22 +16,13 @@ import Typography from '@mui/material/Typography';
 import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import SvgIcon from '@/components/SvgIcon';
+
 import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  PROJECT SPECS & DESCRIPTION  ***************************/
 
-/**
- * ProjectSpecsDescription Block
- *
- * @param {Object} props - Component props
- * @param {Array} props.specifications - Array of spec items with icon, label/labelKey, and value/valueKey
- * @param {string} props.description - Direct description text
- * @param {string} props.descriptionKey - Translation key for description
- * @param {string} props.specsTitle - Optional title for specs section
- * @param {string} props.specsTitleKey - Optional translation key for specs title
- * @param {boolean} props.reverse - Flip the layout (description on left, specs on right)
- */
 export default function ProjectSpecsDescription({ specifications, description, descriptionKey, specsTitle, specsTitleKey, reverse }) {
   const { t } = useTranslation();
 

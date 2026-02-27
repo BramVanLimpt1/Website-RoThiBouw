@@ -29,8 +29,8 @@ export default function Typeset({ heading, caption, stackProps, headingProps, ca
 }
 
 Typeset.propTypes = {
-  heading: PropTypes.string,
-  caption: PropTypes.string,
+  heading: PropTypes.node,
+  caption: PropTypes.node,
   stackProps: PropTypes.any,
   headingProps: PropTypes.any,
   captionProps: PropTypes.any

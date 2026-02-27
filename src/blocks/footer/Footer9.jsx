@@ -1,4 +1,5 @@
 'use client';
+import PropTypes from 'prop-types';
 
 // @next
 import NextLink from 'next/link';
@@ -22,9 +23,6 @@ import useTranslation from '@/hooks/useTranslation';
 import { CopyrightType } from '@/enum';
 
 import { SECTION_COMMON_PY } from '@/utils/constant';
-
-// @types
-import PropTypes from 'prop-types';
 
 /***************************  FOOTER - 9 / HELPER  ***************************/
 

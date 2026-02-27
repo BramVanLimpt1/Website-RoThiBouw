@@ -42,7 +42,6 @@ export default function TimeLine1({ heading, caption, sections }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 6, md: 8 } }} ref={containerRef}>
-        {/* Header */}
         <Typeset
           {...{
             heading: t(heading),
@@ -52,10 +51,7 @@ export default function TimeLine1({ heading, caption, sections }) {
             captionProps: { sx: { maxWidth: 700, textAlign: 'center' } }
           }}
         />
-
-        {/* Timeline Container */}
         <Box sx={{ position: 'relative' }}>
-          {/* Timeline Line - Background (gray) */}
           <Box
             sx={{
               position: 'absolute',
@@ -68,8 +64,6 @@ export default function TimeLine1({ heading, caption, sections }) {
               display: { xs: 'none', md: 'block' }
             }}
           />
-
-          {/* Timeline Line - Progress (colored) */}
           <motion.div
             style={{
               position: 'absolute',
@@ -85,8 +79,6 @@ export default function TimeLine1({ heading, caption, sections }) {
               }
             }}
           />
-
-          {/* Timeline Items */}
           <Stack sx={{ gap: { xs: 6, md: 10 } }}>
             {sections?.map((section, index) => {
               const isEven = index % 2 === 0;
@@ -102,8 +94,7 @@ export default function TimeLine1({ heading, caption, sections }) {
                     position: 'relative'
                   }}
                 >
-                  {/* Left Side Content */}
-                  <Box sx={{ flex: 1, width: { xs: '100%', md: 'auto' } }}>
+                  <Box sx={{ flex: 1, width: { xs: '100%', md: 'auto' }, order: { xs: isEven ? 1 : 3, md: 'unset' } }}>
                     {isEven ? (
                       // Image on left for even items (0, 2, 4...)
                       <MotionWrapper variant="slideInFromSide" direction="left" delay={0.2} duration={0.6}>
@@ -136,8 +127,6 @@ export default function TimeLine1({ heading, caption, sections }) {
                       </MotionWrapper>
                     )}
                   </Box>
-
-                  {/* Timeline Dot */}
                   <Box
                     sx={{
                       position: { xs: 'relative', md: 'absolute' },
@@ -146,7 +135,8 @@ export default function TimeLine1({ heading, caption, sections }) {
                       zIndex: 2,
                       display: 'flex',
                       justifyContent: 'center',
-                      my: { xs: 0, md: 0 }
+                      my: { xs: 0, md: 0 },
+                      order: { xs: 2, md: 'unset' }
                     }}
                   >
                     <MotionWrapper delay={0.3} duration={0.4}>
@@ -164,7 +154,7 @@ export default function TimeLine1({ heading, caption, sections }) {
                   </Box>
 
                   {/* Right Side Content */}
-                  <Box sx={{ flex: 1, width: { xs: '100%', md: 'auto' } }}>
+                  <Box sx={{ flex: 1, width: { xs: '100%', md: 'auto' }, order: { xs: isEven ? 3 : 1, md: 'unset' } }}>
                     {isEven ? (
                       // Text on right for even items (0, 2, 4...)
                       <MotionWrapper variant="slideInFromSide" direction="right" delay={0.2} duration={0.6}>

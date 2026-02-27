@@ -12,7 +12,9 @@ import { GraphicsCard } from '@/components/cards';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import MotionWrapper from '@/components/MotionWrapper';
 import SvgIcon from '@/components/SvgIcon';
+
 import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  PROJECT - SIMPLE TESTIMONIAL  ***************************/
@@ -45,20 +47,13 @@ export default function SimpleTestimonial({ name, review, reviewKey, rating }) {
         <GraphicsCard>
           <Box sx={{ p: { xs: 3, sm: 4, md: 5 } }}>
             <Stack spacing={{ xs: 2, sm: 3 }} alignItems="center" textAlign="center">
-              {/* Quote icon */}
               <SvgIcon name="tabler-quote" size={40} color="primary.main" />
-
-              {/* Review text */}
               {reviewText && (
                 <Typography variant="h5" sx={{ color: 'text.secondary', fontStyle: 'italic', maxWidth: 720, lineHeight: 1.7 }}>
                   {reviewText}
                 </Typography>
               )}
-
-              {/* Rating */}
               {rating && <StarRating rating={rating} />}
-
-              {/* Reviewer name */}
               {name && (
                 <Stack direction="row" spacing={1.5} alignItems="center">
                   <Avatar sx={{ bgcolor: 'primary.lighter', color: 'primary.main', width: 44, height: 44 }}>

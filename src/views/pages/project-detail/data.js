@@ -19,8 +19,9 @@ export const createProjectDetailSections = (project) => {
     sections.push({
       importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSlideshow })),
       props: {
-        images: project.images,
-        alt: project.titleKey
+        images: project.images
+        // headingKey: 'projects.gallery',
+        // captionKey: 'projects.projectGallery'
       }
     });
   }
@@ -36,6 +37,18 @@ export const createProjectDetailSections = (project) => {
       }
     });
   }
+
+  // // 2. Project Image Gallery1
+  // if (project.images && project.images.length > 0) {
+  //   sections.push({
+  //     importFunc: () => import('@/blocks/gallery/Gallery1').then((module) => ({ default: module.default })),
+  //     props: {
+  //       images: project.images
+  //       // headingKey: 'projects.gallery',
+  //       // captionKey: 'projects.projectGallery'
+  //     }
+  //   });
+  // }
 
   // 3. Secondary Section - Secondary Info + Full Description
   if (project.secondaryInfo && project.secondaryInfo.length > 0 && project.descriptionKey) {

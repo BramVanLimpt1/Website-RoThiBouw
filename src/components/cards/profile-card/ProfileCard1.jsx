@@ -18,35 +18,8 @@ import { BORDER_RADIUS } from '@/utils/constant';
 
 /***************************  PROFILE CARD - 1  ***************************/
 
-export default function ProfileCard1({ name, role, avatar, phone }) {
+export default function ProfileCard1({ name, avatar, phone }) {
   const theme = useTheme();
-
-  const refName = useRef(null);
-  const refRole = useRef(null);
-
-  // Function to compare the actual width of the name element with its container width
-  const compareSizeName = () => {
-    const compare = refName.current && refName.current.scrollWidth > refName.current.clientWidth;
-    setHoverName(compare);
-  };
-
-  useEffect(() => {
-    compareSizeName();
-    window.addEventListener('resize', compareSizeName);
-    window.removeEventListener('resize', compareSizeName);
-  }, []);
-
-  // Function to compare the actual width of the role element with its container width
-  const compareSizeRole = () => {
-    const compare = refRole.current && refRole.current.scrollWidth > refRole.current.clientWidth;
-    setHoverRole(compare);
-  };
-
-  useEffect(() => {
-    compareSizeRole();
-    window.addEventListener('resize', compareSizeRole);
-    window.removeEventListener('resize', compareSizeRole);
-  }, []);
 
   return (
     <GraphicsCard sx={{ borderRadius: BORDER_RADIUS.xs }}>
@@ -59,26 +32,22 @@ export default function ProfileCard1({ name, role, avatar, phone }) {
           <Typography variant="h4" noWrap sx={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
             {name}
           </Typography>
-          <Typography noWrap sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-            {role}
-          </Typography>
           {phone && (
             <Box sx={{ mt: { xs: 1, sm: 1.5, md: 2 }, textAlign: 'center' }}>
-              <NextLink href={phone} passHref>
-                <a
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '8px', // Equivalent to p:1
-                    borderRadius: '50%',
-                    backgroundColor: 'transparent',
-                    textDecoration: 'none',
-                    color: theme.palette.primary.main // Using theme from context for consistency
-                  }}
-                >
-                  <SvgIcon name="tabler-phone" color="primary" />
-                </a>
+              <NextLink
+                href={phone}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '8px',
+                  borderRadius: '50%',
+                  backgroundColor: 'transparent',
+                  textDecoration: 'none',
+                  color: theme.palette.primary.main
+                }}
+              >
+                <SvgIcon name="tabler-phone" color="primary" />
               </NextLink>
             </Box>
           )}
@@ -90,7 +59,6 @@ export default function ProfileCard1({ name, role, avatar, phone }) {
 
 ProfileCard1.propTypes = {
   name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   phone: PropTypes.string
 };

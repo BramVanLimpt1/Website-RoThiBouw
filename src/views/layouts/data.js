@@ -10,14 +10,14 @@ export const companyInfo = {
     {
       labelKey: 'footer.phoneRoy',
       icon: 'tabler-phone',
-      value: '+31612345678',
-      href: 'tel:+31612345678'
+      value: '+31 (0)6 12 34 56 78',
+      href: 'tel:+31 (0)6 12 34 56 78'
     },
     {
       labelKey: 'footer.phoneThijs',
       icon: 'tabler-phone',
-      value: '+31687654321',
-      href: 'tel:+31687654321'
+      value: '+31 (0)6 98 76 54 32',
+      href: 'tel:+31 (0)6 98 76 54 32'
     },
     {
       labelKey: 'footer.email',
@@ -47,7 +47,7 @@ export const bottomBar = {
     },
     {
       label: 'footer.termsConditions',
-      href: '/terms-condition'
+      href: '/terms-conditions'
     }
   ]
 };

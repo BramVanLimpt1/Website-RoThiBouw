@@ -17,10 +17,10 @@ export default function palette(mode) {
   const lightPalette = {
     primary: {
       lighter: '#B3D4DC', // lighter teal variant
-      light: '#4A8B9E', // light teal
-      main: '#051519', // RoThiBouw brand dark
-      dark: '#030E11', // darker variant
-      darker: '#020A0C' // darkest variant
+      light: '#5AA2B5', // light teal
+      main: '#7BC4D8', // bright teal
+      dark: '#4A8B9E', // darker variant
+      darker: '#051519' // darkest variant (RoThiBouw brand dark)
     },
     secondary: {
       lighter: '#D9D9D9', // lighter grey
@@ -53,11 +53,11 @@ export default function palette(mode) {
 
   const darkPalette = {
     primary: {
-      lighter: '#0A2A31', // darker teal variant
-      light: '#5AA2B5', // light teal for dark mode
-      main: '#7BC4D8', // lighter teal for dark mode
-      dark: '#A8DDE9', // lighter variant
-      darker: '#D4F0F5' // lightest variant
+      lighter: '#030E11', // darker variant
+      light: '#051519', // RoThiBouw brand dark
+      main: '#4A8B9E', // medium teal
+      dark: '#5AA2B5', // lighter variant
+      darker: '#7BC4D8' // lightest variant
     },
     secondary: {
       lighter: '#3D3C3C', // darker grey variant

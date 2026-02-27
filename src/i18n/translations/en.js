@@ -18,17 +18,15 @@ export const translations = {
     submit: 'Submit',
     send: 'Send Message',
     sendEmail: 'Send Email',
-    getInTouch: 'Get in Touch',
-    contactUs: 'Contact Us',
-    fullName: 'Full Name',
+    getInTouch: 'Get in touch',
+    contactUs: 'Contact us',
+    fullName: 'Full name',
     fullNamePlaceholder: 'Enter your full name',
-    contactPerson: 'Who would you like to contact?',
-    contactPersonPlaceholder: 'Select a person',
     location: 'Location',
     locationPlaceholder: 'Enter your location',
     locationHelper: "It's very helpful if we know where the possible project or support will take place, so we can take that into account.",
     attachment: 'Attachment',
-    attachmentHelper: 'Add a file to your message',
+    attachmentHelper: 'Add an optional file to your message',
     attachmentDrop: 'Drag & drop a file here, or click to select a file',
     attachmentSize: 'Max file size 10MB',
     // Validation messages
@@ -42,8 +40,7 @@ export const translations = {
       phoneRequired: 'Phone number is required',
       phoneInvalid: 'Invalid phone number',
       messageRequired: 'Message is required',
-      locationRequired: 'Location is required',
-      contactPersonRequired: 'Please select who you would like to contact'
+      locationRequired: 'Location is required'
     }
   },
 
@@ -54,15 +51,9 @@ export const translations = {
     projects: 'Projects',
     contact: 'Contact',
     services: 'Services',
-    pricing: 'Pricing',
-    faq: 'FAQ',
     career: 'Career',
     privacyPolicy: 'Privacy Policy',
-    termsCondition: 'Terms & Conditions',
-    blog: 'Blog',
-    pages: 'Pages',
-    company: 'Company',
-    support: 'Support'
+    termsCondition: 'Terms & Conditions'
   },
 
   // Common actions and words
@@ -70,10 +61,10 @@ export const translations = {
     loading: 'Loading...',
     error: 'Error occurred',
     success: 'Success!',
-    learnMore: 'Learn More',
-    getStarted: 'Get Started',
-    readMore: 'Read More',
-    viewAll: 'View All',
+    learnMore: 'Learn more',
+    getStarted: 'Get started',
+    readMore: 'Read more',
+    viewAll: 'View all',
     close: 'Close',
     open: 'Open',
     save: 'Save',
@@ -110,8 +101,6 @@ export const translations = {
     copyright: 'Copyright © 2026',
     privacyPolicy: 'Privacy Policy',
     termsConditions: 'Terms & Conditions',
-    joinNewsletter: 'Join our newsletter',
-    joinNewsletterDescription: 'Discover the features that will transform your customer relationships',
     enterEmailAddress: 'Enter your email address',
     followUsOn: 'Follow Us on',
     allRightsReserved: 'All rights reserved',
@@ -119,8 +108,7 @@ export const translations = {
     phoneRoy: 'Phone Roy',
     phoneThijs: 'Phone Thijs',
     kvkNumber: 'KvK Number',
-    btwNumber: 'BTW Number',
-    legal: 'Legal'
+    btwNumber: 'BTW Number'
   },
 
   // Language names
@@ -136,7 +124,7 @@ export const translations = {
       buttonText: 'Back to Home Page'
     },
     500: {
-      heading: 'Please try again later or feel free to contact us if the problem persists.',
+      heading: 'Please try again later or feel free to contact us if the problem persists. Email: info@rothibouw.nl',
       buttonText: 'Back to Home Page'
     },
     maintenance: {
@@ -144,54 +132,27 @@ export const translations = {
     }
   },
 
-  // Auth
-  auth: {
-    email: 'Email',
-    emailPlaceholder: 'example@gmail.com',
-    password: 'Password',
-    passwordPlaceholder: 'Enter your password',
-    forgotPassword: 'Forgot Password?',
-    signIn: 'Sign In',
-    sendCode: 'Send Code',
-    newPasswordPlaceholder: 'Enter new password',
-    confirmPassword: 'Confirm Password',
-    confirmPasswordPlaceholder: 'Enter confirm password',
-    passwordMatchError: 'The passwords do not match',
-    resetPassword: 'Reset Password',
-    verify: 'Verify',
-    firstName: 'First Name',
-    firstNamePlaceholder: 'Enter first name',
-    lastName: 'Last Name',
-    lastNamePlaceholder: 'Enter last name',
-    signUp: 'Sign Up',
-    signInGoogle: 'Sign In with Google',
-    signInApple: 'Sign In with Apple',
-    signInFacebook: 'Sign In with Facebook',
-    privacyPolicy: 'Privacy Policy',
-    termsAndConditions: 'Terms & Conditions'
-  },
-
   // Contact Page
   contact: {
     pageTitle: 'Contact Us',
     heading: 'Get in Touch',
-    caption: "Have a question or want to work together? We'd love to hear from you.",
+    caption: "Have a question? We'd love to hear from you.",
     emailCard: {
-      title: 'Email Us',
-      content: 'Send us an email anytime',
+      title: 'Email us',
+      content: 'You can always send us an email',
       buttonText: 'Send Email'
     },
     phoneCard: {
-      title: 'Call Us',
+      title: 'Call us',
       content: 'Call Roy or Thijs for direct contact',
-      buttonText: 'Call Now',
+      buttonText: 'Call now',
       roy: 'Call Roy',
       thijs: 'Call Thijs'
     },
     whatsappCard: {
-      title: 'WhatsApp Us',
+      title: 'WhatsApp us',
       content: 'Quick and easy communication',
-      buttonText: 'Start Chat',
+      buttonText: 'Start chat',
       roy: 'Chat with Roy',
       thijs: 'Chat with Thijs'
     }
@@ -241,7 +202,7 @@ export const translations = {
       heading: 'Two friends,',
       highlight: 'one mission',
       caption:
-        'RoThi Bouw was founded by Roy and Thijs — two young craftsmen with a shared passion for quality construction. What started as a dream has grown into a trusted name in carpentry, roofing, and renovations. With an eye for detail and a personal approach to every project, we deliver craftsmanship you can build on.',
+        'RoThiBouw was founded by Roy and Thijs — two young craftsmen with a shared passion for quality construction. What started as a dream has grown into a trusted name in carpentry, roofing, and renovations. With an eye for detail and a personal approach to every project, we deliver craftsmanship you can build on.',
       button: 'Get to Know Us'
     },
     projects: {
@@ -258,40 +219,47 @@ export const translations = {
 
   // About Page
   about: {
+    hero: {
+      title: 'Two friends,',
+      titleHighlight: 'one mission',
+      description: 'Craftsmanship, integrity and personal attention — that is what RoThiBouw stands for.'
+    },
     story: {
-      heading: 'Our Story',
-      caption: 'Two friends with a shared vision to deliver exceptional craftsmanship and quality construction',
-      section1: {
-        title: 'The Beginning',
-        description:
-          'RoThi Bouw was founded in 2023 by two friends with a shared passion for quality construction and craftsmanship. What started as a dream between two experienced construction professionals has grown into a trusted name in timber work, roofing, and renovations.'
+      heading: 'From dream to',
+      highlight: 'reality',
+      p1: 'RoThiBouw was founded out of the shared passion of Roy and Thijs for construction and craftsmanship. Two friends who believed that quality work and personal attention should go hand in hand.',
+      p2: 'What started as small jobs for friends and family quickly grew into a fully fledged construction company. Today we are proud to have completed many projects, always with the same dedication and eye for detail.',
+      p3: 'We specialise in carpentry, roofing, renovations and extensions — and we approach every project as if it were our own.'
+    },
+    founders: {
+      headingKey: 'Who is RoThiBouw?',
+      captionKey: 'The skilled craftsmen behind RoThiBouw - two friends with a shared vision to deliver exceptional craftsmanship and quality construction',
+      roy: {
+        role: 'Co-founder',
+        quote: '"Building is more than stacking bricks. It is craftsmanship, trust and delivering something people can truly be proud of."'
       },
-      section2: {
-        title: 'Our Vision',
-        description:
-          'With years of hands-on experience in the construction industry, our founders bring expertise, dedication, and a commitment to excellence to every project. We are currently working towards obtaining our contractor certifications, positioning ourselves to take on even more ambitious and larger-scale projects in the future.'
+      thijs: {
+        role: 'Co-founder',
+        quote: '"Quality is in the details. I am not satisfied until every joint, every edge and every finish is exactly right."'
       }
     },
     timeline: {
       heading: 'Our Journey',
-      caption: 'Key milestones that shaped RoThi Bouw into the company we are today',
+      caption: 'Key milestones that shaped RoThiBouw into the company we are today!',
       founded: {
         title: '2023 - Company Founded',
         description:
-          'Roy and Thijs founded RoThi Bouw, combining their expertise and passion for quality construction to start their own company.'
-      },
-      team: {
-        title: 'Building Our Team',
-        description:
-          'Expanded our capabilities by building a network of skilled craftsmen and trusted partners in the construction industry.'
+          'RoThiBouw was founded by two friends. What started as a dream between two experienced construction professionals has grown into a trusted name in carpentry, roofing, and renovations.'
       },
       office: {
-        title: 'New Office Location',
-        description: 'Moved to a new office and workshop, giving us more space to plan and prepare our projects with precision.'
+        title: 'New Workshop',
+        description:
+          'Moved to a new workshop, giving us more space to plan and prepare our projects with precision.'
       },
       projects: {
-        title: '100+ Projects Completed',
-        description: 'Reached an important milestone of completing over 100 successful construction projects for satisfied clients.'
+        title: '100+ Projects',
+        description:
+          'Reached an important milestone of completing over 100 successful construction projects for satisfied clients.'
       },
       certification: {
         title: 'Contractor Certification',
@@ -299,45 +267,16 @@ export const translations = {
           'Working towards obtaining official contractor certifications to expand our capabilities for larger and more complex projects.'
       }
     },
-    values: {
-      heading: 'What Sets Us Apart',
-      caption: 'Our commitment to quality, experience, and professionalism',
-      quality: {
-        title: 'Quality Craftsmanship',
-        description:
-          'We take pride in delivering high-quality work that stands the test of time. Every project is executed with precision and attention to detail.'
+    founders: {
+      heading: 'The people behind RoThiBouw',
+      roy: {
+        role: 'Co-founder',
+        quote: '"..."'
       },
-      experience: {
-        title: 'Years of Experience',
-        description:
-          'Our team brings extensive experience from the construction industry, ensuring professional results on every project we undertake.'
-      },
-      contractor: {
-        title: 'Growing Expertise',
-        description:
-          'Currently working towards contractor certifications to expand our capabilities and take on larger, more complex construction projects.'
-      },
-      reliability: {
-        title: 'Reliable & Professional',
-        description:
-          'We value clear communication, punctuality, and professionalism. You can count on us to deliver on our promises and meet deadlines.'
+      thijs: {
+        role: 'Co-founder',
+        quote: '"..."'
       }
-    },
-    team: {
-      heading: 'Meet Our Team',
-      caption: 'The skilled craftsmen behind RoThi Bouw - two friends united by a passion for quality construction',
-      team1_heading: 'Our Dedicated Team',
-      team1_caption: 'Meet the passionate professionals who make RoThi Bouw a success.',
-      member1_name: 'Roy van der Linden',
-      member1_role: 'Co-Founder & Lead Carpenter',
-      member2_name: 'Thijs Bouwman',
-      member2_role: 'Co-Founder & Lead Roofer',
-      member3_name: 'Jane Doe',
-      member3_role: 'Project Manager',
-      member4_name: 'John Smith',
-      member4_role: 'Construction Specialist',
-      member5_name: 'Emily White',
-      member5_role: 'Apprentice Carpenter'
     }
   },
 
