@@ -1,12 +1,12 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useId } from 'react';
 
 // @mui
 import { useTheme } from '@mui/material/styles';
 
-// @types
 
 /***************************  ICON - OPENEYE  ***************************/
 
