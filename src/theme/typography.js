@@ -12,7 +12,7 @@ export default function typography(theme) {
       fontWeight: 400,
       fontSize: 57,
 
-      // lineHeight = lineHeight in figma / fontSize. i.e 1.123 = 64/57
+      // LineHeight = lineHeight in figma / fontSize. i.e 1.123 = 64/57
       lineHeight: 1.123,
       letterSpacing: -0.25,
       [theme.breakpoints.down('md')]: {
