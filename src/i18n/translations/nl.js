@@ -26,7 +26,8 @@ export const translations = {
     contactPersonPlaceholder: 'Selecteer een persoon',
     location: 'Locatie',
     locationPlaceholder: 'Voer je locatie in',
-    locationHelper: 'Het is erg behulpzaam als we weten waar het mogelijke project of ondersteuning plaatsvindt, zodat we dat in acht kunnen nemen.',
+    locationHelper:
+      'Het is erg behulpzaam als we weten waar het mogelijke project of ondersteuning plaatsvindt, zodat we dat in acht kunnen nemen.',
     attachment: 'Bijlage',
     attachmentHelper: 'Voeg een bestand toe aan je bericht',
     attachmentDrop: 'Sleep hier een bestand of klik om een bestand te selecteren',
@@ -260,7 +261,8 @@ export const translations = {
   about: {
     team: {
       heading: 'Wie is RoThi Bouw?',
-      caption: 'De vakkundige vakmensen achter RoThi Bouw - twee vrienden met een gedeelde visie om uitzonderlijk vakmanschap en kwaliteitsbouw te leveren',
+      caption:
+        'De vakkundige vakmensen achter RoThi Bouw - twee vrienden met een gedeelde visie om uitzonderlijk vakmanschap en kwaliteitsbouw te leveren',
       team1_heading: 'Ons Toegewijde Team',
       team1_caption: 'Ontmoet de gepassioneerde professionals die RoThi Bouw tot een succes maken.',
       member1_name: 'Roy van der Linden',
@@ -461,8 +463,8 @@ export const translations = {
         'Met een tuinoverkapping van RoThiBouw kunt u het hele jaar genieten van uw buitenruimte. Wij bouwen duurzame en stijlvolle overkappingen op maat, van klassiek houten pergola tot moderne aluminium constructie.',
       features: {
         f1: 'Houten overkappingen op maat',
-        f2: 'Veranda\'s en terrasoverkappingen',
-        f3: 'Pergola\'s en prielen',
+        f2: "Veranda's en terrasoverkappingen",
+        f3: "Pergola's en prielen",
         f4: 'Lichtdoorlatende dakplaten',
         f5: 'Geïntegreerde verlichting en elektra',
         f6: 'Weerbestendige afwerking'
@@ -509,7 +511,8 @@ export const translations = {
     navigation: {
       heading: 'Onze Diensten',
       caption: 'Ontdek al onze professionele bouwdiensten'
-    }
+    },
+    serviceNotFound: 'Dienst niet gevonden'
   },
 
   // Projects Page

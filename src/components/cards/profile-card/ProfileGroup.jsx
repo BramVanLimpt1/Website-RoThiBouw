@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @mui
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Stack from '@mui/material/Stack';
@@ -8,8 +9,6 @@ import Typography from '@mui/material/Typography';
 
 // @project
 import GetImagePath from '@/utils/GetImagePath';
-
-// @types
 
 // @assets
 import Wave from '@/images/graphics/Wave';

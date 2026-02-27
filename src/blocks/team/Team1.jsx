@@ -28,7 +28,7 @@ function getGridSize(index, length) {
       return 3; // Four members per row
     default:
       // For more than 4, aim for 3-4 per row, adjust as needed for responsiveness
-      return { xs: 6, sm: 6, md: 4 }; 
+      return { xs: 6, sm: 6, md: 4 };
   }
 }
 
@@ -40,19 +40,18 @@ export default function Team1({ headingKey, captionKey, members }) {
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: 4, alignItems: 'center' }}>
-        <Typeset {...{ 
-          heading: t(headingKey), 
-          caption: t(captionKey), 
-          stackProps: { sx: { alignItems: 'center' } }, 
-          headingProps: { sx: { textAlign: 'center' } }, 
-          captionProps: { sx: { textAlign: 'center' } } 
-        }} />
+        <Typeset
+          {...{
+            heading: t(headingKey),
+            caption: t(captionKey),
+            stackProps: { sx: { alignItems: 'center' } },
+            headingProps: { sx: { textAlign: 'center' } },
+            captionProps: { sx: { textAlign: 'center' } }
+          }}
+        />
         <Grid container spacing={1.5} justifyContent="center">
           {members.map((item, index) => (
-            <Grid 
-              key={index} 
-              size={{ xs: 12, sm: getGridSize(index, members.length) }}
-            >
+            <Grid key={index} size={{ xs: 12, sm: getGridSize(index, members.length) }}>
               <ProfileCard1 {...item} />
             </Grid>
           ))}

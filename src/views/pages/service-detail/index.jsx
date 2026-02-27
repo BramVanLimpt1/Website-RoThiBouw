@@ -12,8 +12,8 @@ import useDataThemeMode from '@/hooks/useDataThemeMode';
 import useTranslation from '@/hooks/useTranslation';
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
-// @data
-import { createServiceDetailSections } from './data-sections';
+// @sections
+import { createServiceDetailSections } from './sections';
 
 /***************************  SERVICE DETAIL PAGE  ***************************/
 
@@ -24,13 +24,12 @@ export default function ServiceDetailPage({ service }) {
   if (!service) {
     return (
       <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-        <Typography variant="h4">Service not found</Typography>
+        <Typography variant="h4">{t('services.serviceNotFound')}</Typography>
       </ContainerWrapper>
     );
   }
 
-  // Generate sections for lazy loading (includes translation)
-  const sections = createServiceDetailSections(service, t);
+  const sections = createServiceDetailSections(service);
 
   return (
     <Stack spacing={0}>
@@ -38,20 +37,6 @@ export default function ServiceDetailPage({ service }) {
     </Stack>
   );
 }
-
-ServiceDetailPage.propTypes = {
-  service: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-    titleKey: PropTypes.string.isRequired,
-    heroImage: PropTypes.string.isRequired,
-    descriptionTitleKey: PropTypes.string.isRequired,
-    descriptionKey: PropTypes.string.isRequired,
-    descriptionImage: PropTypes.string.isRequired,
-    features: PropTypes.arrayOf(PropTypes.string).isRequired,
-    featureImage: PropTypes.string.isRequired,
-    relatedCategories: PropTypes.arrayOf(PropTypes.string).isRequired
-  })
-};
 
 ServiceDetailPage.propTypes = {
   service: PropTypes.shape({

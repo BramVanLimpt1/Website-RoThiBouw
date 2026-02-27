@@ -1,4 +1,4 @@
-import { projects } from '../projects/data';
+import { projects } from '@/data/projects';
 
 export const heroSlides = [
   {
@@ -23,52 +23,52 @@ export const servicesData = {
   headerAlign: 'center',
   caption: 'home.services.caption',
   list: [
-      {
-        icon: 'tabler-home',
-        title: 'home.services.roofing.title',
-        content: 'home.services.roofing.description',
-        link: {
-          href: '/services/dakwerken',
-          children: 'common.learnMore'
-        }
-      },
-      {
-        icon: 'tabler-hammer',
-        title: 'home.services.carpentry.title',
-        content: 'home.services.carpentry.description',
-        link: {
-          href: '/services/timmerwerk',
-          children: 'common.learnMore'
-        }
-      },
-      {
-        icon: 'tabler-crane',
-        title: 'home.services.renovations.title',
-        content: 'home.services.renovations.description',
-        link: {
-          href: '/services/renovaties',
-          children: 'common.learnMore'
-        }
-      },
-      {
-        icon: 'tabler-michelin-star-green',
-        title: 'home.services.sustainability.title',
-        content: 'home.services.sustainability.description',
-        link: {
-          href: '/services/verduurzaaming',
-          children: 'common.learnMore'
-        }
-      },
-      {
-        icon: 'tabler-wood',
-        title: 'home.services.woodConstructions.title',
-        content: 'home.services.woodConstructions.description',
-        link: {
-          href: '/services/hout-constructies',
-          children: 'common.learnMore'
-        }
+    {
+      icon: 'tabler-home',
+      title: 'home.services.roofing.title',
+      content: 'home.services.roofing.description',
+      link: {
+        href: '/services/dakwerken',
+        children: 'common.learnMore'
       }
-    ]
+    },
+    {
+      icon: 'tabler-hammer',
+      title: 'home.services.carpentry.title',
+      content: 'home.services.carpentry.description',
+      link: {
+        href: '/services/timmerwerk',
+        children: 'common.learnMore'
+      }
+    },
+    {
+      icon: 'tabler-crane',
+      title: 'home.services.renovations.title',
+      content: 'home.services.renovations.description',
+      link: {
+        href: '/services/renovaties',
+        children: 'common.learnMore'
+      }
+    },
+    {
+      icon: 'tabler-michelin-star-green',
+      title: 'home.services.sustainability.title',
+      content: 'home.services.sustainability.description',
+      link: {
+        href: '/services/verduurzaaming',
+        children: 'common.learnMore'
+      }
+    },
+    {
+      icon: 'tabler-wood',
+      title: 'home.services.woodConstructions.title',
+      content: 'home.services.woodConstructions.description',
+      link: {
+        href: '/services/hout-constructies',
+        children: 'common.learnMore'
+      }
+    }
+  ]
 };
 
 export const aboutTeaserData = {

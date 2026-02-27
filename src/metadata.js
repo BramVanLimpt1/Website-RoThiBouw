@@ -10,17 +10,17 @@ const ogCommonMetadata = {
   locale: 'nl',
   type: 'website',
   siteName: `${branding.brandName}`,
-  images: '' // recommended dimensions of 1200x630
+  images: '' // Recommended dimensions of 1200x630
 };
 
 export const mainMetadata = {
   title: {
     template: `%s | ${title}`,
-    default: title // a default is required when creating a template
+    default: title // A default is required when creating a template
   },
   description,
   applicationName: title,
-  keywords: [`${branding.brandName}`, 'Timmerwerken', 'Renovatie', 'Dakwerken'],
+  keywords: [`${branding.brandName}`, 'A', 'B', 'C'], // TODO: Add more relevant keywords
   creator: `${branding.company.name}`,
   metadataBase: new URL(process.env.NEXT_PUBLIC_METADATA_BASE || 'http://localhost:3000'),
   alternates: {

@@ -29,7 +29,14 @@ export default function Cookie3({ heading, cookie, primaryBtn, secondaryBtn }) {
 
   return (
     <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
-      <GraphicsCard sx={{ boxShadow: `2px 2px 10px 0px ${alpha(theme.palette.grey[600], 0.09)}`, mx: 2, bgcolor: 'primary.lighter', borderRadius: BORDER_RADIUS.xs }}>
+      <GraphicsCard
+        sx={{
+          boxShadow: `2px 2px 10px 0px ${alpha(theme.palette.grey[600], 0.09)}`,
+          mx: 2,
+          bgcolor: 'primary.lighter',
+          borderRadius: BORDER_RADIUS.xs
+        }}
+      >
         <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
           <Stack
             direction={{ sm: 'row' }}
@@ -69,7 +76,16 @@ export default function Cookie3({ heading, cookie, primaryBtn, secondaryBtn }) {
             </Stack>
             <Stack direction="row" sx={{ alignItems: 'center', gap: { xs: 1, md: 1.5 }, width: { xs: 1, sm: 182, md: 298 } }}>
               {primaryBtn && <Button fullWidth variant="outlined" size="small" {...primaryBtn} children={t(primaryBtn.children)} />}
-              {secondaryBtn && <Button fullWidth variant="contained" size="small" sx={{ whiteSpace: 'nowrap' }} {...secondaryBtn} children={t(secondaryBtn.children)} />}
+              {secondaryBtn && (
+                <Button
+                  fullWidth
+                  variant="contained"
+                  size="small"
+                  sx={{ whiteSpace: 'nowrap' }}
+                  {...secondaryBtn}
+                  children={t(secondaryBtn.children)}
+                />
+              )}
             </Stack>
           </Stack>
         </Box>

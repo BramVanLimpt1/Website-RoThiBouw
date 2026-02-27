@@ -3,6 +3,8 @@
 // @mui
 import { useTheme } from '@mui/material/styles';
 
+/***************************  LOADER  ***************************/
+
 export default function Loader() {
   const theme = useTheme();
 

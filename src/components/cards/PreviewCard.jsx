@@ -13,8 +13,6 @@ import GraphicsCard from '@/components/cards/GraphicsCard';
 import GraphicsImage from '@/components/GraphicsImage';
 import SvgIcon from '@/components/SvgIcon';
 
-//@type
-
 /***************************  PREVIEW CARD  ***************************/
 
 export default function PreviewCard({ title, theme, image, status }) {

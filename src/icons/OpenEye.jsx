@@ -7,7 +7,6 @@ import { useId } from 'react';
 // @mui
 import { useTheme } from '@mui/material/styles';
 
-
 /***************************  ICON - OPENEYE  ***************************/
 
 export default function OpenEye({ size = 24, color, stroke = 1.5 }) {

@@ -1,6 +1,9 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @next
+import NextLink from 'next/link';
+
 // @mui
 import { alpha, useTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -53,7 +56,15 @@ export default function Cta1({ bgImage, headingKey, primaryBtn }) {
               </Typography>
               {primaryBtn && (
                 <ButtonAnimationWrapper style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-                  <Button color="primary" size="large" variant="contained" sx={{ width: { xs: '100%', sm: 'auto' } }} {...primaryBtn} children={t(primaryBtn.children)} />
+                  <Button
+                    color="primary"
+                    size="large"
+                    variant="contained"
+                    sx={{ width: { xs: '100%', sm: 'auto' } }}
+                    {...primaryBtn}
+                    {...(primaryBtn.href && { component: NextLink })}
+                    children={t(primaryBtn.children)}
+                  />
                 </ButtonAnimationWrapper>
               )}
             </Stack>

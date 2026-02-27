@@ -52,12 +52,7 @@ function ContactCard({ icon, title, content, link }) {
             <Stack direction="row" sx={{ gap: 1, flexWrap: 'wrap' }}>
               {links.map((linkItem, index) => (
                 <ButtonAnimationWrapper key={index}>
-                  <Button 
-                    color="primary" 
-                    variant="outlined"
-                    {...(linkItem.href && { component: NextLink })}
-                    href={linkItem.href}
-                  >
+                  <Button color="primary" variant="outlined" {...(linkItem.href && { component: NextLink })} href={linkItem.href}>
                     {t(linkItem.children)}
                   </Button>
                 </ButtonAnimationWrapper>

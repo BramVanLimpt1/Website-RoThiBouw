@@ -1,7 +1,7 @@
 'use client';
 
 // @project
-import { Project2 } from '@/blocks/projects';
+import LazySection from '@/components/LazySection';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
 
 // @data
@@ -13,11 +13,17 @@ export default function ProjectsPage() {
   useDataThemeMode();
 
   return (
-    <Project2
-      heading="projects.heading"
-      caption="projects.caption"
-      projects={projects}
-      categories={projectCategories}
+    <LazySection
+      sections={{
+        importFunc: () => import('@/blocks/projects').then((module) => ({ default: module.Project2 })),
+        props: {
+          heading: 'projects.heading',
+          caption: 'projects.caption',
+          projects,
+          categories: projectCategories
+        }
+      }}
+      offset="200px"
     />
   );
 }

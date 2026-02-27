@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 // @mui
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -8,8 +9,6 @@ import Box from '@mui/material/Box';
 // @project
 import { GraphicsCard } from '@/components/cards';
 import SvgIcon from '@/components/SvgIcon';
-
-// @types
 
 /***************************  COMMON - ICON CARD  ***************************/
 

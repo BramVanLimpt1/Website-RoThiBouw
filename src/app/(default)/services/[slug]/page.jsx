@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 const ServiceDetailPage = dynamic(() => import('@/views/pages/service-detail'));
 
 // Import services data
-import { services } from '@/views/pages/service-detail/data';
+import { services } from '@/data/services';
 
 /***************************  GENERATE STATIC PARAMS  ***************************/
 

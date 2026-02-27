@@ -1,7 +1,4 @@
-export const ADMIN_PATH = '#';
-export const BUY_NOW_URL = '#';
-export const FREEBIES_URL = '#';
-export const DOCS_URL = '#';
+/***************************  PAGE PATHS  ***************************/
 
 export const PAGE_PATH = {
   homePage: '/',

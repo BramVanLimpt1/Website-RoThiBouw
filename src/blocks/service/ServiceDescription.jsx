@@ -19,7 +19,7 @@ import { SECTION_COMMON_PY } from '@/utils/constant';
 
 export default function ServiceDescription({ title, titleKey, description, descriptionKey, image, reverse = false }) {
   const { t } = useTranslation();
-  
+
   const displayTitle = titleKey ? t(titleKey) : title;
   const displayDescription = descriptionKey ? t(descriptionKey) : description;
 
@@ -36,7 +36,15 @@ export default function ServiceDescription({ title, titleKey, description, descr
 
   const imageContent = (
     <MotionWrapper variant="slideInFromSide" direction={reverse ? 'left' : 'right'} delay={0.2}>
-      <Box sx={{ position: 'relative', width: '100%', height: { xs: 300, sm: 350, md: 400 }, borderRadius: { xs: 6, sm: 8, md: 10 }, overflow: 'hidden' }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: { xs: 300, sm: 350, md: 400 },
+          borderRadius: { xs: 6, sm: 8, md: 10 },
+          overflow: 'hidden'
+        }}
+      >
         <Image src={image} alt={displayTitle} fill style={{ objectFit: 'cover' }} />
       </Box>
     </MotionWrapper>

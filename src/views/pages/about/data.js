@@ -5,12 +5,12 @@ export const teamData = {
     {
       name: 'Roy van Strijdhoven',
       avatar: '/assets/temp/placeholder_person.jpg',
-      phone: 'tel:+31123456789',
+      phone: 'tel:+31123456789'
     },
     {
       name: 'Thijs van Gisbergen',
       avatar: '/assets/temp/placeholder_person.jpg',
-      phone: 'tel:+31987654321',
+      phone: 'tel:+31987654321'
     }
   ]
 };

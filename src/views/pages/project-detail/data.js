@@ -5,7 +5,16 @@ export const createProjectDetailSections = (project) => {
 
   const sections = [];
 
-  // 1. Project Image Slideshow
+  // 1. Page heading
+  sections.push({
+    importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectHeader })),
+    props: {
+      titleKey: project.titleKey,
+      subtitleKey: project.subtitleKey
+    }
+  });
+
+  // 2. Project Image Slideshow
   if (project.images && project.images.length > 0) {
     sections.push({
       importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSlideshow })),

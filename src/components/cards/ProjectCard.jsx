@@ -18,6 +18,7 @@ import SvgIcon from '@/components/SvgIcon';
 import MotionWrapper from '@/components/MotionWrapper';
 import Typeset from '@/components/Typeset';
 import { GraphicsCard } from '@/components/cards';
+
 import useTranslation from '@/hooks/useTranslation';
 
 /***************************  PROJECT CARD  ***************************/
@@ -26,7 +27,7 @@ export default function ProjectCard({ project, index = 0 }) {
   const theme = useTheme();
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const images = project.images || [project.thumbnail];
   const currentImage = images[currentImageIndex];
   const hasMultipleImages = images.length > 1;
@@ -96,13 +97,7 @@ export default function ProjectCard({ project, index = 0 }) {
                   zIndex: 1
                 }}
               >
-                <Fab
-                  color="primary"
-                  size="small"
-                  onClick={handlePrevImage}
-                  aria-label="previous image"
-                  sx={{ width: 40, height: 40 }}
-                >
+                <Fab color="primary" size="small" onClick={handlePrevImage} aria-label="previous image" sx={{ width: 40, height: 40 }}>
                   <SvgIcon name="tabler-chevron-left" color="background.default" size={20} />
                 </Fab>
               </Box>
@@ -117,13 +112,7 @@ export default function ProjectCard({ project, index = 0 }) {
                   zIndex: 1
                 }}
               >
-                <Fab
-                  color="primary"
-                  size="small"
-                  onClick={handleNextImage}
-                  aria-label="next image"
-                  sx={{ width: 40, height: 40 }}
-                >
+                <Fab color="primary" size="small" onClick={handleNextImage} aria-label="next image" sx={{ width: 40, height: 40 }}>
                   <SvgIcon name="tabler-chevron-right" color="background.default" size={20} />
                 </Fab>
               </Box>
@@ -164,7 +153,6 @@ export default function ProjectCard({ project, index = 0 }) {
 
         {/* Card Content */}
         <Stack sx={{ flexGrow: 1, p: { xs: 2, sm: 3, md: 4 }, gap: { xs: 1, md: 2 } }}>
-          
           {/* Title & Description */}
           <Typeset
             {...{
@@ -172,7 +160,7 @@ export default function ProjectCard({ project, index = 0 }) {
               caption: t(project.descriptionKey),
               stackProps: { sx: { gap: { xs: 1, md: 1.5 } } },
               headingProps: { variant: 'h4' },
-              captionProps: { 
+              captionProps: {
                 variant: 'body1',
                 sx: {
                   overflow: 'hidden',
@@ -199,14 +187,7 @@ export default function ProjectCard({ project, index = 0 }) {
           </Stack>
 
           {/* Navigation Button */}
-          <Button
-            component={NextLink}
-            href={`/projects/${project.slug}`}
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ mt: 2 }}
-          >
+          <Button component={NextLink} href={`/projects/${project.slug}`} variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
             {t('common.readMore')}
           </Button>
         </Stack>

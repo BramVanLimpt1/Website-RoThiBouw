@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 const ProjectDetailPage = dynamic(() => import('@/views/pages/project-detail'));
 
 // Import projects data
-import { projects } from '@/views/pages/projects/data';
+import { projects } from '@/data/projects';
 
 /***************************  GENERATE STATIC PARAMS  ***************************/
 

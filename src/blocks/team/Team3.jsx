@@ -110,7 +110,7 @@ export default function Team3({ heading, caption, members }) {
         >
           <Typeset {...{ heading, caption }} />
         </motion.div>
-        
+
         {/* Team Members Carousel */}
         <Box
           sx={{

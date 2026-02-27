@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 // @mui
 import { useTheme } from '@mui/material/styles';
 import List from '@mui/material/List';
@@ -10,8 +11,6 @@ import Typography from '@mui/material/Typography';
 
 // @project
 import SvgIcon from '../SvgIcon';
-
-// @types
 
 /***************************  FAQ - DETAILS  ***************************/
 

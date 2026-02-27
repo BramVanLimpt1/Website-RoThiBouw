@@ -61,7 +61,9 @@ function ContactCard({ icon, title, content, link }) {
               captionProps: { variant: 'body1' }
             }}
           />
-          {link && <Button color="primary" variant="contained" {...(link.href && { component: NextLink })} {...link} children={t(link.children)} />}
+          {link && (
+            <Button color="primary" variant="contained" {...(link.href && { component: NextLink })} {...link} children={t(link.children)} />
+          )}
         </Stack>
       </Stack>
     </GraphicsCard>
@@ -102,4 +104,10 @@ export default function ContactUs3({ heading, caption, list, headerAlign = 'cent
 
 ContactCard.propTypes = { icon: PropTypes.any, title: PropTypes.any, content: PropTypes.any, link: PropTypes.any };
 
-ContactUs3.propTypes = { heading: PropTypes.string, caption: PropTypes.string, list: PropTypes.array, headerAlign: PropTypes.oneOf(['left', 'center', 'right']), animateHeader: PropTypes.bool };
+ContactUs3.propTypes = {
+  heading: PropTypes.string,
+  caption: PropTypes.string,
+  list: PropTypes.array,
+  headerAlign: PropTypes.oneOf(['left', 'center', 'right']),
+  animateHeader: PropTypes.bool
+};

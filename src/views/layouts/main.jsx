@@ -27,10 +27,8 @@ export default function MainLayout({ children }) {
           <NavbarContent11 {...navbar} />
         </Navbar11>
       </Box>
-
       {/* page content */}
       <main>{children}</main>
-
       {/* footer section */}
       <Footer9 companyInfo={companyInfo} bottomBar={bottomBar} />;
     </>

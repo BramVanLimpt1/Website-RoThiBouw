@@ -10,27 +10,6 @@ import StarFab from '@/images/graphics/StarFab';
 
 /***************************  COMMON - GRADIENT FAB  ***************************/
 
-/**
- * GradientFab Component
- *
- * A floating action button (FAB) with a gradient background that can be either round or star-shaped.
- * The button displays a centered icon and adjusts its size based on the provided prop.
- *
- * @param {Object} props - Component props
- * @param {JSX.Element} props.icon - The icon to display at the center of the FAB.
- * @param {string} props.type - The type of FAB shape ('round' or 'star').
- * @param {number} props.size - The size of the FAB in pixels.
- *
- * @returns {JSX.Element} A Stack component containing the gradient FAB with the specified icon
- *
- * @example
- * // Round FAB with a home icon
- * <GradientFab icon={<HomeIcon />} type="round" size={60} />
- *
- * @example
- * // Star-shaped FAB with a star icon
- * <GradientFab icon={<StarIcon />} type="star" size={80} />
- */
 export default function GradientFab({ icon, type, size }) {
   return (
     <Stack sx={{ position: 'relative', alignItems: 'center', justifyContent: 'center' }}>

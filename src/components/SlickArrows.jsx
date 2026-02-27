@@ -9,19 +9,6 @@ import SvgIcon from './SvgIcon';
 
 /***************************  COMMON - SLICK ARROWS  ***************************/
 
-/**
- * SlickArrows Component
- *
- * A reusable component that provides "Previous" and "Next" arrow buttons for navigating
- * a react-slick slider. The buttons are styled consistently and trigger the slider's
- * navigation methods when clicked.
- *
- * @param {Object} props - Component props
- * @param {Object} props.sliderRef - A React ref object pointing to the react-slick Slider instance.
- * @param {('outlined'|'contained')} [props.variant='outlined'] - The variant to use for the buttons.
- *
- * @returns {JSX.Element} A Box containing two IconButton components for slider navigation
- */
 export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
   const outlinedStyle = {
     height: 64,
@@ -30,7 +17,7 @@ export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
     border: '1px solid',
     borderColor: 'grey.600',
     color: 'text.primary',
-    pointerEvents: 'auto',
+    pointerEvents: 'auto'
   };
 
   const containedStyle = {
@@ -40,9 +27,9 @@ export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
     backgroundColor: 'primary.main',
     color: 'primary.contrastText',
     '&:hover': {
-      backgroundColor: 'primary.dark',
+      backgroundColor: 'primary.dark'
     },
-    pointerEvents: 'auto',
+    pointerEvents: 'auto'
   };
 
   const buttonStyle = variant === 'contained' ? containedStyle : outlinedStyle;
@@ -59,7 +46,7 @@ export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
         justifyContent: 'space-between',
         px: { xs: 1, md: 2 },
         zIndex: 2,
-        pointerEvents: 'none',
+        pointerEvents: 'none'
       }}
     >
       <IconButton sx={buttonStyle} onClick={() => sliderRef.current?.slickPrev()} rel="noopener noreferrer" aria-label="previous">
@@ -74,5 +61,5 @@ export default function SlickArrows({ sliderRef, variant = 'outlined' }) {
 
 SlickArrows.propTypes = {
   sliderRef: PropTypes.any,
-  variant: PropTypes.oneOf(['outlined', 'contained']),
+  variant: PropTypes.oneOf(['outlined', 'contained'])
 };

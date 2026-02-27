@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useState } from 'react';
 
 // @mui
@@ -41,20 +42,6 @@ import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, 
 
 /***************************  FORM - INPUT LABEL  ***************************/
 
-/**
- * FieldLabel Component
- *
- * Simple label component for form fields. Displays the field name/label text
- * in a consistent subtitle style with secondary text color.
- *
- * @param {Object} props - Component props
- * @param {string} props.name - The label text to display
- *
- * @example
- * ```jsx
- * <FieldLabel name={t('forms.firstName')} />
- * ```
- */
 function FieldLabel({ name }) {
   return (
     <Typography variant="subtitle1" sx={{ color: 'text.secondary' }}>
@@ -65,20 +52,6 @@ function FieldLabel({ name }) {
 
 /***************************  FORM - ERROR MESSAGE  ***************************/
 
-/**
- * ErrorMessage Component
- *
- * Displays validation or submission error messages in a consistent style.
- * Used for displaying inline form field errors.
- *
- * @param {Object} props - Component props
- * @param {string} props.message - The error message text to display
- *
- * @example
- * ```jsx
- * <ErrorMessage message={errors.email?.message} />
- * ```
- */
 function ErrorMessage({ message }) {
   return (
     <Typography variant="caption" sx={{ color: 'error.main' }}>
@@ -89,39 +62,6 @@ function ErrorMessage({ message }) {
 
 /***************************  CONTACT US - FORM 1  ***************************/
 
-/**
- * ContactUsForm1 Component
- *
- * Advanced contact form with multi-field input, country dial code selector, and API integration.
- *
- * Features:
- * - Input validation for all fields (name, email, phone, message)
- * - Dynamic country code selector with flag icons
- * - Real-time error message display (translation-aware)
- * - Loading state while submitting
- * - Success/error feedback messages
- * - Language-aware default dial code (defaults to Netherlands +31)
- * - Responsive design (mobile-first)
- * - Integrated with submitContactForm() API utility for server submission
- *
- * Form Fields:
- * - firstName: Required, alpha characters only
- * - lastName: Required, alpha characters only
- * - email: Required, must be valid email format
- * - phone: Required with country dial code, 7-15 digits
- * - message: Required, multi-line text input
- *
- * Validation Approach:
- * - Uses reusable validation schemas from src/utils/validationSchema.js
- * - All error messages are translated strings from i18n
- * - Server-side validation also occurs on /api/contact endpoint
- *
- * API Integration:
- * - Calls submitContactForm() utility from src/api/contact.js
- * - Server endpoint: POST /api/contact
- * - Handles both success and error responses with translated messages
- * - Resets form on successful submission
- */
 export default function ContactUsForm1() {
   const theme = useTheme();
   const { t } = useTranslation();
@@ -184,7 +124,6 @@ export default function ContactUsForm1() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Grid container spacing={2.5}>
-
         {/* First Name Field */}
         <Grid size={{ xs: 12, sm: 6 }}>
           <Stack sx={{ gap: 0.5 }}>
@@ -346,7 +285,7 @@ export default function ContactUsForm1() {
             {errors.message?.message && <ErrorMessage message={errors.message?.message} />}
           </Stack>
         </Grid>
-        
+
         {/* Submit Button */}
         <Grid size={12}>
           <Stack sx={{ alignItems: 'flex-start', mt: { xs: 0.5, sm: 1.5 } }}>

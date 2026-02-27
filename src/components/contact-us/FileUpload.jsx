@@ -1,13 +1,19 @@
 'use client';
-import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 
+// @react
+import { useCallback, useState } from 'react';
+
+// @mui
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
+// @project
 import SvgIcon from '@/components/SvgIcon';
 import useTranslation from '@/hooks/useTranslation';
+
+/***************************  FILE UPLOAD  ***************************/
 
 export default function FileUpload({ onFileSelect }) {
   const theme = useTheme();
@@ -71,8 +77,8 @@ export default function FileUpload({ onFileSelect }) {
         cursor: 'pointer',
         transition: 'border-color 0.3s',
         '&:hover': {
-          borderColor: theme.palette.primary.main,
-        },
+          borderColor: theme.palette.primary.main
+        }
       }}
     >
       <input id="file-upload-input" type="file" hidden onChange={handleFileChange} />
@@ -88,5 +94,5 @@ export default function FileUpload({ onFileSelect }) {
 }
 
 FileUpload.propTypes = {
-  onFileSelect: PropTypes.func.isRequired,
+  onFileSelect: PropTypes.func.isRequired
 };

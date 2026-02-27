@@ -86,13 +86,7 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
               height: '100%'
             }}
           >
-            <Image
-              src={slides[0].image}
-              alt={slides[0].title || 'Header Image'}
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-            />
+            <Image src={slides[0].image} alt={slides[0].title || 'Header Image'} fill style={{ objectFit: 'cover' }} priority />
             {showText && (
               <Box
                 sx={{
@@ -123,18 +117,18 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                     sx: {
                       textAlign: 'center',
                       alignItems: 'center',
-                      maxWidth: 800,
-                    },
+                      maxWidth: 800
+                    }
                   }}
                   headingProps={{
                     sx: {
-                      color: 'white',
-                    },
+                      color: 'white'
+                    }
                   }}
                   captionProps={{
                     sx: {
-                      color: 'white',
-                    },
+                      color: 'white'
+                    }
                   }}
                 />
               </MotionWrapper>
@@ -190,18 +184,18 @@ export default function HeroSlideshow({ slides, height = { xs: 400, sm: 500, md:
                           sx: {
                             textAlign: 'center',
                             alignItems: 'center',
-                            maxWidth: 800,
-                          },
+                            maxWidth: 800
+                          }
                         }}
                         headingProps={{
                           sx: {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                         captionProps={{
                           sx: {
-                            color: 'white',
-                          },
+                            color: 'white'
+                          }
                         }}
                       />
                     </MotionWrapper>

@@ -50,16 +50,21 @@ export default function Cta2({ bgImage, headingKey, primaryBtn }) {
               direction={{ xs: 'column', md: 'row' }}
               sx={{ alignItems: { xs: 'flex-start', md: 'flex-end' }, justifyContent: 'space-between', gap: { xs: 3, sm: 4 } }}
             >
-              <Typography variant="h3">
-                {t(headingKey)}
-              </Typography>
+              <Typography variant="h3">{t(headingKey)}</Typography>
               {primaryBtn && (
-                <Button color="primary" size="large" variant="contained" sx={{ minWidth: 215 }} {...primaryBtn} children={t(primaryBtn.children)} />
+                <Button
+                  color="primary"
+                  size="large"
+                  variant="contained"
+                  sx={{ minWidth: 215 }}
+                  {...primaryBtn}
+                  children={t(primaryBtn.children)}
+                />
               )}
             </Stack>
           </Box>
-        </GraphicsCard>      
-      </MotionWrapper>    
+        </GraphicsCard>
+      </MotionWrapper>
     </ContainerWrapper>
   );
 }

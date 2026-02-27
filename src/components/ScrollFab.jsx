@@ -1,5 +1,6 @@
 'use client';
 
+// @react
 import { useEffect, useState } from 'react';
 
 // @mui
@@ -14,19 +15,6 @@ import SvgIcon from './SvgIcon';
 
 /***************************  COMMON - SCROLL TO TOP BUTTON  ***************************/
 
-/**
- * ScrollFab Component
- * 
- * A floating action button (FAB) that appears when the user scrolls down the page.
- * When clicked, it smoothly scrolls the user back to the top of the page.
- * The button uses framer-motion for fade-in and slide-up animations.
- * 
- * @returns {JSX.Element} A floating action button for scrolling to the top
- * 
- * @example
- * // Basic usage
- * <ScrollFab />
- */
 export default function ScrollFab() {
   const [isVisible, setIsVisible] = useState(false);
 

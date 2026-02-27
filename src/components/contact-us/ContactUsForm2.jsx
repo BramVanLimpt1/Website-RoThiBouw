@@ -1,6 +1,7 @@
 'use client';
 import PropTypes from 'prop-types';
 
+// @react
 import { useState } from 'react';
 
 // @mui
@@ -39,21 +40,17 @@ import countries from '@/data/countries';
 
 import { submitContactForm } from '@/api/contact';
 
-import { getEmailSchema, getFirstNameSchema, getLastNameSchema, getPhoneSchema, getMessageSchema, getLocationSchema } from '@/utils/validationSchema';
+import {
+  getEmailSchema,
+  getFirstNameSchema,
+  getLastNameSchema,
+  getPhoneSchema,
+  getMessageSchema,
+  getLocationSchema
+} from '@/utils/validationSchema';
 
 /***************************  FORM - INPUT LABEL  ***************************/
 
-/**
- * FieldLabel Component
- *
- * Simple label component for form fields. Displays the field name/label text
- * in a consistent subtitle style with secondary text color.
- * Optionally displays a question mark icon with a tooltip for helper text.
- *
- * @param {Object} props - Component props
- * @param {string} props.name - The label text to display
- * @param {string} [props.helper] - Optional helper text to show in a tooltip on the question mark icon
- */
 function FieldLabel({ name, helper }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', gap: 0.75 }}>
@@ -93,15 +90,6 @@ function FieldLabel({ name, helper }) {
 
 /***************************  FORM - ERROR MESSAGE  ***************************/
 
-/**
- * ErrorMessage Component
- *
- * Displays validation or submission error messages in a consistent style.
- * Used for displaying inline form field errors.
- *
- * @param {Object} props - Component props
- * @param {string} props.message - The error message text to display
- */
 function ErrorMessage({ message }) {
   return (
     <Typography variant="caption" sx={{ color: 'error.main' }}>
@@ -112,20 +100,6 @@ function ErrorMessage({ message }) {
 
 /***************************  CONTACT US - FORM 2  ***************************/
 
-/**
- * ContactUsForm2 Component
- *
- * Contact form with multi-field input, country dial code selector, and API integration.
- *
- * Form Fields:
- * - firstName: Required, alpha characters only
- * - lastName: Required, alpha characters only
- * - email: Required, must be valid email format
- * - phone: Required with country dial code, 7-15 digits
- * - location: Required, text input for project location
- * - message: Required, multi-line text input
- * - file: Optional file upload for attachments
- */
 export default function ContactUsForm2() {
   const theme = useTheme();
   const { t } = useTranslation();
@@ -193,7 +167,6 @@ export default function ContactUsForm2() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
         <Grid container spacing={2.5} sx={{ justifyContent: 'space-between' }}>
-          
           {/* First Name Field */}
           <Grid size={{ xs: 12, sm: 6 }}>
             <Stack sx={{ gap: 0.5 }}>
@@ -341,10 +314,7 @@ export default function ContactUsForm2() {
           {/* Location Field */}
           <Grid size={12}>
             <Stack sx={{ gap: 0.5 }}>
-              <FieldLabel 
-                name={t('forms.location')} 
-                helper={t('forms.locationHelper')} 
-              />
+              <FieldLabel name={t('forms.location')} helper={t('forms.locationHelper')} />
               <OutlinedInput
                 {...register('location', getLocationSchema(t))}
                 placeholder={t('forms.locationPlaceholder')}
@@ -381,7 +351,7 @@ export default function ContactUsForm2() {
             </Stack>
           </Grid>
         </Grid>
-        
+
         {/* Submit Button */}
         <Box sx={{ textAlign: 'center' }}>
           <ButtonAnimationWrapper>

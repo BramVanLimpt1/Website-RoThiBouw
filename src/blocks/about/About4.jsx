@@ -32,8 +32,8 @@ export default function About4({ headingKey, highlightKey, captionKey, image, pr
         <Grid size={{ xs: 12, md: 6 }}>
           <MotionWrapper>
             <GraphicsImage
-              image={image} 
-              sx={{ 
+              image={image}
+              sx={{
                 height: { xs: 300, sm: 400, md: 480 },
                 borderRadius: BORDER_RADIUS.xs,
                 overflow: 'hidden'

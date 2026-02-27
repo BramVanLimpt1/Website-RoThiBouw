@@ -76,13 +76,7 @@ export default function ProjectSlideshow({ images, height = { xs: 350, sm: 450, 
                 height: '100%'
               }}
             >
-              <Image
-                src={image}
-                alt={`${alt} ${index + 1}`}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority={index === 0}
-              />
+              <Image src={image} alt={`${alt} ${index + 1}`} fill style={{ objectFit: 'cover' }} priority={index === 0} />
             </Box>
           </Box>
         ))}

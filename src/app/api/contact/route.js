@@ -84,7 +84,6 @@ import nodemailer from 'nodemailer';
 
 // POST handler for /api/contact
 export async function POST(request) {
-  
   // Get language from request headers or default to 'nl'
   const language = request.headers.get('accept-language')?.split(',')[0]?.split('-')[0] || 'nl';
 
@@ -107,7 +106,6 @@ export async function POST(request) {
   const msg = messages[language] || messages.en;
 
   try {
-    
     const formData = await request.formData();
     const name = formData.get('name');
     const email = formData.get('email');
@@ -148,7 +146,7 @@ export async function POST(request) {
       timestamp: new Date().toISOString(),
       userAgent: request.headers.get('user-agent'),
       ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
-      attachment: file ? { filename: fileName, content: fileBuffer } : null,
+      attachment: file ? { filename: fileName, content: fileBuffer } : null
     };
 
     // Choose your email provider (uncomment one):

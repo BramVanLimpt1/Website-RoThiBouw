@@ -14,15 +14,15 @@ import Typography from '@mui/material/Typography';
 
 // @project
 import { GraphicsCard } from '@/components/cards';
+import ContainerWrapper from '@/components/ContainerWrapper';
 import SvgIcon from '@/components/SvgIcon';
 import useTranslation from '@/hooks/useTranslation';
+import { SECTION_COMMON_PY } from '@/utils/constant';
 
 /***************************  PROJECT SPECS & DESCRIPTION  ***************************/
 
 /**
  * ProjectSpecsDescription Block
- *
- * Based on Feature13 layout pattern - displays specifications list alongside description text.
  *
  * @param {Object} props - Component props
  * @param {Array} props.specifications - Array of spec items with icon, label/labelKey, and value/valueKey
@@ -121,19 +121,21 @@ export default function ProjectSpecsDescription({ specifications, description, d
   );
 
   return (
-    <Grid container spacing={{ xs: 3, sm: 4 }} sx={{ alignItems: { sm: 'stretch' } }}>
-      {reverse ? (
-        <>
-          {descriptionContent}
-          {specsContent}
-        </>
-      ) : (
-        <>
-          {specsContent}
-          {descriptionContent}
-        </>
-      )}
-    </Grid>
+    <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
+      <Grid container spacing={{ xs: 3, sm: 4 }} sx={{ alignItems: { sm: 'stretch' } }}>
+        {reverse ? (
+          <>
+            {descriptionContent}
+            {specsContent}
+          </>
+        ) : (
+          <>
+            {specsContent}
+            {descriptionContent}
+          </>
+        )}
+      </Grid>
+    </ContainerWrapper>
   );
 }
 

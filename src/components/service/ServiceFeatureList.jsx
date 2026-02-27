@@ -41,7 +41,15 @@ export default function ServiceFeatureList({ features, image, reverse = false })
 
   const imageContent = (
     <MotionWrapper variant="slideInFromSide" direction={reverse ? 'left' : 'right'} delay={0.2}>
-      <Box sx={{ position: 'relative', width: '100%', height: { xs: 300, sm: 350, md: 400 }, borderRadius: { xs: 6, sm: 8, md: 10 }, overflow: 'hidden' }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: { xs: 300, sm: 350, md: 400 },
+          borderRadius: { xs: 6, sm: 8, md: 10 },
+          overflow: 'hidden'
+        }}
+      >
         <Image src={image} alt="Service features" fill style={{ objectFit: 'cover' }} />
       </Box>
     </MotionWrapper>

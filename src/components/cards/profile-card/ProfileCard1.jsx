@@ -51,14 +51,17 @@ export default function ProfileCard1({ name, role, avatar, phone }) {
   return (
     <GraphicsCard sx={{ borderRadius: BORDER_RADIUS.xs }}>
       <Stack>
-        <GraphicsCard bgImage={avatar} sx={{ height: { xs: 180, sm: 240, md: 300 }, bgcolor: alpha(theme.palette.grey[600], 0.6), borderRadius: BORDER_RADIUS.xs }} />
+        <GraphicsCard
+          bgImage={avatar}
+          sx={{ height: { xs: 180, sm: 240, md: 300 }, bgcolor: alpha(theme.palette.grey[600], 0.6), borderRadius: BORDER_RADIUS.xs }}
+        />
         <Stack sx={{ gap: { xs: 0.25, sm: 0.5 }, padding: { xs: 1.5, sm: 2, md: 3 } }}>
-            <Typography variant="h4" noWrap sx={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
-              {name}
-            </Typography>
-            <Typography noWrap sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-              {role}
-            </Typography>
+          <Typography variant="h4" noWrap sx={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>
+            {name}
+          </Typography>
+          <Typography noWrap sx={{ color: 'text.secondary', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+            {role}
+          </Typography>
           {phone && (
             <Box sx={{ mt: { xs: 1, sm: 1.5, md: 2 }, textAlign: 'center' }}>
               <NextLink href={phone} passHref>
@@ -85,7 +88,7 @@ export default function ProfileCard1({ name, role, avatar, phone }) {
   );
 }
 
-ProfileCard1.propTypes = { 
+ProfileCard1.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,

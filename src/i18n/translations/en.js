@@ -26,7 +26,7 @@ export const translations = {
     contactPersonPlaceholder: 'Select a person',
     location: 'Location',
     locationPlaceholder: 'Enter your location',
-    locationHelper: 'It\'s very helpful if we know where the possible project or support will take place, so we can take that into account.',
+    locationHelper: "It's very helpful if we know where the possible project or support will take place, so we can take that into account.",
     attachment: 'Attachment',
     attachmentHelper: 'Add a file to your message',
     attachmentDrop: 'Drag & drop a file here, or click to select a file',
@@ -120,7 +120,7 @@ export const translations = {
     phoneThijs: 'Phone Thijs',
     kvkNumber: 'KvK Number',
     btwNumber: 'BTW Number',
-    legal: 'Legal',
+    legal: 'Legal'
   },
 
   // Language names
@@ -140,7 +140,7 @@ export const translations = {
       buttonText: 'Back to Home Page'
     },
     maintenance: {
-      heading: 'We\'re currently making improvements. We\'ll be back online soon!'
+      heading: "We're currently making improvements. We'll be back online soon!"
     }
   },
 
@@ -457,7 +457,7 @@ export const translations = {
       title: 'Timber Work',
       descriptionTitle: 'Expert Carpentry for Every Project',
       description:
-        'Carpentry is at the core of what we do. Whether it\'s installing window frames, building a wooden structure, or finishing an interior - at RoThiBouw you are assured of precision and quality. We work with various types of wood and deliver custom solutions for every situation.',
+        "Carpentry is at the core of what we do. Whether it's installing window frames, building a wooden structure, or finishing an interior - at RoThiBouw you are assured of precision and quality. We work with various types of wood and deliver custom solutions for every situation.",
       features: {
         f1: 'Window and door frames',
         f2: 'Wooden structures and support beams',
@@ -550,7 +550,8 @@ export const translations = {
     navigation: {
       heading: 'Our Services',
       caption: 'Discover all our professional construction services'
-    }
+    },
+    serviceNotFound: 'Service not found'
   },
 
   // Projects Page
