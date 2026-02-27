@@ -233,7 +233,8 @@ export const translations = {
     },
     founders: {
       headingKey: 'Who is RoThiBouw?',
-      captionKey: 'The skilled craftsmen behind RoThiBouw - two friends with a shared vision to deliver exceptional craftsmanship and quality construction',
+      captionKey:
+        'The skilled craftsmen behind RoThiBouw - two friends with a shared vision to deliver exceptional craftsmanship and quality construction',
       roy: {
         role: 'Co-founder',
         quote: '"Building is more than stacking bricks. It is craftsmanship, trust and delivering something people can truly be proud of."'
@@ -253,13 +254,11 @@ export const translations = {
       },
       office: {
         title: 'New Workshop',
-        description:
-          'Moved to a new workshop, giving us more space to plan and prepare our projects with precision.'
+        description: 'Moved to a new workshop, giving us more space to plan and prepare our projects with precision.'
       },
       projects: {
         title: '100+ Projects',
-        description:
-          'Reached an important milestone of completing over 100 successful construction projects for satisfied clients.'
+        description: 'Reached an important milestone of completing over 100 successful construction projects for satisfied clients.'
       },
       certification: {
         title: 'Contractor Certification',
@@ -486,6 +485,8 @@ export const translations = {
     filterByCategory: 'Filter by Category',
     noProjects: 'No projects found in this category',
     specifications: 'Specifications',
+    aboutProject: 'About this Project',
+    information: 'Project Information',
     projectNotFound: 'Project not found',
 
     // Category labels

@@ -24,27 +24,29 @@ export const createProjectDetailSections = (project) => {
     });
   }
 
-  // 2. Primary Section - Primary Info + Short Description
+  // 2. Primary Section - Primary Info + Short Description (pull-quote style)
   if (project.primaryInfo && project.primaryInfo.length > 0 && project.shortDescriptionKey) {
     sections.push({
       importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSpecsDescription })),
       props: {
         specifications: project.primaryInfo,
         descriptionKey: project.shortDescriptionKey,
-        specsTitleKey: 'projects.information'
+        specsTitleKey: 'projects.information',
+        overlineKey: 'projects.aboutProject',
+        descriptionHighlight: true
       }
     });
   }
 
-  // 3. Secondary Section - Secondary Info + Full Description
+  // 3. Secondary Section - Full Description + Secondary Info as highlight cards
   if (project.secondaryInfo && project.secondaryInfo.length > 0 && project.descriptionKey) {
     sections.push({
       importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSpecsDescription })),
       props: {
         specifications: project.secondaryInfo,
         descriptionKey: project.descriptionKey,
-        specsTitleKey: 'projects.additionalInfo',
-        reverse: true
+        reverse: true,
+        specsAsCards: true
       }
     });
   }

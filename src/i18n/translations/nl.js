@@ -475,6 +475,8 @@ export const translations = {
     filterByCategory: 'Filter op Categorie',
     noProjects: 'Geen projecten gevonden in deze categorie',
     specifications: 'Specificaties',
+    aboutProject: 'Over dit project',
+    information: 'Projectinformatie',
     projectNotFound: 'Project niet gevonden',
 
     // Category labels

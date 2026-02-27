@@ -63,7 +63,7 @@ export default function Gallery1({ headingKey, captionKey, images }) {
   });
 
   return (
-    <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
+    <ContainerWrapper sx={{ pt: 0, pb: SECTION_COMMON_PY }}>
       <Stack sx={{ gap: { xs: 3, sm: 4 } }}>
         <Typeset heading={t(headingKey)} caption={t(captionKey)} />
         <Grid container spacing={1.5}>

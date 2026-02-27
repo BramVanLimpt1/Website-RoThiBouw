@@ -8,15 +8,13 @@ import Typeset from '@/components/Typeset';
 
 import useTranslation from '@/hooks/useTranslation';
 
-import { SECTION_COMMON_PY } from '@/utils/constant';
-
 /***************************  PROJECT - HEADER  ***************************/
 
 export default function ProjectHeader({ titleKey, subtitleKey }) {
   const { t } = useTranslation();
 
   return (
-    <ContainerWrapper sx={{ py: SECTION_COMMON_PY }}>
+    <ContainerWrapper sx={{ py: { xs: 2, sm: 2.5, md: 3 } }}>
       <MotionWrapper>
         <Typeset
           heading={t(titleKey)}

@@ -12,7 +12,13 @@ export const projects = [
     category: 'dakwerken',
     year: 2026,
     location: 'Hooge Mierde',
-    images: ['/assets/home/image_1.jpg', '/assets/home/image_2.jpg', '/assets/temp/placeholder.png', '/assets/temp/placeholder.png', '/assets/temp/placeholder.png'],
+    images: [
+      '/assets/home/image_1.jpg',
+      '/assets/home/image_2.jpg',
+      '/assets/temp/placeholder.png',
+      '/assets/temp/placeholder.png',
+      '/assets/temp/placeholder.png'
+    ],
     thumbnail: '/assets/home/image_3.jpg',
     primaryInfo: [
       { icon: 'tabler-map-pin', label: 'Locatie', value: 'Hooge Mierde' },
@@ -109,8 +115,8 @@ export const projects = [
       name: 'Bob Williams',
       reviewKey: 'projects.items.project4.review'
     }
-    },
-    {
+  },
+  {
     id: 'project-5',
     slug: 'project-5',
     titleKey: 'projects.items.project5.title',
@@ -136,6 +142,5 @@ export const projects = [
       name: 'Charlie Brown',
       reviewKey: 'projects.items.project5.review'
     }
-   }
-
+  }
 ];
