@@ -10,9 +10,7 @@ import Box from '@mui/material/Box';
 // @project
 import ContainerWrapper from '@/components/ContainerWrapper';
 
-// @types
-
-// override media queries injected by theme.mixins.toolbar
+// Override media queries injected by theme.mixins.toolbar
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   '@media all': {
     minHeight: 108,

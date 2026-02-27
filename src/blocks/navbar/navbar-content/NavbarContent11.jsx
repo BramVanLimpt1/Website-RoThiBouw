@@ -13,8 +13,6 @@ import LogoSection from '@/components/logo';
 import { MenuPopper, NavMenu, NavMenuDrawer, Customization } from '@/components/navbar';
 import SvgIcon from '@/components/SvgIcon';
 
-// @types
-
 /***************************  NAVBAR - CONTENT 11  ***************************/
 
 export default function NavbarContent11({ navItems }) {
@@ -34,7 +32,7 @@ export default function NavbarContent11({ navItems }) {
           </Box>
         )}
 
-        {/* Theme and Language Switcher */}
+        {/* Theme and language switcher */}
         {!downMD && <Customization showThemeToggle={true} showDirectionToggle={false} showLanguageSelector={true} />}
 
         {/* Mobile menu */}
