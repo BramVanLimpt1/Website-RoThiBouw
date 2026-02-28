@@ -1,7 +1,7 @@
 export const heroData = {
   slides: [
     {
-      image: '/assets/temp/placeholder.png',
+      image: '/assets/about/hero.jpeg',
       title: 'about.hero.title',
       titleHighlight: 'about.hero.titleHighlight',
       description: 'about.hero.description'
@@ -44,26 +44,26 @@ export const timelineData = {
   ]
 };
 
-export const founderData = {
+export const teamData = {
   headingKey: 'about.founders.heading',
   members: [
     {
       name: 'Roy van Strijdhoven',
       roleKey: 'about.founders.roy.role',
       quoteKey: 'about.founders.roy.quote',
-      avatar: '/assets/temp/placeholder_person.jpg',
-      phone: '+31 (0)6 12 34 56 78',
-      email: 'roy@rothibouw.nl',
-      linkedin: 'https://linkedin.com/in/roy-van-strijdhoven'
+      avatar: '/assets/about/roy.jpeg',
+      phone: '+31 (0)6 81 39 97 41',
+      email: 'roy@rothibouw.nl'
+      // linkedin: 'https://linkedin.com/in/roy-van-strijdhoven'
     },
     {
       name: 'Thijs van Gisbergen',
       roleKey: 'about.founders.thijs.role',
       quoteKey: 'about.founders.thijs.quote',
-      avatar: '/assets/temp/placeholder_person.jpg',
-      phone: '+31 (0)6 98 76 54 32',
-      email: 'thijs@rothibouw.nl',
-      linkedin: 'https://linkedin.com/in/thijs-van-gisbergen'
+      avatar: '/assets/about/thijs.jpg',
+      phone: '+31 (0)6 57 41 59 09',
+      email: 'thijs@rothibouw.nl'
+      // linkedin: 'https://linkedin.com/in/thijs-van-gisbergen'
     }
   ]
 };
