@@ -9,7 +9,9 @@ import Typography from '@mui/material/Typography';
 import LazySection from '@/components/LazySection';
 import ContainerWrapper from '@/components/ContainerWrapper';
 import useDataThemeMode from '@/hooks/useDataThemeMode';
+
 import useTranslation from '@/hooks/useTranslation';
+
 import { SECTION_COMMON_PY } from '@/utils/constant';
 
 // @sections
