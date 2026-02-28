@@ -1,5 +1,3 @@
-/***************************  FOOTER - 9 DATA  ***************************/
-
 export const companyInfo = {
   infoItems: [
     {
@@ -10,14 +8,14 @@ export const companyInfo = {
     {
       labelKey: 'footer.phoneRoy',
       icon: 'tabler-phone',
-      value: '+31 (0)6 12 34 56 78',
-      href: 'tel:+31 (0)6 12 34 56 78'
+      value: '+31 (0)6 81 39 97 41',
+      href: 'tel:+31 (0)6 81 39 97 41'
     },
     {
       labelKey: 'footer.phoneThijs',
       icon: 'tabler-phone',
-      value: '+31 (0)6 98 76 54 32',
-      href: 'tel:+31 (0)6 98 76 54 32'
+      value: '+31 (0)6 57 41 59 09',
+      href: 'tel:+31 (0)6 57 41 59 09'
     },
     {
       labelKey: 'footer.email',
