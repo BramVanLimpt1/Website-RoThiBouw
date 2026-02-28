@@ -201,8 +201,8 @@ export const translations = {
       }
     },
     aboutTeaser: {
-      heading: 'Twee vrienden,',
-      highlight: 'één missie',
+      heading: 'Van vriendschap,',
+      highlight: 'naar vakmanschap',
       caption:
         'RoThiBouw is opgericht door Roy en Thijs — twee jonge vakmensen met een gedeelde passie voor kwaliteitsbouw. Het begon als een droom en is uitgegroeid tot een vertrouwde naam in timmerwerk, dakwerken en renovaties. Met oog voor detail en een persoonlijke aanpak bij elk project, leveren we vakmanschap waar u op kunt bouwen.',
       button: 'Leer Ons Kennen'
@@ -222,16 +222,17 @@ export const translations = {
   // About Page
   about: {
     hero: {
-      title: 'Twee vrienden,',
-      titleHighlight: 'één missie',
+      title: 'Van vriendschap,',
+      titleHighlight: 'naar vakmanschap',
       description: '...'
     },
     story: {
       heading: 'Van droom naar',
       highlight: 'werkelijkheid',
-      p1: 'RoThiBouw is ontstaan uit de gedeelde passie van Roy en Thijs voor de bouw en het vakmanschap. Twee vrienden die ...',
-      p2: 'Wat begon met kleine klussen voor vrienden en familie groeide al snel uit tot een volwaardig bouwbedrijf. Vandaag mogen we trots zijn op de vele projecten die we hebben gerealiseerd, steeds met dezelfde toewijding en oog voor detail.',
-      p3: 'Wij zijn gespecialiseerd in timmerwerk, dakwerken, renovaties en aanbouwen, en we benaderen elk project alsof het ons eigen huis betreft.'
+      p1: 'We leerden elkaar kennen op veertienjarige leeftijd. Bij onze eerste bijbaan klikte het meteen. Al snel merkten we dat we niet alleen hetzelfde plezier in het werk hadden, maar ook dezelfde werklust hadden. Na jarenlang zij aan zij te hebben gewerkt en ontzettend veel te hebben geleerd, bleek onze passie en het werkplezier zich om te zetten in interesse voor de bouw.',
+      p2: 'Om ons vakmanschap te onderbouwen met de juiste kennis, hebben we beiden de opleiding Middenkaderfunctionaris Bouw gevolgd. Roy rondde deze af in mei 2023 en Thijs volgde in januari 2025. Hoewel we in de tussentijd beiden ervaring opdeden als zelfstandig ondernemer met een eigen eenmanszaak, bleef de ambitie om samen iets op te bouwen kriebelen.',
+      p3: 'In februari 2025 was het zover: de oprichting van RoThi Bouw. Onze missie is simpel: met passie en plezier prachtige projecten realiseren en ons bedrijf laten groeien door kwaliteit te leveren waar we trots op zijn. Bij ons ben je verzekerd van vakmanschap met een persoonlijke aanpak.',
+      p4: 'Op naar nog vele mooie jaren.'
     },
     timeline: {
       heading: 'Onze reis',
@@ -257,7 +258,7 @@ export const translations = {
       }
     },
     founders: {
-      heading: 'De mensen achter RoThiBouw',
+      heading: 'De vakmannen achter RoThiBouw',
       roy: {
         role: 'Mede-oprichter',
         quote: '"..."'
@@ -367,74 +368,68 @@ export const translations = {
 
   // Service Detail Pages
   services: {
-    dakwerken: {
-      title: 'Dakwerken',
-      descriptionTitle: 'Professionele Dakconstructie & Reparaties',
-      description:
-        'Bij RoThiBouw zijn we gespecialiseerd in alle vormen van dakwerk. Van nieuwbouw tot renovatie, wij zorgen voor een waterdicht en duurzaam dak dat jarenlang meegaat. Onze ervaren vakmensen werken met hoogwaardige materialen en leveren altijd een strak en professioneel resultaat.',
-      features: {
-        f1: 'Nieuwbouw dakconstructies',
-        f2: 'Dakrenovaties en reparaties',
-        f3: 'Dakpannen leggen en vervangen',
-        f4: 'Dakisolatie en ventilatie',
-        f5: 'Dakgoten en hemelwaterafvoer',
-        f6: 'Lood- en zinkwerk'
-      }
-    },
-    timmerwerk: {
-      title: 'Timmerwerk',
-      descriptionTitle: 'Vakkundig Timmerwerk voor Elk Project',
-      description:
-        'Timmerwerk is de kern van wat wij doen. Of het nu gaat om het plaatsen van kozijnen, het maken van een houten constructie of het afwerken van een interieur - bij RoThiBouw bent u verzekerd van precisie en kwaliteit. Wij werken met diverse houtsoorten en leveren maatwerk voor elke situatie.',
-      features: {
-        f1: 'Kozijnen en deurkozijnen',
-        f2: 'Houten constructies en draagbalken',
-        f3: 'Gevelbekleding in hout',
-        f4: 'Binnenbetimmering en afwerking',
-        f5: 'Houten vloeren en plafonds',
-        f6: 'Maatwerk meubels en inbouwkasten'
-      }
-    },
     renovaties: {
-      title: 'Renovaties',
-      descriptionTitle: 'Complete Renovatieoplossingen',
+      title: 'Ver- en aanbouw',
+      descriptionTitle: 'Complete renovatieoplossingen',
       description:
         'Een renovatie geeft uw woning een nieuw leven. Of u nu een enkele ruimte wilt vernieuwen of een complete verbouwing plant, wij begeleiden u van begin tot eind. Met oog voor detail en respect voor de bestaande structuur realiseren wij uw droomproject.',
       features: {
         f1: 'Complete woningrenovaties',
         f2: 'Keuken- en badkamerverbouwingen',
         f3: 'Aanbouwen en uitbreidingen',
-        f4: 'Vloeren en wanden vernieuwen',
-        f5: 'Isolatie en energiebesparing',
-        f6: 'Constructieve aanpassingen'
+        f4: 'Constructieve aanpassingen',
+        f5: 'E/W-installaties'
+      }
+    },
+    dakwerken: {
+      title: 'Dakwerken',
+      descriptionTitle: 'Dakconstructie & Reparaties',
+      description:
+        'Bij RoThiBouw zijn we gespecialiseerd in alle vormen van dakwerk. Van nieuwbouw tot renovatie, wij zorgen voor een duurzaam dak dat jarenlang meegaat. Onze ervaren vakmensen werken met hoogwaardige materialen en leveren altijd een strak en professioneel resultaat.',
+      features: {
+        f1: 'Nieuwbouw dakconstructies',
+        f2: 'Dakrenovaties en reparaties',
+        f3: 'Dakpannen aanbrengen en vervangen',
+        f4: 'Aanbrengen van dakisolatie',
+        f5: 'Dakgoten en hemelwaterafvoer',
+        f6: 'Lood- en zinkwerk'
+      }
+    },
+    timmerwerk: {
+      title: 'Timmerwerk',
+      descriptionTitle: 'Vakkundig timmerwerk voor elk project',
+      description:
+        'Timmerwerk is de kern van wat wij doen. Of het nu gaat om het plaatsen van kozijnen, het aanbrengen van gevelbekleding of aftimmering, bij RoThiBouw bent u verzekerd van precisie en kwaliteit. Wij werken met diverse houtsoorten en leveren maatwerk voor elke situatie.',
+      features: {
+        f1: 'Kozijnen',
+        f2: 'Diversen gevelbekleding',
+        f3: 'Binnenbetimmering en afwerking'
       }
     },
     verduurzaming: {
       title: 'Verduurzaming',
-      descriptionTitle: 'Duurzame Oplossingen voor Uw Woning',
+      descriptionTitle: 'Duurzame oplossingen voor uw woning',
       description:
-        'Bij RoThiBouw bieden we diverse verduurzamingsoplossingen om uw woning energiezuiniger en milieuvriendelijker te maken. Van isolatie tot zonnepanelen, wij helpen u bij het realiseren van een duurzame woning.',
+        'Bij RoThiBouw zorgen we ervoor dat uw woning verduurzaamd wordt, van vloer tot hellend dak en van gevel tot platdak. Hierbij zorgen we uiteraard voor een nieuwe vloer, nieuw metselwerk en nieuwe dakbedekking, net wat voor u van toepassing is. Hierbij zorgen we ervoor dat uw woning klaar is voor de toekomst.',
       features: {
-        f1: 'Isolatie en energiebesparing',
-        f2: 'Zonnepanelen en zonne-energie',
-        f3: 'Duurzame verwarmingssystemen',
-        f4: 'Waterbesparende oplossingen',
-        f5: 'Energiezuinige verlichting',
-        f6: 'Milieuvriendelijke materialen'
+        f1: 'Aanbrengen vloer-, gevel- en dakisolatie',
+        f2: 'Aanpak koudebruggen',
+        f3: 'Energie besparende installaties',
+        f4: 'Zonnenpanelen'
       }
     },
     houtConstructies: {
-      title: 'Hout Constructies',
-      descriptionTitle: 'Solide Houtconstructies & Maatwerk',
+      title: 'Hout constructies',
+      descriptionTitle: 'Houtconstructies & Maatwerk',
       description:
-        'Van houten draagconstructies tot maatwerk meubels, RoThiBouw levert vakkundig houtwerk. Wij werken met verschillende houtsoorten en technieken om een stevig en mooi resultaat te garanderen.',
+        'Van houten draagconstructies tot maatwerk, RoThiBouw levert vakkundig houtwerk. Wij werken met verschillende houtsoorten en technieken om een stevig en mooi resultaat te garanderen.',
       features: {
         f1: 'Houten draagconstructies',
-        f2: 'Maatwerk meubels',
-        f3: 'Kozijnen en deurkozijnen',
-        f4: 'Binnenbetimmering en afwerking',
-        f5: 'Houten vloeren en plafonds',
-        f6: 'Maatwerk meubels en inbouwkasten'
+        f2: '-',
+        f3: '-',
+        f4: '-',
+        f5: '-',
+        f6: '-'
       }
     },
     process: {
@@ -471,20 +466,20 @@ export const translations = {
   // Projects Page
   projects: {
     heading: 'Onze Projecten',
-    caption: 'Ontdek onze uitgevoerde bouwprojecten en zie de kwaliteit van ons vakmanschap',
-    filterByCategory: 'Filter op Categorie',
+    caption: 'Ontdek onze uitgevoerde bouwprojecten en zie de kwaliteit en mogelijkheden van ons vakmanschap',
+    filterByCategory: 'Filter op categorie',
     noProjects: 'Geen projecten gevonden in deze categorie',
-    specifications: 'Specificaties',
     aboutProject: 'Over dit project',
     information: 'Projectinformatie',
     projectNotFound: 'Project niet gevonden',
+    whatWeDidForThisProject: 'Wat we voor dit project hebben gedaan',
 
     // Category labels
     categories: {
       all: 'Alle Projecten',
+      renovaties: 'Ver- en aanbouw',
       dakwerken: 'Dakwerken',
       timmerwerk: 'Timmerwerk',
-      renovaties: 'Renovaties',
       verduurzaming: 'Verduurzaming',
       houtConstructies: 'Hout Constructies'
     },
@@ -492,10 +487,10 @@ export const translations = {
     // Project items
     items: {
       project1: {
-        title: 'Houten Overkapping met Terrasvloer',
-        description: 'Realisatie van een prachtige houten overkapping met massieve eiken kolommen en een duurzame terrasvloer.',
+        title: 'Kaprenovatie Hooge Mierde',
+        subtitle: 'Uw huis verduurzamen en daarbij één nieuw fris dak.', /// nog naar een kop samenvoegen
         detailDescription:
-          'Voor deze klant hebben wij een prachtige houten overkapping gerealiseerd die perfect aansluit bij de bestaande woning. De constructie is gemaakt van duurzaam eikenhout met robuuste kolommen die zorgen voor een solide en langdurige oplossing. De overkapping biedt niet alleen beschutting, maar voegt ook een warme en natuurlijke uitstraling toe aan de buitenruimte.',
+          'Bij deze kaprenovatie hebben we op het woonhuis gebruik gemaakt van renovatieplaten, Renopir. Dit zorgt ervoor dat wij het dakbeschot kunnen laten zitten zodat er binnen niks aan het huis wordt aangetast. De klant heeft gekozen voor een OVH 206 pan. In combinatie van deze nieuwe pannen en een onderhoudsarme overstek van Rockpanel (RAL 7035) is de kap helemaal afgewerkt. Uiteraard hebben we ook nieuwe zinken goten en afvoeren toegepast.',
         activities: {
           activity1: 'Massieve eiken kolommen met stalen voetplaten',
           activity2: 'Hoogwaardige dakbedekking met optimale waterafvoer',
@@ -506,7 +501,6 @@ export const translations = {
       },
       project2: {
         title: 'Moderne Aanbouw met Houtbekleding',
-        description: 'Compleet aanbouw met moderne houtbekleding, grote raampartijen en naadloze integratie met bestaande woning.',
         detailDescription:
           'Deze moderne aanbouw combineert functionaliteit met esthetiek. De houtbekleding geeft de aanbouw een warme en eigentijdse uitstraling die perfect integreert met de bestaande architectuur.',
         activities: {

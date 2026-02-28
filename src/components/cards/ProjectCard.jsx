@@ -55,35 +55,6 @@ export default function ProjectCard({ project, index = 0 }) {
         <Box sx={{ position: 'relative', width: '100%', height: 380, overflow: 'hidden', bgcolor: 'grey.200' }}>
           <Image src={currentImage} alt={t(project.titleKey)} fill style={{ objectFit: 'cover' }} priority={index === 0} />
 
-          {/* Category Badge */}
-          {/* <Box
-            sx={{
-              position: 'absolute',
-              top: 25,
-              left: 25,
-              right: 25,
-              bottom: 25,
-              zIndex: 2,
-              color: 'primary.main',
-              // py: 1,
-              // px: 2,
-              // borderRadius: 1,
-              textAlign: 'center',
-              fontSize: '0.875rem',
-              fontWeight: 600
-            }}
-          >
-            <Button
-              variant="contained"
-              color="primary"
-              fullWidth
-              disabled
-              sx={{ cursor: 'default', pointerEvents: 'none' }}
-            >
-              {t(`projects.categories.${project.category}`)}
-            </Button>
-          </Box> */}
-
           {/* Navigation Arrows & Dots (only if multiple images) */}
           {hasMultipleImages && (
             <>
@@ -157,7 +128,7 @@ export default function ProjectCard({ project, index = 0 }) {
           <Typeset
             {...{
               heading: t(project.titleKey),
-              caption: t(project.descriptionKey),
+              caption: t(project.subtitleKey),
               stackProps: { sx: { gap: { xs: 1, md: 1.5 } } },
               headingProps: { variant: 'h4' },
               captionProps: {
@@ -200,7 +171,7 @@ ProjectCard.propTypes = {
   project: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     titleKey: PropTypes.string.isRequired,
-    descriptionKey: PropTypes.string.isRequired,
+    subtitleKey: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
     location: PropTypes.string.isRequired,

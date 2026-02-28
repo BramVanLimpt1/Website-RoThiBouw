@@ -377,6 +377,20 @@ export const translations = {
 
   // Service Detail Pages
   services: {
+    renovaties: {
+      title: 'Renovations',
+      descriptionTitle: 'Complete Renovation Solutions',
+      description:
+        'A renovation gives your home a new life. Whether you want to refresh a single room or plan a complete remodel, we guide you from start to finish. With an eye for detail and respect for the existing structure, we realize your dream project.',
+      features: {
+        f1: 'Complete home renovations',
+        f2: 'Kitchen and bathroom remodels',
+        f3: 'Extensions and additions',
+        f4: 'Floor and wall renewals',
+        f5: 'Insulation and energy efficiency',
+        f6: 'Structural modifications'
+      }
+    },
     dakwerken: {
       title: 'Roofing',
       descriptionTitle: 'Professional Roof Construction & Repairs',
@@ -399,24 +413,7 @@ export const translations = {
       features: {
         f1: 'Window and door frames',
         f2: 'Wooden structures and support beams',
-        f3: 'Wood cladding for facades',
-        f4: 'Interior paneling and finishing',
-        f5: 'Wooden floors and ceilings',
-        f6: 'Custom furniture and built-in cabinets'
-      }
-    },
-    renovaties: {
-      title: 'Renovations',
-      descriptionTitle: 'Complete Renovation Solutions',
-      description:
-        'A renovation gives your home a new life. Whether you want to refresh a single room or plan a complete remodel, we guide you from start to finish. With an eye for detail and respect for the existing structure, we realize your dream project.',
-      features: {
-        f1: 'Complete home renovations',
-        f2: 'Kitchen and bathroom remodels',
-        f3: 'Extensions and additions',
-        f4: 'Floor and wall renewals',
-        f5: 'Insulation and energy efficiency',
-        f6: 'Structural modifications'
+        f3: 'Wood cladding for facades'
       }
     },
     verduurzaming: {
@@ -488,6 +485,7 @@ export const translations = {
     aboutProject: 'About this Project',
     information: 'Project Information',
     projectNotFound: 'Project not found',
+    whatWeDidForThisProject: 'What we did for this project',
 
     // Category labels
     categories: {

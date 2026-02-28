@@ -20,7 +20,7 @@ export let ThemeDirection;
 const config = {
   mode: ThemeMode.LIGHT,
   themeDirection: ThemeDirection.LTR,
-  language: 'en'
+  language: 'nl'
 };
 
 export default config;

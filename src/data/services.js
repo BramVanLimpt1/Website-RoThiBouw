@@ -3,45 +3,7 @@
 
 export const services = [
   {
-    slug: 'dakwerken',
-    titleKey: 'services.dakwerken.title',
-    icon: 'tabler-home',
-    heroImage: '/assets/temp/placeholder.png',
-    descriptionTitleKey: 'services.dakwerken.descriptionTitle',
-    descriptionKey: 'services.dakwerken.description',
-    descriptionImage: '/assets/temp/placeholder.png',
-    features: [
-      'services.dakwerken.features.f1',
-      'services.dakwerken.features.f2',
-      'services.dakwerken.features.f3',
-      'services.dakwerken.features.f4',
-      'services.dakwerken.features.f5',
-      'services.dakwerken.features.f6'
-    ],
-    featureImage: '/assets/temp/placeholder.png',
-    relatedCategories: ['dakwerken']
-  },
-  {
-    slug: 'timmerwerk',
-    titleKey: 'services.timmerwerk.title',
-    icon: 'tabler-tool',
-    heroImage: '/assets/temp/placeholder.png',
-    descriptionTitleKey: 'services.timmerwerk.descriptionTitle',
-    descriptionKey: 'services.timmerwerk.description',
-    descriptionImage: '/assets/temp/placeholder.png',
-    features: [
-      'services.timmerwerk.features.f1',
-      'services.timmerwerk.features.f2',
-      'services.timmerwerk.features.f3',
-      'services.timmerwerk.features.f4',
-      'services.timmerwerk.features.f5',
-      'services.timmerwerk.features.f6'
-    ],
-    featureImage: '/assets/temp/placeholder.png',
-    relatedCategories: ['timmerwerk']
-  },
-  {
-    slug: 'renovaties',
+    slug: 'renovaties', // Moet als eerst zictbaar zijn ook in dropdown!
     titleKey: 'services.renovaties.title',
     icon: 'tabler-paint',
     heroImage: '/assets/temp/placeholder.png',
@@ -53,11 +15,41 @@ export const services = [
       'services.renovaties.features.f2',
       'services.renovaties.features.f3',
       'services.renovaties.features.f4',
-      'services.renovaties.features.f5',
-      'services.renovaties.features.f6'
+      'services.renovaties.features.f5'
     ],
     featureImage: '/assets/temp/placeholder.png',
     relatedCategories: ['renovaties']
+  },
+  {
+    slug: 'dakwerken',
+    titleKey: 'services.dakwerken.title',
+    icon: 'tabler-home',
+    heroImage: '/assets/services/dakwerken/hero.jpeg',
+    descriptionTitleKey: 'services.dakwerken.descriptionTitle',
+    descriptionKey: 'services.dakwerken.description',
+    descriptionImage: '/assets/services/dakwerken/description.jpeg',
+    features: [
+      'services.dakwerken.features.f1',
+      'services.dakwerken.features.f2',
+      'services.dakwerken.features.f3',
+      'services.dakwerken.features.f4',
+      'services.dakwerken.features.f5',
+      'services.dakwerken.features.f6'
+    ],
+    featureImage: '/assets/services/dakwerken/feature.jpeg',
+    relatedCategories: ['dakwerken']
+  },
+  {
+    slug: 'timmerwerk',
+    titleKey: 'services.timmerwerk.title',
+    icon: 'tabler-tool',
+    heroImage: '/assets/services/timmerwerk/hero.jpeg',
+    descriptionTitleKey: 'services.timmerwerk.descriptionTitle',
+    descriptionKey: 'services.timmerwerk.description',
+    descriptionImage: '/assets/services/timmerwerk/description.jpeg',
+    features: ['services.timmerwerk.features.f1', 'services.timmerwerk.features.f2', 'services.timmerwerk.features.f3'],
+    featureImage: '/assets/services/timmerwerk/feature.jpeg',
+    relatedCategories: ['-'] // Not yet ready for linking, so empty category to avoid showing any projects for now
   },
   {
     slug: 'verduurzaming',
@@ -66,16 +58,14 @@ export const services = [
     heroImage: '/assets/temp/placeholder.png',
     descriptionTitleKey: 'services.verduurzaming.descriptionTitle',
     descriptionKey: 'services.verduurzaming.description',
-    descriptionImage: '/assets/temp/placeholder.png',
+    descriptionImage: '/assets/services/verduurzaming/description.jpeg',
     features: [
       'services.verduurzaming.features.f1',
       'services.verduurzaming.features.f2',
       'services.verduurzaming.features.f3',
-      'services.verduurzaming.features.f4',
-      'services.verduurzaming.features.f5',
-      'services.verduurzaming.features.f6'
+      'services.verduurzaming.features.f4'
     ],
-    featureImage: '/assets/temp/placeholder.png',
+    featureImage: '/assets/services/verduurzaming/feature.jpeg',
     relatedCategories: ['verduurzaming']
   },
   {
