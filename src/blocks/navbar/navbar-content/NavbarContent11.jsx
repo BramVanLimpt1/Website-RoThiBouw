@@ -22,7 +22,7 @@ export default function NavbarContent11({ navItems }) {
   return (
     <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
       {/* Logo on the left */}
-      <LogoSection isIcon={true} sx={{ '& img': { width: 40, height: 40 }, display: 'flex' }} />
+      <LogoSection isIcon={true} sx={{ '& img': { width: 56, height: 56 }, display: 'flex' }} />
 
       {/* Navigation items and customization on the right */}
       <Stack direction="row" sx={{ alignItems: 'center', gap: 1 }}>
