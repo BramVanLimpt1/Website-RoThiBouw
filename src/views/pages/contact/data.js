@@ -17,11 +17,11 @@ export const contactData = {
       content: 'contact.phoneCard.content',
       link: [
         {
-          href: 'tel:+31 (0)6 12 34 56 78',
+          href: 'tel:+31 (0)6 81 39 97 41',
           children: 'contact.phoneCard.roy'
         },
         {
-          href: 'tel:+31 (0)6 98 76 54 32',
+          href: 'tel:+31 (0)6 57 41 59 09',
           children: 'contact.phoneCard.thijs'
         }
       ]
