@@ -1,11 +1,9 @@
-// Project detail page configuration for LazySection
-
 export const createProjectDetailSections = (project) => {
   if (!project) return [];
 
   const sections = [];
 
-  // Page heading
+  // Header Section with Project Title, Subtitle
   sections.push({
     importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectHeader })),
     props: {
@@ -14,7 +12,7 @@ export const createProjectDetailSections = (project) => {
     }
   });
 
-  // Project Image Gallery1
+  // Project Image Gallery1 with all project images (if available)
   if (project.images && project.images.length > 0) {
     sections.push({
       importFunc: () => import('@/blocks/gallery/Gallery1').then((module) => ({ default: module.default })),
@@ -24,32 +22,52 @@ export const createProjectDetailSections = (project) => {
     });
   }
 
-  // 2. Primary Section - Primary Info + Short Description (pull-quote style)
-  if (project.primaryInfo && project.primaryInfo.length > 0 && project.shortDescriptionKey) {
+  // Project Detail Description (long-form)
+  if (project.detailDescriptionKey) {
     sections.push({
-      importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSpecsDescription })),
+      importFunc: () => import('@/blocks/about').then((m) => ({ default: m.OurStory1 })),
       props: {
-        specifications: project.primaryInfo,
-        descriptionKey: project.shortDescriptionKey,
-        specsTitleKey: 'projects.information',
-        overlineKey: 'projects.aboutProject',
-        descriptionHighlight: true
+        headingKey: 'projects.whatWeDidForThisProject',
+        highlightKey: '',
+        paragraphKeys: [project.detailDescriptionKey]
       }
     });
   }
 
-  // 3. Secondary Section - Full Description + Secondary Info as highlight cards
-  if (project.secondaryInfo && project.secondaryInfo.length > 0 && project.descriptionKey) {
+  // // Materials/Features List
+  // if (project.primaryInfo && project.primaryInfo.length > 0) {
+  //   sections.push({
+  //     importFunc: () => import('@/blocks/project/FeaturesList').then((module) => ({ default: module.default })),
+  //     props: {
+  //       items: project.primaryInfo
+  //     }
+  //   });
+  // }
+
+  // 2. Primary Section - Primary Info + Short Description (Idea 3 icons + Idea 1 description)
+  if (project.primaryInfo && project.primaryInfo.length > 0 && project.projectInformationDescriptionKey) {
     sections.push({
       importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSpecsDescription })),
       props: {
-        specifications: project.secondaryInfo,
-        descriptionKey: project.descriptionKey,
-        reverse: true,
-        specsAsCards: true
+        specifications: project.primaryInfo,
+        descriptionKey: project.projectInformationDescriptionKey
+        // specsTitleKey: 'projects.information'
       }
     });
   }
+
+  // // 3. Secondary Section - Full Description + Secondary Info as highlight cards
+  // if (project.secondaryInfo && project.secondaryInfo.length > 0 && project.descriptionKey) {
+  //   sections.push({
+  //     importFunc: () => import('@/blocks/project').then((module) => ({ default: module.ProjectSpecsDescription })),
+  //     props: {
+  //       specifications: project.secondaryInfo,
+  //       descriptionKey: project.descriptionKey,
+  //       reverse: true,
+  //       specsAsCards: true
+  //     }
+  //   });
+  // }
 
   // 4. Testimonial / Review
   if (project.testimonial && (project.testimonial.review || project.testimonial.reviewKey)) {

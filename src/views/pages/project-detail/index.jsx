@@ -43,7 +43,7 @@ ProjectDetailPage.propTypes = {
     titleKey: PropTypes.string.isRequired,
     subtitleKey: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.string),
-    shortDescriptionKey: PropTypes.string,
+    projectInformationDescriptionKey: PropTypes.string,
     descriptionKey: PropTypes.string,
     primaryInfo: PropTypes.arrayOf(
       PropTypes.shape({
