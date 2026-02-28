@@ -2,20 +2,20 @@ import { projects } from '@/data/projects';
 
 export const heroSlides = [
   {
-    image: '/assets/home/image_1.jpg',
+    image: '/assets/home/hero_1.jpg',
     titleKey: 'home.hero.slide1.title',
     descriptionKey: 'home.hero.slide1.description'
-  },
-  {
-    image: '/assets/home/image_2.jpg',
-    titleKey: 'home.hero.slide2.title',
-    descriptionKey: 'home.hero.slide2.description'
-  },
-  {
-    image: '/assets/home/image_3.jpg',
-    titleKey: 'home.hero.slide3.title',
-    descriptionKey: 'home.hero.slide3.description'
   }
+  // {
+  //   image: '/assets/home/image_2.jpg',
+  //   titleKey: 'home.hero.slide2.title',
+  //   descriptionKey: 'home.hero.slide2.description'
+  // },
+  // {
+  //   image: '/assets/home/image_3.jpg',
+  //   titleKey: 'home.hero.slide3.title',
+  //   descriptionKey: 'home.hero.slide3.description'
+  // }
 ];
 
 export const servicesData = {
